@@ -39,7 +39,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
 import { cn } from "@/lib/utils"
-import { CalendarIcon, Check, ChevronDown, Info, AlertTriangle, CheckCircle, Bold, Italic, Underline, DollarSign, Users, CreditCard, Activity, Mail, MapPin, FileText, Video, Image, X, Share, Menu } from "lucide-react"
+import { CalendarIcon, Check, ChevronDown, Info, AlertTriangle, CheckCircle, Bold, Italic, Underline, DollarSign, Users, CreditCard, Activity, Mail, MapPin, FileText, Video, Image, X, Share, Menu, Lock, Quote } from "lucide-react"
 import { format } from "date-fns"
 import { ThemeToggle } from "@/components/theme-toggle"
 import {
@@ -56,6 +56,8 @@ import {
   Settings,
   Star,
   Upload,
+  Sun,
+  Moon,
 } from "lucide-react"
 import Link from "next/link"
 
@@ -3335,8 +3337,674 @@ function App() {
       </div>
     ),
   },
-
-
+  {
+    name: "Profile Page Template",
+    description: "Complete profile page with avatar, settings form, and activity log",
+    code: `<div className="max-w-4xl mx-auto space-y-8">
+  {/* Profile Header */}
+  <div className="flex items-center space-x-6">
+    <Avatar className="w-24 h-24">
+      <AvatarFallback className="text-2xl font-semibold">JD</AvatarFallback>
+    </Avatar>
+    <div>
+      <h1 className="text-3xl font-bold">John Doe</h1>
+      <p className="text-muted-foreground">Software Developer</p>
+      <p className="text-sm text-muted-foreground">john.doe@example.com</p>
+    </div>
+  </div>
+  
+  {/* Settings Form */}
+  <Card>
+    <CardHeader>
+      <CardTitle>Profile Settings</CardTitle>
+      <CardDescription>Update your profile information</CardDescription>
+    </CardHeader>
+    <CardContent className="space-y-4">
+      <div className="grid grid-cols-2 gap-4">
+        <div>
+          <Label htmlFor="firstName">First Name</Label>
+          <Input id="firstName" defaultValue="John" />
+        </div>
+        <div>
+          <Label htmlFor="lastName">Last Name</Label>
+          <Input id="lastName" defaultValue="Doe" />
+        </div>
+      </div>
+      <div>
+        <Label htmlFor="email">Email</Label>
+        <Input id="email" type="email" defaultValue="john.doe@example.com" />
+      </div>
+      <Button>Save Changes</Button>
+    </CardContent>
+  </Card>
+  
+  {/* Activity Log */}
+  <Card>
+    <CardHeader>
+      <CardTitle>Recent Activity</CardTitle>
+    </CardHeader>
+    <CardContent>
+      <div className="space-y-4">
+        <div className="flex items-center space-x-3">
+          <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+          <span className="text-sm">Profile updated - 2 hours ago</span>
+        </div>
+        <div className="flex items-center space-x-3">
+          <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+          <span className="text-sm">Password changed - 1 day ago</span>
+        </div>
+        <div className="flex items-center space-x-3">
+          <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+          <span className="text-sm">Login from new device - 3 days ago</span>
+        </div>
+      </div>
+    </CardContent>
+  </Card>
+</div>`,
+    preview: (
+      <div className="max-w-4xl mx-auto space-y-8">
+        <div className="flex items-center space-x-6">
+          <Avatar className="w-24 h-24">
+            <AvatarFallback className="text-2xl font-semibold">JD</AvatarFallback>
+          </Avatar>
+          <div>
+            <h1 className="text-3xl font-bold">John Doe</h1>
+            <p className="text-muted-foreground">Software Developer</p>
+            <p className="text-sm text-muted-foreground">john.doe@example.com</p>
+          </div>
+        </div>
+        <Card>
+          <CardHeader>
+            <CardTitle>Profile Settings</CardTitle>
+            <CardDescription>Update your profile information</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <Label htmlFor="firstName">First Name</Label>
+                <Input id="firstName" defaultValue="John" />
+              </div>
+              <div>
+                <Label htmlFor="lastName">Last Name</Label>
+                <Input id="lastName" defaultValue="Doe" />
+              </div>
+            </div>
+            <div>
+              <Label htmlFor="email">Email</Label>
+              <Input id="email" type="email" defaultValue="john.doe@example.com" />
+            </div>
+            <Button>Save Changes</Button>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader>
+            <CardTitle>Recent Activity</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              <div className="flex items-center space-x-3">
+                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                <span className="text-sm">Profile updated - 2 hours ago</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                <span className="text-sm">Password changed - 1 day ago</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                <span className="text-sm">Login from new device - 3 days ago</span>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    ),
+  },
+  {
+    name: "Lock Screen Component",
+    description: "Password unlock UI with modern design",
+    code: `<div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 to-purple-900 p-4">
+  <Card className="w-full max-w-md">
+    <CardHeader className="text-center">
+      <div className="w-20 h-20 mx-auto mb-4 bg-primary/20 rounded-full flex items-center justify-center">
+        <Lock className="w-10 h-10 text-primary" />
+      </div>
+      <CardTitle>Device Locked</CardTitle>
+      <CardDescription>Enter your password to unlock</CardDescription>
+    </CardHeader>
+    <CardContent className="space-y-4">
+      <div>
+        <Label htmlFor="password" className="sr-only">Password</Label>
+        <Input 
+          id="password" 
+          type="password" 
+          placeholder="Enter password"
+          className="text-center text-lg"
+        />
+      </div>
+      <Button className="w-full" size="lg">
+        Unlock
+      </Button>
+      <div className="text-center">
+        <Button variant="link" size="sm">
+          Forgot password?
+        </Button>
+      </div>
+    </CardContent>
+  </Card>
+</div>`,
+    preview: (
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 to-purple-900 p-4">
+        <Card className="w-full max-w-md">
+          <CardHeader className="text-center">
+            <div className="w-20 h-20 mx-auto mb-4 bg-primary/20 rounded-full flex items-center justify-center">
+              <Lock className="w-10 h-10 text-primary" />
+            </div>
+            <CardTitle>Device Locked</CardTitle>
+            <CardDescription>Enter your password to unlock</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div>
+              <Label htmlFor="password" className="sr-only">Password</Label>
+              <Input 
+                id="password" 
+                type="password" 
+                placeholder="Enter password"
+                className="text-center text-lg"
+              />
+            </div>
+            <Button className="w-full" size="lg">
+              Unlock
+            </Button>
+            <div className="text-center">
+              <Button variant="link" size="sm">
+                Forgot password?
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    ),
+  },
+  {
+    name: "Hero Sections",
+    description: "Landing page style with text and call-to-action buttons",
+    code: `<div className="relative overflow-hidden bg-gradient-to-r from-blue-600 to-purple-700 py-24">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center">
+      <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
+        Build amazing things
+      </h1>
+      <p className="mt-6 text-xl text-blue-100 max-w-3xl mx-auto">
+        Create beautiful, responsive websites with our modern UI components. 
+        Built with React, TypeScript, and Tailwind CSS.
+      </p>
+      <div className="mt-10 flex items-center justify-center gap-x-6">
+        <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
+          Get started
+        </Button>
+        <Button variant="outline" size="lg" className="text-white border-white hover:bg-white hover:text-blue-600">
+          Learn more
+        </Button>
+      </div>
+    </div>
+  </div>
+</div>`,
+    preview: (
+      <div className="relative overflow-hidden bg-gradient-to-r from-blue-600 to-purple-700 py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
+              Build amazing things
+            </h1>
+            <p className="mt-6 text-xl text-blue-100 max-w-3xl mx-auto">
+              Create beautiful, responsive websites with our modern UI components. 
+              Built with React, TypeScript, and Tailwind CSS.
+            </p>
+            <div className="mt-10 flex items-center justify-center gap-x-6">
+              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
+                Get started
+              </Button>
+              <Button variant="outline" size="lg" className="text-white border-white hover:bg-white hover:text-blue-600">
+                Learn more
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
+  },
+  {
+    name: "Testimonials Carousel",
+    description: "Rotating testimonials with navigation controls",
+    code: `<div className="max-w-4xl mx-auto">
+  <Carousel className="w-full">
+    <CarouselContent>
+      <CarouselItem>
+        <div className="text-center p-6">
+          <div className="w-16 h-16 mx-auto mb-4 bg-primary/20 rounded-full flex items-center justify-center">
+            <Quote className="w-8 h-8 text-primary" />
+          </div>
+          <blockquote className="text-lg italic mb-4">
+            "This component library has transformed how we build our applications. 
+            The quality and consistency are outstanding."
+          </blockquote>
+          <div className="font-semibold">Sarah Johnson</div>
+          <div className="text-sm text-muted-foreground">Product Manager, TechCorp</div>
+        </div>
+      </CarouselItem>
+      <CarouselItem>
+        <div className="text-center p-6">
+          <div className="w-16 h-16 mx-auto mb-4 bg-primary/20 rounded-full flex items-center justify-center">
+            <Quote className="w-8 h-8 text-primary" />
+          </div>
+          <blockquote className="text-lg italic mb-4">
+            "The best UI library I've ever used. Clean, accessible, and incredibly well-designed."
+          </blockquote>
+          <div className="font-semibold">Mike Chen</div>
+          <div className="text-sm text-muted-foreground">Frontend Developer, StartupXYZ</div>
+        </div>
+      </CarouselItem>
+    </CarouselContent>
+    <CarouselPrevious />
+    <CarouselNext />
+  </Carousel>
+</div>`,
+    preview: (
+      <div className="max-w-4xl mx-auto">
+        <Carousel className="w-full">
+          <CarouselContent>
+            <CarouselItem>
+              <div className="text-center p-6">
+                <div className="w-16 h-16 mx-auto mb-4 bg-primary/20 rounded-full flex items-center justify-center">
+                  <Quote className="w-8 h-8 text-primary" />
+                </div>
+                <blockquote className="text-lg italic mb-4">
+                  "This component library has transformed how we build our applications. 
+                  The quality and consistency are outstanding."
+                </blockquote>
+                <div className="font-semibold">Sarah Johnson</div>
+                <div className="text-sm text-muted-foreground">Product Manager, TechCorp</div>
+              </div>
+            </CarouselItem>
+            <CarouselItem>
+              <div className="text-center p-6">
+                <div className="w-16 h-16 mx-auto mb-4 bg-primary/20 rounded-full flex items-center justify-center">
+                  <Quote className="w-8 h-8 text-primary" />
+                </div>
+                <blockquote className="text-lg italic mb-4">
+                  "The best UI library I've ever used. Clean, accessible, and incredibly well-designed."
+                </blockquote>
+                <div className="font-semibold">Mike Chen</div>
+                <div className="text-sm text-muted-foreground">Frontend Developer, StartupXYZ</div>
+              </div>
+            </CarouselItem>
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
+      </div>
+    ),
+  },
+  {
+    name: "Chat / Messages UI",
+    description: "Conversation list and chat window interface",
+    code: `<div className="flex h-96 border rounded-lg">
+  {/* Conversation List */}
+  <div className="w-80 border-r bg-muted/50">
+    <div className="p-4 border-b">
+      <h3 className="font-semibold">Conversations</h3>
+    </div>
+    <div className="space-y-1">
+      <div className="p-3 hover:bg-muted cursor-pointer">
+        <div className="flex items-center space-x-3">
+          <Avatar className="w-10 h-10">
+            <AvatarFallback>JD</AvatarFallback>
+          </Avatar>
+          <div className="flex-1 min-w-0">
+            <p className="font-medium">John Doe</p>
+            <p className="text-sm text-muted-foreground truncate">Hey, how's the project going?</p>
+          </div>
+        </div>
+      </div>
+      <div className="p-3 hover:bg-muted cursor-pointer">
+        <div className="flex items-center space-x-3">
+          <Avatar className="w-10 h-10">
+            <AvatarFallback>SM</AvatarFallback>
+          </Avatar>
+          <div className="flex-1 min-w-0">
+            <p className="font-medium">Sarah Miller</p>
+            <p className="text-sm text-muted-foreground truncate">Can we schedule a meeting?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  {/* Chat Window */}
+  <div className="flex-1 flex flex-col">
+    <div className="p-4 border-b">
+      <h3 className="font-semibold">John Doe</h3>
+    </div>
+    <div className="flex-1 p-4 space-y-4 overflow-y-auto">
+      <div className="flex justify-end">
+        <div className="bg-primary text-primary-foreground rounded-lg px-3 py-2 max-w-xs">
+          <p>Hey! How's the project going?</p>
+        </div>
+      </div>
+      <div className="flex justify-start">
+        <div className="bg-muted rounded-lg px-3 py-2 max-w-xs">
+          <p>It's going great! We're on track to finish by Friday.</p>
+        </div>
+      </div>
+    </div>
+    <div className="p-4 border-t">
+      <div className="flex space-x-2">
+        <Input placeholder="Type a message..." className="flex-1" />
+        <Button>Send</Button>
+      </div>
+    </div>
+  </div>
+</div>`,
+    preview: (
+      <div className="flex h-96 border rounded-lg">
+        <div className="w-80 border-r bg-muted/50">
+          <div className="p-4 border-b">
+            <h3 className="font-semibold">Conversations</h3>
+          </div>
+          <div className="space-y-1">
+            <div className="p-3 hover:bg-muted cursor-pointer">
+              <div className="flex items-center space-x-3">
+                <Avatar className="w-10 h-10">
+                  <AvatarFallback>JD</AvatarFallback>
+                </Avatar>
+                <div className="flex-1 min-w-0">
+                  <p className="font-medium">John Doe</p>
+                  <p className="text-sm text-muted-foreground truncate">Hey, how's the project going?</p>
+                </div>
+              </div>
+            </div>
+            <div className="p-3 hover:bg-muted cursor-pointer">
+              <div className="flex items-center space-x-3">
+                <Avatar className="w-10 h-10">
+                  <AvatarFallback>SM</AvatarFallback>
+                </Avatar>
+                <div className="flex-1 min-w-0">
+                  <p className="font-medium">Sarah Miller</p>
+                  <p className="text-sm text-muted-foreground truncate">Can we schedule a meeting?</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="flex-1 flex flex-col">
+          <div className="p-4 border-b">
+            <h3 className="font-semibold">John Doe</h3>
+          </div>
+          <div className="flex-1 p-4 space-y-4 overflow-y-auto">
+            <div className="flex justify-end">
+              <div className="bg-primary text-primary-foreground rounded-lg px-3 py-2 max-w-xs">
+                <p>Hey! How's the project going?</p>
+              </div>
+            </div>
+            <div className="flex justify-start">
+              <div className="bg-muted rounded-lg px-3 py-2 max-w-xs">
+                <p>It's going great! We're on track to finish by Friday.</p>
+              </div>
+            </div>
+          </div>
+          <div className="p-4 border-t">
+            <div className="flex space-x-2">
+              <Input placeholder="Type a message..." className="flex-1" />
+              <Button>Send</Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
+  },
+  {
+    name: "Kanban Board / Task Manager",
+    description: "Drag and drop task management board",
+    code: `<div className="space-y-6">
+  <div className="flex justify-between items-center">
+    <h2 className="text-2xl font-bold">Project Tasks</h2>
+    <Button>Add Task</Button>
+  </div>
+  
+  <div className="grid grid-cols-3 gap-6">
+    {/* To Do */}
+    <div className="space-y-4">
+      <div className="flex items-center space-x-2">
+        <div className="w-3 h-3 bg-gray-400 rounded-full"></div>
+        <h3 className="font-semibold">To Do</h3>
+        <Badge variant="secondary">3</Badge>
+      </div>
+      <div className="space-y-3">
+        <Card className="p-4">
+          <h4 className="font-medium mb-2">Design homepage</h4>
+          <p className="text-sm text-muted-foreground mb-3">Create wireframes and mockups</p>
+          <div className="flex items-center justify-between">
+            <Badge variant="outline">Design</Badge>
+            <span className="text-xs text-muted-foreground">Due: Today</span>
+          </div>
+        </Card>
+        <Card className="p-4">
+          <h4 className="font-medium mb-2">Setup database</h4>
+          <p className="text-sm text-muted-foreground mb-3">Configure PostgreSQL and migrations</p>
+          <div className="flex items-center justify-between">
+            <Badge variant="outline">Backend</Badge>
+            <span className="text-xs text-muted-foreground">Due: Tomorrow</span>
+          </div>
+        </Card>
+      </div>
+    </div>
+    
+    {/* In Progress */}
+    <div className="space-y-4">
+      <div className="flex items-center space-x-2">
+        <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+        <h3 className="font-semibold">In Progress</h3>
+        <Badge variant="secondary">2</Badge>
+      </div>
+      <div className="space-y-3">
+        <Card className="p-4">
+          <h4 className="font-medium mb-2">API development</h4>
+          <p className="text-sm text-muted-foreground mb-3">Build REST endpoints</p>
+          <div className="flex items-center justify-between">
+            <Badge variant="outline">Backend</Badge>
+            <span className="text-xs text-muted-foreground">Due: Friday</span>
+          </div>
+        </Card>
+      </div>
+    </div>
+    
+    {/* Done */}
+    <div className="space-y-4">
+      <div className="flex items-center space-x-2">
+        <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+        <h3 className="font-semibold">Done</h3>
+        <Badge variant="secondary">1</Badge>
+      </div>
+      <div className="space-y-3">
+        <Card className="p-4">
+          <h4 className="font-medium mb-2">Project setup</h4>
+          <p className="text-sm text-muted-foreground mb-3">Initialize repository and dependencies</p>
+          <div className="flex items-center justify-between">
+            <Badge variant="outline">Setup</Badge>
+            <span className="text-xs text-muted-foreground">Completed</span>
+          </div>
+        </Card>
+      </div>
+    </div>
+  </div>
+</div>`,
+    preview: (
+      <div className="space-y-6">
+        <div className="flex justify-between items-center">
+          <h2 className="text-2xl font-bold">Project Tasks</h2>
+          <Button>Add Task</Button>
+        </div>
+        <div className="grid grid-cols-3 gap-6">
+          <div className="space-y-4">
+            <div className="flex items-center space-x-2">
+              <div className="w-3 h-3 bg-gray-400 rounded-full"></div>
+              <h3 className="font-semibold">To Do</h3>
+              <Badge variant="secondary">3</Badge>
+            </div>
+            <div className="space-y-3">
+              <Card className="p-4">
+                <h4 className="font-medium mb-2">Design homepage</h4>
+                <p className="text-sm text-muted-foreground mb-3">Create wireframes and mockups</p>
+                <div className="flex items-center justify-between">
+                  <Badge variant="outline">Design</Badge>
+                  <span className="text-xs text-muted-foreground">Due: Today</span>
+                </div>
+              </Card>
+              <Card className="p-4">
+                <h4 className="font-medium mb-2">Setup database</h4>
+                <p className="text-sm text-muted-foreground mb-3">Configure PostgreSQL and migrations</p>
+                <div className="flex items-center justify-between">
+                  <Badge variant="outline">Backend</Badge>
+                  <span className="text-xs text-muted-foreground">Due: Tomorrow</span>
+                </div>
+              </Card>
+            </div>
+          </div>
+          <div className="space-y-4">
+            <div className="flex items-center space-x-2">
+              <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+              <h3 className="font-semibold">In Progress</h3>
+              <Badge variant="secondary">2</Badge>
+            </div>
+            <div className="space-y-3">
+              <Card className="p-4">
+                <h4 className="font-medium mb-2">API development</h4>
+                <p className="text-sm text-muted-foreground mb-3">Build REST endpoints</p>
+                <div className="flex items-center justify-between">
+                  <Badge variant="outline">Backend</Badge>
+                  <span className="text-xs text-muted-foreground">Due: Friday</span>
+                </div>
+              </Card>
+            </div>
+          </div>
+          <div className="space-y-4">
+            <div className="flex items-center space-x-2">
+              <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+              <h3 className="font-semibold">Done</h3>
+              <Badge variant="secondary">1</Badge>
+            </div>
+            <div className="space-y-3">
+              <Card className="p-4">
+                <h4 className="font-medium mb-2">Project setup</h4>
+                <p className="text-sm text-muted-foreground mb-3">Initialize repository and dependencies</p>
+                <div className="flex items-center justify-between">
+                  <Badge variant="outline">Setup</Badge>
+                  <span className="text-xs text-muted-foreground">Completed</span>
+                </div>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
+  },
+  {
+    name: "Theme Toggle",
+    description: "Light/Dark/Custom theme switching with preview",
+    code: `<div className="space-y-6">
+  <div className="flex items-center justify-between">
+    <h3 className="text-lg font-medium">Theme Settings</h3>
+    <ThemeToggle />
+  </div>
+  
+  <div className="grid grid-cols-3 gap-4">
+    <div className="space-y-3">
+      <div className="text-center">
+        <div className="w-20 h-20 mx-auto bg-white border-2 border-gray-200 rounded-lg flex items-center justify-center">
+          <Sun className="w-8 h-8 text-yellow-500" />
+        </div>
+        <p className="text-sm font-medium mt-2">Light</p>
+      </div>
+    </div>
+    
+    <div className="space-y-3">
+      <div className="text-center">
+        <div className="text-center">
+          <div className="w-20 h-20 mx-auto bg-gray-900 border-2 border-gray-700 rounded-lg flex items-center justify-center">
+            <Moon className="w-8 h-8 text-blue-400" />
+          </div>
+          <p className="text-sm font-medium mt-2">Dark</p>
+        </div>
+      </div>
+    </div>
+    
+    <div className="space-y-3">
+      <div className="text-center">
+        <div className="w-20 h-20 mx-auto bg-gradient-to-br from-blue-500 to-purple-600 border-2 border-blue-300 rounded-lg flex items-center justify-center">
+          <Palette className="w-8 h-8 text-white" />
+        </div>
+        <p className="text-sm font-medium mt-2">Custom</p>
+      </div>
+    </div>
+  </div>
+  
+  <div className="space-y-3">
+    <Label>Accent Color</Label>
+    <div className="flex gap-2">
+      <div className="w-8 h-8 bg-blue-500 rounded-full cursor-pointer border-2 border-blue-700"></div>
+      <div className="w-8 h-8 bg-green-500 rounded-full cursor-pointer border-2 border-transparent"></div>
+      <div className="w-8 h-8 bg-purple-500 rounded-full cursor-pointer border-2 border-transparent"></div>
+      <div className="w-8 h-8 bg-orange-500 rounded-full cursor-pointer border-2 border-transparent"></div>
+    </div>
+  </div>
+</div>`,
+    preview: (
+      <div className="space-y-6">
+        <div className="flex items-center justify-between">
+          <h3 className="text-lg font-medium">Theme Settings</h3>
+          <ThemeToggle />
+        </div>
+        <div className="grid grid-cols-3 gap-4">
+          <div className="space-y-3">
+            <div className="text-center">
+              <div className="w-20 h-20 mx-auto bg-white border-2 border-gray-200 rounded-lg flex items-center justify-center">
+                <Sun className="w-8 h-8 text-yellow-500" />
+              </div>
+              <p className="text-sm font-medium mt-2">Light</p>
+            </div>
+          </div>
+          <div className="space-y-3">
+            <div className="text-center">
+              <div className="text-center">
+                <div className="w-20 h-20 mx-auto bg-gray-900 border-2 border-gray-700 rounded-lg flex items-center justify-center">
+                  <Moon className="w-8 h-8 text-blue-400" />
+                </div>
+                <p className="text-sm font-medium mt-2">Dark</p>
+              </div>
+            </div>
+          </div>
+          <div className="space-y-3">
+            <div className="text-center">
+              <div className="w-20 h-20 mx-auto bg-gradient-to-br from-blue-500 to-purple-600 border-2 border-blue-300 rounded-lg flex items-center justify-center">
+                <Palette className="w-8 h-8 text-white" />
+              </div>
+              <p className="text-sm font-medium mt-2">Custom</p>
+            </div>
+          </div>
+        </div>
+        <div className="space-y-3">
+          <Label>Accent Color</Label>
+          <div className="flex gap-2">
+            <div className="w-8 h-8 bg-blue-500 rounded-full cursor-pointer border-2 border-blue-700"></div>
+            <div className="w-8 h-8 bg-green-500 rounded-full cursor-pointer border-2 border-transparent"></div>
+            <div className="w-8 h-8 bg-purple-500 rounded-full cursor-pointer border-2 border-transparent"></div>
+            <div className="w-8 h-8 bg-orange-500 rounded-full cursor-pointer border-2 border-transparent"></div>
+          </div>
+        </div>
+      </div>
+    ),
+  },
 ]
 
   const filteredComponents = components.filter(
