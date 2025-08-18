@@ -60,6 +60,7 @@ import {
   Moon,
 } from "lucide-react"
 import Link from "next/link"
+import { motion } from "framer-motion"
 
 export default function DocsPage() {
   const [searchQuery, setSearchQuery] = useState("")
@@ -4201,6 +4202,671 @@ function App() {
           </AccordionContent>
         </AccordionItem>
       </Accordion>
+    ),
+  },
+  {
+    name: "Confetti Animation",
+    description: "Celebratory confetti for success actions with CSS and Framer Motion",
+    code: `// CSS Version
+<div className="relative">
+  <div className="confetti-piece" style={{
+    position: 'absolute',
+    width: '10px',
+    height: '10px',
+    background: 'linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4)',
+    animation: 'confetti-fall 3s ease-in-out infinite'
+  }}></div>
+</div>
+
+// Framer Motion Version
+<motion.div
+  initial={{ scale: 0, rotate: 0 }}
+  animate={{ scale: [0, 1, 0], rotate: [0, 180, 360] }}
+  transition={{ duration: 2, repeat: Infinity }}
+  className="w-4 h-4 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full"
+/>`,
+    preview: (
+      <div className="relative h-20">
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2">
+          <div className="w-4 h-4 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full animate-bounce"></div>
+        </div>
+        <div className="absolute top-2 left-1/3 transform -translate-x-1/2">
+          <div className="w-3 h-3 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+        </div>
+        <div className="absolute top-4 right-1/3 transform -translate-x-1/2">
+          <div className="w-3 h-3 bg-gradient-to-r from-green-400 to-blue-500 rounded-full animate-bounce" style={{ animationDelay: '0.4s' }}></div>
+        </div>
+      </div>
+    ),
+  },
+  {
+    name: "Animated Statistic Counters",
+    description: "Count up numbers and progress bars with smooth animations",
+    code: `// CSS Version
+<div className="space-y-4">
+  <div className="text-4xl font-bold text-primary animate-pulse">1,234</div>
+  <div className="w-full bg-gray-200 rounded-full h-2">
+    <div className="bg-primary h-2 rounded-full transition-all duration-1000 ease-out" style={{ width: '75%' }}></div>
+  </div>
+</div>
+
+// Framer Motion Version
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+  className="text-4xl font-bold text-primary"
+>
+  {count}
+</motion.div>`,
+    preview: (
+      <div className="space-y-4">
+        <div className="text-4xl font-bold text-primary animate-pulse">1,234</div>
+        <div className="w-full bg-gray-200 rounded-full h-2">
+          <div className="bg-primary h-2 rounded-full transition-all duration-1000 ease-out" style={{ width: '75%' }}></div>
+        </div>
+        <div className="text-2xl font-semibold text-muted-foreground">75% Complete</div>
+      </div>
+    ),
+  },
+  {
+    name: "Timeline Reveal Animation",
+    description: "Events slide in as you scroll with CSS and GSAP",
+    code: `// CSS Version
+<div className="space-y-6">
+  <div className="timeline-item opacity-0 translate-x-[-50px] transition-all duration-700 ease-out">
+    <h3 className="text-xl font-semibold">Event 1</h3>
+    <p className="text-muted-foreground">Description of the first event</p>
+  </div>
+  <div className="timeline-item opacity-0 translate-x-[-50px] transition-all duration-700 ease-out" style={{ transitionDelay: '0.2s' }}>
+    <h3 className="text-xl font-semibold">Event 2</h3>
+    <p className="text-muted-foreground">Description of the second event</p>
+  </div>
+</div>
+
+// GSAP Version
+useEffect(() => {
+  gsap.from('.timeline-item', {
+    opacity: 0,
+    x: -50,
+    duration: 0.8,
+    stagger: 0.2,
+    scrollTrigger: {
+      trigger: '.timeline-item',
+      start: 'top 80%'
+    }
+  });
+}, []);`,
+    preview: (
+      <div className="space-y-6">
+        <div className="opacity-100 translate-x-0 transition-all duration-700 ease-out">
+          <h3 className="text-xl font-semibold">Event 1</h3>
+          <p className="text-muted-foreground">Description of the first event</p>
+        </div>
+        <div className="opacity-100 translate-x-0 transition-all duration-700 ease-out">
+          <h3 className="text-xl font-semibold">Event 2</h3>
+          <p className="text-muted-foreground">Description of the second event</p>
+        </div>
+        <div className="opacity-100 translate-x-0 transition-all duration-700 ease-out">
+          <h3 className="text-xl font-semibold">Event 3</h3>
+          <p className="text-muted-foreground">Description of the third event</p>
+        </div>
+      </div>
+    ),
+  },
+  {
+    name: "Hover Card Lift / Tilt",
+    description: "3D tilt effects with CSS transforms and Framer Motion",
+    code: `// CSS Version
+<div className="group cursor-pointer">
+  <div className="transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-xl group-hover:-translate-y-2">
+    <Card className="p-6">
+      <h3 className="text-lg font-semibold">Hover Card</h3>
+      <p className="text-muted-foreground">Hover to see the lift effect</p>
+    </Card>
+  </div>
+</div>
+
+// Framer Motion Version
+<motion.div
+  whileHover={{ 
+    scale: 1.05, 
+    y: -8,
+    rotateX: 5,
+    rotateY: 5
+  }}
+  transition={{ type: "spring", stiffness: 300 }}
+>
+  <Card className="p-6">
+    <h3 className="text-lg font-semibold">3D Tilt Card</h3>
+    <p className="text-muted-foreground">Hover for 3D tilt effect</p>
+  </Card>
+</motion.div>`,
+    preview: (
+      <div className="group cursor-pointer">
+        <div className="transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-xl group-hover:-translate-y-2">
+          <Card className="p-6">
+            <h3 className="text-lg font-semibold">Hover Card</h3>
+            <p className="text-muted-foreground">Hover to see the lift effect</p>
+          </Card>
+        </div>
+      </div>
+    ),
+  },
+  {
+    name: "Page Fade In/Out",
+    description: "Route transitions with shared element motion",
+    code: `// CSS Version
+<div className="page-transition opacity-0 animate-in fade-in duration-500">
+  <h1 className="text-3xl font-bold">Welcome Page</h1>
+  <p className="text-muted-foreground">This page fades in smoothly</p>
+</div>
+
+// Framer Motion Version
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  exit={{ opacity: 0, y: -20 }}
+  transition={{ duration: 0.5 }}
+>
+  <h1 className="text-3xl font-bold">Animated Page</h1>
+  <p className="text-muted-foreground">Smooth fade in/out transitions</p>
+</motion.div>`,
+    preview: (
+      <div className="opacity-100 animate-in fade-in duration-500">
+        <h1 className="text-3xl font-bold">Welcome Page</h1>
+        <p className="text-muted-foreground">This page fades in smoothly</p>
+      </div>
+    ),
+  },
+  {
+    name: "Scroll Reveal Animations",
+    description: "Trigger animations on scroll with CSS and GSAP",
+    code: `// CSS Version
+<div className="reveal-on-scroll opacity-0 translate-y-10 transition-all duration-700">
+  <h2 className="text-2xl font-bold">Scroll to Reveal</h2>
+  <p className="text-muted-foreground">This content appears when scrolled into view</p>
+</div>
+
+// GSAP Version
+useEffect(() => {
+  gsap.from('.reveal-on-scroll', {
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    stagger: 0.3,
+    scrollTrigger: {
+      trigger: '.reveal-on-scroll',
+      start: 'top 80%',
+      end: 'bottom 20%',
+      toggleActions: 'play none none reverse'
+    }
+  });
+}, []);`,
+    preview: (
+      <div className="opacity-100 translate-y-0 transition-all duration-700">
+        <h2 className="text-2xl font-bold">Scroll to Reveal</h2>
+        <p className="text-muted-foreground">This content appears when scrolled into view</p>
+        <div className="mt-4 p-4 bg-muted rounded-lg">
+          <p className="text-sm">Additional content that reveals on scroll</p>
+        </div>
+      </div>
+    ),
+  },
+  {
+    name: "Hero Section Text Animation",
+    description: "Staggered text animations with CSS and Framer Motion",
+    code: `// CSS Version
+<div className="hero-text">
+  <h1 className="text-6xl font-bold overflow-hidden">
+    <span className="block animate-slide-up" style={{ animationDelay: '0.1s' }}>Welcome</span>
+    <span className="block animate-slide-up" style={{ animationDelay: '0.2s' }}>to Our</span>
+    <span className="block animate-slide-up" style={{ animationDelay: '0.3s' }}>Platform</span>
+  </h1>
+</div>
+
+// Framer Motion Version
+<motion.h1
+  initial={{ opacity: 0, y: 50 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, staggerChildren: 0.1 }}
+  className="text-6xl font-bold"
+>
+  {["Welcome", "to Our", "Platform"].map((word, i) => (
+    <motion.span
+      key={i}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: i * 0.1 }}
+      className="block"
+    >
+      {word}
+    </motion.span>
+  ))}
+</motion.h1>`,
+    preview: (
+      <div className="hero-text">
+        <h1 className="text-6xl font-bold overflow-hidden">
+          <span className="block animate-slide-up" style={{ animationDelay: '0.1s' }}>Welcome</span>
+          <span className="block animate-slide-up" style={{ animationDelay: '0.2s' }}>to Our</span>
+          <span className="block animate-slide-up" style={{ animationDelay: '0.3s' }}>Platform</span>
+        </h1>
+        <p className="text-xl text-muted-foreground mt-4 animate-fade-in" style={{ animationDelay: '0.5s' }}>
+          Build amazing experiences with modern animations
+        </p>
+      </div>
+    ),
+  },
+  {
+    name: "Parallax Effects",
+    description: "Multi-layer parallax synced with scroll position",
+    code: `// CSS Version
+<div className="parallax-container relative h-96 overflow-hidden">
+  <div className="parallax-layer absolute inset-0 bg-blue-500/20" style={{ transform: 'translateZ(-1px) scale(2)' }}></div>
+  <div className="parallax-layer absolute inset-0 bg-purple-500/20" style={{ transform: 'translateZ(-2px) scale(3)' }}></div>
+  <div className="parallax-content relative z-10 flex items-center justify-center h-full">
+    <h2 className="text-4xl font-bold text-white">Parallax Effect</h2>
+  </div>
+</div>
+
+// GSAP Version
+useEffect(() => {
+  gsap.to('.parallax-layer', {
+    yPercent: -50,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: '.parallax-container',
+      start: 'top bottom',
+      end: 'bottom top',
+      scrub: true
+    }
+  });
+}, []);`,
+    preview: (
+      <div className="parallax-container relative h-96 overflow-hidden rounded-lg">
+        <div className="parallax-layer absolute inset-0 bg-gradient-to-br from-blue-500/30 to-purple-500/30"></div>
+        <div className="parallax-layer absolute inset-0 bg-gradient-to-tl from-green-500/20 to-yellow-500/20"></div>
+        <div className="parallax-content relative z-10 flex items-center justify-center h-full">
+          <div className="text-center">
+            <h2 className="text-4xl font-bold text-white mb-4">Parallax Effect</h2>
+            <p className="text-white/80">Multi-layer background with scroll sync</p>
+          </div>
+        </div>
+      </div>
+    ),
+  },
+  {
+    name: "Dot + Trail Cursor",
+    description: "Small dot follows mouse with trailing ghost effect",
+    code: `// CSS Version
+<div className="cursor-container relative">
+  <div className="cursor-dot fixed w-3 h-3 bg-primary rounded-full pointer-events-none z-50 transition-transform duration-100 ease-out"></div>
+  <div className="cursor-trail fixed w-6 h-6 bg-primary/30 rounded-full pointer-events-none z-40 transition-transform duration-200 ease-out"></div>
+  <div className="content p-8">
+    <h2 className="text-2xl font-bold mb-4">Hover around this area</h2>
+    <p className="text-muted-foreground">Move your mouse to see the custom cursor effect</p>
+  </div>
+</div>
+
+// JavaScript Version
+useEffect(() => {
+  const cursorDot = document.querySelector('.cursor-dot');
+  const cursorTrail = document.querySelector('.cursor-trail');
+  
+  const moveCursor = (e) => {
+    cursorDot.style.transform = \`translate(\${e.clientX - 6}px, \${e.clientY - 6}px)\`;
+    cursorTrail.style.transform = \`translate(\${e.clientX - 12}px, \${e.clientY - 12}px)\`;
+  };
+  
+  document.addEventListener('mousemove', moveCursor);
+  return () => document.removeEventListener('mousemove', moveCursor);
+}, []);`,
+    preview: (
+      <div className="cursor-container relative border rounded-lg p-8 bg-muted/30">
+        <div className="w-3 h-3 bg-primary rounded-full mx-auto mb-4"></div>
+        <div className="w-6 h-6 bg-primary/30 rounded-full mx-auto mb-4"></div>
+        <div className="text-center">
+          <h2 className="text-2xl font-bold mb-4">Dot + Trail Cursor</h2>
+          <p className="text-muted-foreground">Small dot with trailing ghost effect</p>
+        </div>
+      </div>
+    ),
+  },
+  {
+    name: "Magnetic Cursor",
+    description: "Cursor pulls towards interactive elements with magnetic attraction",
+    code: `// CSS Version
+<div className="magnetic-container">
+  <Button className="magnetic-button group relative overflow-hidden">
+    <span className="relative z-10">Hover Me</span>
+    <div className="absolute inset-0 bg-primary/20 scale-0 group-hover:scale-100 transition-transform duration-300 ease-out"></div>
+  </Button>
+</div>
+
+// JavaScript Version
+useEffect(() => {
+  const magneticElements = document.querySelectorAll('.magnetic-button');
+  
+  magneticElements.forEach(element => {
+    element.addEventListener('mousemove', (e) => {
+      const rect = element.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      
+      element.style.transform = \`translate(\${x * 0.3}px, \${y * 0.3}px)\`;
+    });
+    
+    element.addEventListener('mouseleave', () => {
+      element.style.transform = 'translate(0px, 0px)';
+    });
+  });
+}, []);`,
+    preview: (
+      <div className="magnetic-container space-y-4">
+        <Button className="magnetic-button group relative overflow-hidden hover:scale-105 transition-transform duration-300">
+          <span className="relative z-10">Hover Me</span>
+          <div className="absolute inset-0 bg-primary/20 scale-0 group-hover:scale-100 transition-transform duration-300 ease-out"></div>
+        </Button>
+        <Button variant="outline" className="magnetic-button group relative overflow-hidden hover:scale-105 transition-transform duration-300">
+          <span className="relative z-10">Another Button</span>
+          <div className="absolute inset-0 bg-primary/10 scale-0 group-hover:scale-100 transition-transform duration-300 ease-out"></div>
+        </Button>
+      </div>
+    ),
+  },
+  {
+    name: "Blob Cursor",
+    description: "Smooth morphing blob follows pointer and expands on hover",
+    code: `// CSS Version
+<div className="blob-container relative">
+  <div className="blob-cursor fixed w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full pointer-events-none z-50 mix-blend-multiply transition-all duration-300 ease-out"></div>
+  <div className="content p-8">
+    <h2 className="text-2xl font-bold mb-4">Blob Cursor Effect</h2>
+    <p className="text-muted-foreground">Move your mouse to see the morphing blob</p>
+  </div>
+</div>
+
+// JavaScript Version
+useEffect(() => {
+  const blob = document.querySelector('.blob-cursor');
+  
+  const moveBlob = (e) => {
+    blob.style.transform = \`translate(\${e.clientX - 16}px, \${e.clientY - 16}px)\`;
+  };
+  
+  const expandBlob = (e) => {
+    blob.style.width = '48px';
+    blob.style.height = '48px';
+    blob.style.transform = \`translate(\${e.clientX - 24}px, \${e.clientY - 24}px)\`;
+  };
+  
+  const shrinkBlob = () => {
+    blob.style.width = '32px';
+    blob.style.height = '32px';
+  };
+  
+  document.addEventListener('mousemove', moveBlob);
+  document.addEventListener('mouseenter', expandBlob);
+  document.addEventListener('mouseleave', shrinkBlob);
+  
+  return () => {
+    document.removeEventListener('mousemove', moveBlob);
+    document.removeEventListener('mouseenter', expandBlob);
+    document.removeEventListener('mouseleave', shrinkBlob);
+  };
+}, []);`,
+    preview: (
+      <div className="blob-container relative border rounded-lg p-8 bg-muted/30">
+        <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mx-auto mb-4 mix-blend-multiply"></div>
+        <div className="text-center">
+          <h2 className="text-2xl font-bold mb-4">Blob Cursor</h2>
+          <p className="text-muted-foreground">Smooth morphing blob with hover expansion</p>
+          <div className="mt-4 space-y-2">
+            <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mx-auto mix-blend-multiply transition-transform duration-300 hover:scale-150"></div>
+          </div>
+        </div>
+      </div>
+    ),
+  },
+  {
+    name: "Text Hover Reveal Cursor",
+    description: "Cursor shows highlight/underline effect when hovering text",
+    code: `// CSS Version
+<div className="text-hover-container">
+  <h2 className="text-2xl font-bold mb-4 cursor-text">
+    <span className="text-hover-item relative inline-block">
+      Hover
+      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+    </span>
+    <span className="text-hover-item relative inline-block ml-2">
+      over
+      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+    </span>
+    <span className="text-hover-item relative inline-block ml-2">
+      text
+      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+    </span>
+  </h2>
+</div>
+
+// JavaScript Version
+useEffect(() => {
+  const textItems = document.querySelectorAll('.text-hover-item');
+  
+  textItems.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      const underline = item.querySelector('span');
+      underline.style.width = '100%';
+    });
+    
+    item.addEventListener('mouseleave', () => {
+      const underline = item.querySelector('span');
+      underline.style.width = '0%';
+    });
+  });
+}, []);`,
+    preview: (
+      <div className="text-hover-container">
+        <h2 className="text-2xl font-bold mb-4 cursor-text">
+          <span className="text-hover-item relative inline-block group">
+            Hover
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+          </span>
+          <span className="text-hover-item relative inline-block ml-2 group">
+            over
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+          </span>
+          <span className="text-hover-item relative inline-block ml-2 group">
+            text
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+          </span>
+        </h2>
+        <p className="text-muted-foreground">Move your cursor over the text to see the underline effect</p>
+      </div>
+    ),
+  },
+  {
+    name: "Cursor as Tooltip",
+    description: "Cursor transforms into a tooltip showing content like image previews",
+    code: `// CSS Version
+<div className="tooltip-cursor-container">
+  <div className="cursor-tooltip fixed w-32 h-32 bg-white border rounded-lg shadow-lg pointer-events-none z-50 opacity-0 transition-opacity duration-200">
+    <img src="/placeholder-image.jpg" alt="Preview" className="w-full h-full object-cover rounded" />
+  </div>
+  <div className="content p-8">
+    <h2 className="text-2xl font-bold mb-4">Hover for Tooltip</h2>
+    <p className="text-muted-foreground">Move your cursor over this area to see the tooltip cursor</p>
+  </div>
+</div>
+
+// JavaScript Version
+useEffect(() => {
+  const tooltip = document.querySelector('.cursor-tooltip');
+  const container = document.querySelector('.tooltip-cursor-container');
+  
+  const showTooltip = (e) => {
+    tooltip.style.opacity = '1';
+    tooltip.style.transform = \`translate(\${e.clientX + 20}px, \${e.clientY - 64}px)\`;
+  };
+  
+  const hideTooltip = () => {
+    tooltip.style.opacity = '0';
+  };
+  
+  const moveTooltip = (e) => {
+    tooltip.style.transform = \`translate(\${e.clientX + 20}px, \${e.clientY - 64}px)\`;
+  };
+  
+  container.addEventListener('mouseenter', showTooltip);
+  container.addEventListener('mouseleave', hideTooltip);
+  container.addEventListener('mousemove', moveTooltip);
+  
+  return () => {
+    container.removeEventListener('mouseenter', showTooltip);
+    container.removeEventListener('mouseleave', hideTooltip);
+    container.removeEventListener('mousemove', moveTooltip);
+  };
+}, []);`,
+    preview: (
+      <div className="tooltip-cursor-container border rounded-lg p-8 bg-muted/30">
+        <div className="w-32 h-32 bg-white border rounded-lg shadow-lg mx-auto mb-4 flex items-center justify-center">
+          <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg flex items-center justify-center">
+            <span className="text-white font-bold text-sm">Preview</span>
+          </div>
+        </div>
+        <div className="text-center">
+          <h2 className="text-2xl font-bold mb-4">Cursor as Tooltip</h2>
+          <p className="text-muted-foreground">Hover to see tooltip cursor effect</p>
+        </div>
+      </div>
+    ),
+  },
+  {
+    name: "Gradient Circle Cursor",
+    description: "Circle with animated gradient inside follows mouse movement",
+    code: `// CSS Version
+<div className="gradient-cursor-container">
+  <div className="gradient-cursor fixed w-12 h-12 rounded-full pointer-events-none z-50">
+    <div className="w-full h-full rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 animate-spin"></div>
+  </div>
+  <div className="content p-8">
+    <h2 className="text-2xl font-bold mb-4">Gradient Circle Cursor</h2>
+    <p className="text-muted-foreground">Move your mouse to see the animated gradient circle</p>
+  </div>
+</div>
+
+// JavaScript Version
+useEffect(() => {
+  const gradientCursor = document.querySelector('.gradient-cursor');
+  
+  const moveGradientCursor = (e) => {
+    gradientCursor.style.transform = \`translate(\${e.clientX - 24}px, \${e.clientY - 24}px)\`;
+  };
+  
+  const expandGradientCursor = () => {
+    gradientCursor.style.transform += ' scale(1.5)';
+  };
+  
+  const shrinkGradientCursor = () => {
+    gradientCursor.style.transform = gradientCursor.style.transform.replace(' scale(1.5)', '');
+  };
+  
+  document.addEventListener('mousemove', moveGradientCursor);
+  document.addEventListener('mouseenter', expandGradientCursor);
+  document.addEventListener('mouseleave', shrinkGradientCursor);
+  
+  return () => {
+    document.removeEventListener('mousemove', moveGradientCursor);
+    document.removeEventListener('mouseenter', expandGradientCursor);
+    document.removeEventListener('mouseleave', shrinkGradientCursor);
+  };
+}, []);`,
+    preview: (
+      <div className="gradient-cursor-container border rounded-lg p-8 bg-muted/30">
+        <div className="w-12 h-12 rounded-full mx-auto mb-4">
+          <div className="w-full h-full rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 animate-spin"></div>
+        </div>
+        <div className="text-center">
+          <h2 className="text-2xl font-bold mb-4">Gradient Circle Cursor</h2>
+          <p className="text-muted-foreground">Animated gradient circle following mouse</p>
+          <div className="mt-4 space-y-2">
+            <div className="w-8 h-8 rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 animate-spin mx-auto"></div>
+            <div className="w-6 h-6 rounded-full bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 animate-spin mx-auto" style={{ animationDirection: 'reverse' }}></div>
+          </div>
+        </div>
+      </div>
+    ),
+  },
+  {
+    name: "Drag Cursor",
+    description: "Changes shape to arrows, grab/hand when dragging elements",
+    code: `// CSS Version
+<div className="drag-cursor-container space-y-4">
+  <div className="draggable-item p-4 border rounded-lg cursor-grab active:cursor-grabbing hover:bg-muted/50 transition-colors">
+    <h3 className="font-semibold">Drag Me (Grab)</h3>
+    <p className="text-sm text-muted-foreground">Click and drag to see cursor change</p>
+  </div>
+  
+  <div className="resizable-item p-4 border rounded-lg cursor-ns-resize hover:bg-muted/50 transition-colors">
+    <h3 className="font-semibold">Resize Me (NS)</h3>
+    <p className="text-sm text-muted-foreground">North-south resize cursor</p>
+  </div>
+  
+  <div className="moveable-item p-4 border rounded-lg cursor-move hover:bg-muted/50 transition-colors">
+    <h3 className="font-semibold">Move Me (Move)</h3>
+    <p className="text-sm text-muted-foreground">Move cursor for repositioning</p>
+  </div>
+</div>
+
+// JavaScript Version
+useEffect(() => {
+  const draggableItems = document.querySelectorAll('.draggable-item, .resizable-item, .moveable-item');
+  
+  draggableItems.forEach(item => {
+    let isDragging = false;
+    
+    const handleMouseDown = () => {
+      isDragging = true;
+      item.style.cursor = item.classList.contains('draggable-item') ? 'grabbing' : 
+                         item.classList.contains('resizable-item') ? 'ns-resize' : 'move';
+    };
+    
+    const handleMouseUp = () => {
+      isDragging = false;
+      item.style.cursor = item.classList.contains('draggable-item') ? 'grab' : 
+                         item.classList.contains('resizable-item') ? 'ns-resize' : 'move';
+    };
+    
+    item.addEventListener('mousedown', handleMouseDown);
+    document.addEventListener('mouseup', handleMouseUp);
+    
+    return () => {
+      item.removeEventListener('mousedown', handleMouseDown);
+      document.removeEventListener('mouseup', handleMouseUp);
+    };
+  });
+}, []);`,
+    preview: (
+      <div className="drag-cursor-container space-y-4">
+        <div className="draggable-item p-4 border rounded-lg cursor-grab active:cursor-grabbing hover:bg-muted/50 transition-colors">
+          <h3 className="font-semibold">Drag Me (Grab)</h3>
+          <p className="text-sm text-muted-foreground">Click and drag to see cursor change</p>
+        </div>
+        
+        <div className="resizable-item p-4 border rounded-lg cursor-ns-resize hover:bg-muted/50 transition-colors">
+          <h3 className="font-semibold">Resize Me (NS)</h3>
+          <p className="text-sm text-muted-foreground">North-south resize cursor</p>
+        </div>
+        
+        <div className="moveable-item p-4 border rounded-lg cursor-move hover:bg-muted/50 transition-colors">
+          <h3 className="font-semibold">Move Me (Move)</h3>
+          <p className="text-sm text-muted-foreground">Move cursor for repositioning</p>
+        </div>
+        
+        <div className="text-center text-sm text-muted-foreground">
+          <p>Try clicking and dragging on the items above</p>
+        </div>
+      </div>
     ),
   },
 ]
