@@ -3118,6 +3118,316 @@ function App() {
       </Accordion>
     ),
   },
+  {
+    name: "Timeline",
+    description: "Vertical and horizontal event timeline with customizable markers",
+    code: `<div className="space-y-4">
+  <div className="flex items-start space-x-4">
+    <div className="w-3 h-3 bg-blue-500 rounded-full mt-2"></div>
+    <div className="flex-1">
+      <h4 className="font-medium">Project Started</h4>
+      <p className="text-sm text-muted-foreground">January 15, 2024</p>
+      <p className="text-sm">Initial planning and setup phase completed.</p>
+    </div>
+  </div>
+  <div className="flex items-start space-x-4">
+    <div className="w-3 h-3 bg-green-500 rounded-full mt-2"></div>
+    <div className="flex-1">
+      <h4 className="font-medium">Development Phase</h4>
+      <p className="text-sm text-muted-foreground">February 1, 2024</p>
+      <p className="text-sm">Core features implementation in progress.</p>
+    </div>
+  </div>
+  <div className="flex items-start space-x-4">
+    <div className="w-3 h-3 bg-purple-500 rounded-full mt-2"></div>
+    <div className="flex-1">
+      <h4 className="font-medium">Testing & Review</h4>
+      <p className="text-sm text-muted-foreground">March 1, 2024</p>
+      <p className="text-sm">Quality assurance and user testing phase.</p>
+    </div>
+  </div>
+</div>`,
+    preview: (
+      <div className="space-y-4">
+        <div className="flex items-start space-x-4">
+          <div className="w-3 h-3 bg-blue-500 rounded-full mt-2"></div>
+          <div className="flex-1">
+            <h4 className="font-medium">Project Started</h4>
+            <p className="text-sm text-muted-foreground">January 15, 2024</p>
+            <p className="text-sm">Initial planning and setup phase completed.</p>
+          </div>
+        </div>
+        <div className="flex items-start space-x-4">
+          <div className="w-3 h-3 bg-green-500 rounded-full mt-2"></div>
+          <div className="flex-1">
+            <h4 className="font-medium">Development Phase</h4>
+            <p className="text-sm text-muted-foreground">February 1, 2024</p>
+            <p className="text-sm">Core features implementation in progress.</p>
+          </div>
+        </div>
+        <div className="flex items-start space-x-4">
+          <div className="w-3 h-3 bg-purple-500 rounded-full mt-2"></div>
+          <div className="flex-1">
+            <h4 className="font-medium">Testing & Review</h4>
+            <p className="text-sm text-muted-foreground">March 1, 2024</p>
+            <p className="text-sm">Quality assurance and user testing phase.</p>
+          </div>
+        </div>
+      </div>
+    ),
+  },
+  {
+    name: "Tooltips & Popovers",
+    description: "Interactive tooltips and popovers for enhanced user experience",
+    code: `<TooltipProvider>
+  <Tooltip>
+    <TooltipTrigger asChild>
+      <Button variant="outline">Hover me</Button>
+    </TooltipTrigger>
+    <TooltipContent>
+      <p>This is a helpful tooltip!</p>
+    </TooltipContent>
+  </Tooltip>
+</TooltipProvider>
+
+<Popover>
+  <PopoverTrigger asChild>
+    <Button variant="outline">Click me</Button>
+  </PopoverTrigger>
+  <PopoverContent className="w-80">
+    <div className="grid gap-4">
+      <div className="space-y-2">
+        <h4 className="font-medium leading-none">Dimensions</h4>
+        <p className="text-sm text-muted-foreground">
+          Set the dimensions for the layer.
+        </p>
+      </div>
+    </div>
+  </PopoverContent>
+</Popover>`,
+    preview: (
+      <div className="flex gap-4">
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button variant="outline">Hover me</Button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>This is a helpful tooltip!</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+        <Popover>
+          <PopoverTrigger asChild>
+            <Button variant="outline">Click me</Button>
+          </PopoverTrigger>
+          <PopoverContent className="w-80">
+            <div className="grid gap-4">
+              <div className="space-y-2">
+                <h4 className="font-medium leading-none">Dimensions</h4>
+                <p className="text-sm text-muted-foreground">
+                  Set the dimensions for the layer.
+                </p>
+              </div>
+            </div>
+          </PopoverContent>
+        </Popover>
+      </div>
+    ),
+  },
+  {
+    name: "Empty States",
+    description: "Illustrations and messages for when there's no data to display",
+    code: `<div className="text-center py-12">
+  <div className="w-24 h-24 mx-auto mb-4 bg-muted rounded-full flex items-center justify-center">
+    <FileText className="w-12 h-12 text-muted-foreground" />
+  </div>
+  <h3 className="text-lg font-medium mb-2">No documents found</h3>
+  <p className="text-muted-foreground mb-4">
+    Get started by creating your first document.
+  </p>
+  <Button>Create Document</Button>
+</div>`,
+    preview: (
+      <div className="text-center py-12">
+        <div className="w-24 h-24 mx-auto mb-4 bg-muted rounded-full flex items-center justify-center">
+          <FileText className="w-12 h-12 text-muted-foreground" />
+        </div>
+        <h3 className="text-lg font-medium mb-2">No documents found</h3>
+        <p className="text-muted-foreground mb-4">
+          Get started by creating your first document.
+        </p>
+        <Button>Create Document</Button>
+      </div>
+    ),
+  },
+  {
+    name: "Charts",
+    description: "Line, bar, pie, and donut charts for data visualization",
+    code: `<div className="space-y-6">
+  {/* Line Chart */}
+  <div className="h-32 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-lg border flex items-center justify-center">
+    <span className="text-sm text-muted-foreground">Line Chart</span>
+  </div>
+  
+  {/* Bar Chart */}
+  <div className="h-32 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-lg border flex items-center justify-center">
+    <span className="text-sm text-muted-foreground">Bar Chart</span>
+  </div>
+  
+  {/* Pie Chart */}
+  <div className="h-32 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-lg border flex items-center justify-center">
+    <span className="text-sm text-muted-foreground">Pie Chart</span>
+  </div>
+  
+  {/* Donut Chart */}
+  <div className="h-32 bg-gradient-to-r from-pink-500/20 to-rose-500/20 rounded-lg border flex items-center justify-center">
+    <span className="text-sm text-muted-foreground">Donut Chart</span>
+  </div>
+</div>`,
+    preview: (
+      <div className="space-y-6">
+        <div className="h-32 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-lg border flex items-center justify-center">
+          <span className="text-sm text-muted-foreground">Line Chart</span>
+        </div>
+        <div className="h-32 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-lg border flex items-center justify-center">
+          <span className="text-sm text-muted-foreground">Bar Chart</span>
+        </div>
+        <div className="h-32 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-lg border flex items-center justify-center">
+          <span className="text-sm text-muted-foreground">Pie Chart</span>
+        </div>
+        <div className="h-32 bg-gradient-to-r from-pink-500/20 to-rose-500/20 rounded-lg border flex items-center justify-center">
+          <span className="text-sm text-muted-foreground">Donut Chart</span>
+        </div>
+      </div>
+    ),
+  },
+  {
+    name: "Heatmap & Calendar",
+    description: "Interactive heatmap and calendar chart components",
+    code: `<div className="space-y-4">
+  {/* Heatmap */}
+  <div className="grid grid-cols-7 gap-1">
+    {Array.from({ length: 35 }).map((_, i) => (
+      <div key={i} className="w-8 h-8 bg-green-500/20 rounded border flex items-center justify-center">
+        <span className="text-xs text-muted-foreground">{i + 1}</span>
+      </div>
+    ))}
+  </div>
+  
+  {/* Calendar Chart */}
+  <div className="h-32 bg-gradient-to-r from-indigo-500/20 to-blue-500/20 rounded-lg border flex items-center justify-center">
+    <span className="text-sm text-muted-foreground">Calendar Chart</span>
+  </div>
+</div>`,
+    preview: (
+      <div className="space-y-4">
+        <div className="grid grid-cols-7 gap-1">
+          {Array.from({ length: 35 }).map((_, i) => (
+            <div key={i} className="w-8 h-8 bg-green-500/20 rounded border flex items-center justify-center">
+              <span className="text-xs text-muted-foreground">{i + 1}</span>
+            </div>
+          ))}
+        </div>
+        <div className="h-32 bg-gradient-to-r from-indigo-500/20 to-blue-500/20 rounded-lg border flex items-center justify-center">
+          <span className="text-sm text-muted-foreground">Calendar Chart</span>
+        </div>
+      </div>
+    ),
+  },
+  {
+    name: "Progress Donut",
+    description: "Circular progress indicators and donut charts",
+    code: `<div className="flex gap-6">
+  <div className="relative w-20 h-20">
+    <svg className="w-20 h-20 transform -rotate-90" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="40" stroke="currentColor" strokeWidth="8" fill="none" className="text-muted" />
+      <circle cx="50" cy="50" r="40" stroke="currentColor" strokeWidth="8" fill="none" className="text-primary" strokeDasharray="251.2" strokeDashoffset="75.36" />
+    </svg>
+    <div className="absolute inset-0 flex items-center justify-center">
+      <span className="text-sm font-medium">70%</span>
+    </div>
+  </div>
+  
+  <div className="relative w-20 h-20">
+    <svg className="w-20 h-20 transform -rotate-90" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="35" stroke="currentColor" strokeWidth="6" fill="none" className="text-muted" />
+      <circle cx="50" cy="50" r="35" stroke="currentColor" strokeWidth="6" fill="none" className="text-green-500" strokeDasharray="219.8" strokeDashoffset="109.9" />
+    </svg>
+    <div className="absolute inset-0 flex items-center justify-center">
+      <span className="text-sm font-medium">50%</span>
+    </div>
+  </div>
+</div>`,
+    preview: (
+      <div className="flex gap-6">
+        <div className="relative w-20 h-20">
+          <svg className="w-20 h-20 transform -rotate-90" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="40" stroke="currentColor" strokeWidth="8" fill="none" className="text-muted" />
+            <circle cx="50" cy="50" r="40" stroke="currentColor" strokeWidth="8" fill="none" className="text-primary" strokeDasharray="251.2" strokeDashoffset="75.36" />
+          </svg>
+          <div className="absolute inset-0 flex items-center justify-center">
+            <span className="text-sm font-medium">70%</span>
+          </div>
+        </div>
+        <div className="relative w-20 h-20">
+          <svg className="w-20 h-20 transform -rotate-90" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="35" stroke="currentColor" strokeWidth="6" fill="none" className="text-muted" />
+            <circle cx="50" cy="50" r="35" stroke="currentColor" strokeWidth="6" fill="none" className="text-green-500" strokeDasharray="219.8" strokeDashoffset="109.9" />
+          </svg>
+          <div className="absolute inset-0 flex items-center justify-center">
+            <span className="text-sm font-medium">50%</span>
+          </div>
+        </div>
+      </div>
+    ),
+  },
+  {
+    name: "Comparison Cards",
+    description: "Comparison cards showing metrics between different time periods",
+    code: `<div className="grid grid-cols-2 gap-4">
+  <Card>
+    <CardHeader className="pb-2">
+      <CardTitle className="text-sm font-medium">This Month</CardTitle>
+    </CardHeader>
+    <CardContent>
+      <div className="text-2xl font-bold">$12,234</div>
+      <p className="text-xs text-muted-foreground">+20.1% from last month</p>
+    </CardContent>
+  </Card>
+  <Card>
+    <CardHeader className="pb-2">
+      <CardTitle className="text-sm font-medium">Last Month</CardTitle>
+    </CardHeader>
+    <CardContent>
+      <div className="text-2xl font-bold">$10,187</div>
+      <p className="text-xs text-muted-foreground">+12.3% from previous</p>
+    </CardContent>
+  </Card>
+</div>`,
+    preview: (
+      <div className="grid grid-cols-2 gap-4">
+        <Card>
+          <CardHeader className="pb-2">
+            <CardTitle className="text-sm font-medium">This Month</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold">$12,234</div>
+            <p className="text-xs text-muted-foreground">+20.1% from last month</p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader className="pb-2">
+            <CardTitle className="text-sm font-medium">Last Month</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold">$10,187</div>
+            <p className="text-xs text-muted-foreground">+12.3% from previous</p>
+          </CardContent>
+        </Card>
+      </div>
+    ),
+  },
 ]
 
   const filteredComponents = components.filter(
