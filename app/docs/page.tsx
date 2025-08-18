@@ -39,7 +39,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
 import { cn } from "@/lib/utils"
-import { CalendarIcon, Check, ChevronDown, Info, AlertTriangle, CheckCircle, Bold, Italic, Underline, DollarSign, Users, CreditCard, Activity, Mail, MapPin, FileText, Video, Image, X, Share, Menu, Lock, Quote } from "lucide-react"
+import { CalendarIcon, Check, ChevronDown, Info, AlertTriangle, CheckCircle, Bold, Italic, Underline, DollarSign, Users, CreditCard, Activity, Mail, MapPin, FileText, Video, Image, X, Share, Menu, Lock, Quote, Heart } from "lucide-react"
 import { format } from "date-fns"
 import { ThemeToggle } from "@/components/theme-toggle"
 import {
@@ -4003,6 +4003,204 @@ function App() {
           </div>
         </div>
       </div>
+    ),
+  },
+  {
+    name: "Animated Dotted Loader",
+    description: "Chat typing indicator with animated dots",
+    code: `<div className="flex space-x-1">
+  <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce"></div>
+  <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+  <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+</div>`,
+    preview: (
+      <div className="flex space-x-1">
+        <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce"></div>
+        <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+        <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+      </div>
+    ),
+  },
+  {
+    name: "Shimmer Effect Loader",
+    description: "Gradient shimmer animation across elements",
+    code: `<div className="space-y-3">
+  <div className="h-4 bg-gray-200 rounded animate-pulse"></div>
+  <div className="h-4 bg-gray-200 rounded w-5/6 animate-pulse"></div>
+  <div className="h-4 bg-gray-200 rounded w-4/6 animate-pulse"></div>
+</div>`,
+    preview: (
+      <div className="space-y-3">
+        <div className="h-4 bg-gray-200 rounded animate-pulse"></div>
+        <div className="h-4 bg-gray-200 rounded w-5/6 animate-pulse"></div>
+        <div className="h-4 bg-gray-200 rounded w-4/6 animate-pulse"></div>
+      </div>
+    ),
+  },
+  {
+    name: "Icon Button Hover Effects",
+    description: "Rotate, bounce, ripple, and neon glow animations",
+    code: `<div className="flex gap-4">
+  <Button size="icon" className="hover:rotate-12 transition-transform duration-200">
+    <Settings className="w-4 h-4" />
+  </Button>
+  <Button size="icon" className="hover:scale-110 transition-transform duration-200">
+    <Star className="w-4 h-4" />
+  </Button>
+  <Button size="icon" className="hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-200">
+    <Zap className="w-4 h-4" />
+  </Button>
+</div>`,
+    preview: (
+      <div className="flex gap-4">
+        <Button size="icon" className="hover:rotate-12 transition-transform duration-200">
+          <Settings className="w-4 h-4" />
+        </Button>
+        <Button size="icon" className="hover:scale-110 transition-transform duration-200">
+          <Star className="w-4 h-4" />
+        </Button>
+        <Button size="icon" className="hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-200">
+          <Zap className="w-4 h-4" />
+        </Button>
+      </div>
+    ),
+  },
+  {
+    name: "Like / Favorite Heart Animation",
+    description: "Burst of particles when clicked with heart animation",
+    code: `<div className="flex items-center space-x-2">
+  <Button variant="ghost" size="sm" className="group">
+    <Heart className="w-5 h-5 text-gray-400 group-hover:text-red-500 transition-colors duration-200" />
+  </Button>
+  <span className="text-sm text-muted-foreground">42 likes</span>
+</div>`,
+    preview: (
+      <div className="flex items-center space-x-2">
+        <Button variant="ghost" size="sm" className="group">
+          <Heart className="w-5 h-5 text-gray-400 group-hover:text-red-500 transition-colors duration-200" />
+        </Button>
+        <span className="text-sm text-muted-foreground">42 likes</span>
+      </div>
+    ),
+  },
+  {
+    name: "Animated Tabs",
+    description: "Underline slide and fade-in content animations",
+    code: `<Tabs defaultValue="account" className="w-full">
+  <TabsList className="grid w-full grid-cols-2">
+    <TabsTrigger value="account" className="relative">
+      Account
+      <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary transform scale-x-0 transition-transform duration-200 group-data-[state=active]:scale-x-100"></div>
+    </TabsTrigger>
+    <TabsTrigger value="password" className="relative">
+      Password
+      <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary transform scale-x-0 transition-transform duration-200 group-data-[state=active]:scale-x-100"></div>
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value="account" className="mt-4">
+    <Card>
+      <CardHeader>
+        <CardTitle>Account</CardTitle>
+        <CardDescription>Make changes to your account here.</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <p>Account settings content goes here.</p>
+      </CardContent>
+    </Card>
+  </TabsContent>
+  <TabsContent value="password" className="mt-4">
+    <Card>
+      <CardHeader>
+        <CardTitle>Password</CardTitle>
+        <CardDescription>Change your password here.</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <p>Password settings content goes here.</p>
+      </CardContent>
+    </Card>
+  </TabsContent>
+</Tabs>`,
+    preview: (
+      <Tabs defaultValue="account" className="w-full">
+        <TabsList className="grid w-full grid-cols-2">
+          <TabsTrigger value="account" className="relative">
+            Account
+            <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary transform scale-x-0 transition-transform duration-200 group-data-[state=active]:scale-x-100"></div>
+          </TabsTrigger>
+          <TabsTrigger value="password" className="relative">
+            Password
+            <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary transform scale-x-0 transition-transform duration-200 group-data-[state=active]:scale-x-100"></div>
+          </TabsTrigger>
+        </TabsList>
+        <TabsContent value="account" className="mt-4">
+          <Card>
+            <CardHeader>
+              <CardTitle>Account</CardTitle>
+              <CardDescription>Make changes to your account here.</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p>Account settings content goes here.</p>
+            </CardContent>
+          </Card>
+        </TabsContent>
+        <TabsContent value="password" className="mt-4">
+          <Card>
+            <CardHeader>
+              <CardTitle>Password</CardTitle>
+              <CardDescription>Change your password here.</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p>Password settings content goes here.</p>
+            </CardContent>
+          </Card>
+        </TabsContent>
+      </Tabs>
+    ),
+  },
+  {
+    name: "Accordion with Motion",
+    description: "Height easing and rotating chevron icon animations",
+    code: `<Accordion type="single" collapsible className="w-full">
+  <AccordionItem value="item-1">
+    <AccordionTrigger className="group">
+      <span>What is this component library?</span>
+      <ChevronDown className="w-4 h-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
+    </AccordionTrigger>
+    <AccordionContent className="overflow-hidden transition-all duration-300 ease-in-out">
+      <p>This is a comprehensive UI component library built with React, TypeScript, and Tailwind CSS. It provides ready-to-use components for building modern web applications.</p>
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="item-2">
+    <AccordionTrigger className="group">
+      <span>How do I get started?</span>
+      <ChevronDown className="w-4 h-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
+    </AccordionTrigger>
+    <AccordionContent className="overflow-hidden transition-all duration-300 ease-in-out">
+      <p>Simply install the package and import the components you need. All components are fully customizable and follow accessibility best practices.</p>
+    </AccordionContent>
+  </AccordionItem>
+</Accordion>`,
+    preview: (
+      <Accordion type="single" collapsible className="w-full">
+        <AccordionItem value="item-1">
+          <AccordionTrigger className="group">
+            <span>What is this component library?</span>
+            <ChevronDown className="w-4 h-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
+          </AccordionTrigger>
+          <AccordionContent className="overflow-hidden transition-all duration-300 ease-in-out">
+            <p>This is a comprehensive UI component library built with React, TypeScript, and Tailwind CSS. It provides ready-to-use components for building modern web applications.</p>
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-2">
+          <AccordionTrigger className="group">
+            <span>How do I get started?</span>
+            <ChevronDown className="w-4 h-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
+          </AccordionTrigger>
+          <AccordionContent className="overflow-hidden transition-all duration-300 ease-in-out">
+            <p>Simply install the package and import the components you need. All components are fully customizable and follow accessibility best practices.</p>
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
     ),
   },
 ]
