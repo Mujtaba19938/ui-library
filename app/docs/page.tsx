@@ -4869,6 +4869,283 @@ useEffect(() => {
       </div>
     ),
   },
+  {
+    name: "Animated Gradient Background",
+    description: "Linear and radial gradients smoothly shifting colors with CSS animations",
+    code: `// CSS Version
+<div className="animated-gradient-container relative h-64 overflow-hidden rounded-lg">
+  {/* Linear Gradient */}
+  <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 animate-gradient-x"></div>
+  
+  {/* Radial Gradient */}
+  <div className="absolute inset-0 bg-gradient-radial from-green-400 via-blue-500 to-purple-600 animate-pulse opacity-50"></div>
+  
+  {/* Content */}
+  <div className="relative z-10 flex items-center justify-center h-full">
+    <div className="text-center text-white">
+      <h2 className="text-3xl font-bold mb-2">Animated Background</h2>
+      <p className="text-white/80">Smoothly shifting gradient colors</p>
+    </div>
+  </div>
+</div>
+
+// Custom CSS Animation
+// Add this CSS to your stylesheet:
+// @keyframes gradient-x {
+//   0%, 100% { background-position: 0% 50%; }
+//   50% { background-position: 100% 50%; }
+// }
+// 
+// .animate-gradient-x {
+//   background-size: 200% 200%;
+//   animation: gradient-x 15s ease infinite;
+// }`,
+    preview: (
+      <div className="animated-gradient-container relative h-64 overflow-hidden rounded-lg">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 animate-pulse"></div>
+        <div className="absolute inset-0 bg-gradient-radial from-green-400 via-blue-500 to-purple-600 animate-pulse opacity-50"></div>
+        <div className="relative z-10 flex items-center justify-center h-full">
+          <div className="text-center text-white">
+            <h2 className="text-3xl font-bold mb-2">Animated Background</h2>
+            <p className="text-white/80">Smoothly shifting gradient colors</p>
+          </div>
+        </div>
+      </div>
+    ),
+  },
+  {
+    name: "Noise Texture Overlay",
+    description: "Subtle static/film grain for retro or depth effect",
+    code: `// CSS Version
+<div className="noise-texture-container relative h-64 overflow-hidden rounded-lg">
+  {/* Base Background */}
+  <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-gray-700"></div>
+  
+  {/* Noise Overlay */}
+  <div className="absolute inset-0 opacity-10">
+    <div className="w-full h-full" style={{
+      backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noise"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%" height="100%" filter="url(%23noise)" opacity="0.4"/%3E%3C/svg%3E")',
+      backgroundSize: '200px 200px'
+    }}></div>
+  </div>
+  
+  {/* Content */}
+  <div className="relative z-10 flex items-center justify-center h-full">
+    <div className="text-center text-white">
+      <h2 className="text-3xl font-bold mb-2">Noise Texture</h2>
+      <p className="text-white/80">Subtle film grain effect</p>
+    </div>
+  </div>
+</div>
+
+// JavaScript Version with Canvas
+useEffect(() => {
+  const canvas = document.getElementById('noise-canvas');
+  const ctx = canvas.getContext('2d');
+  
+  const generateNoise = () => {
+    const imageData = ctx.createImageData(200, 200);
+    const data = imageData.data;
+    
+    for (let i = 0; i < data.length; i += 4) {
+      const noise = Math.random() * 255;
+      data[i] = noise;     // Red
+      data[i + 1] = noise; // Green
+      data[i + 2] = noise; // Blue
+      data[i + 3] = 50;    // Alpha
+    }
+    
+    ctx.putImageData(imageData, 0, 0);
+  };
+  
+  generateNoise();
+}, []);`,
+    preview: (
+      <div className="noise-texture-container relative h-64 overflow-hidden rounded-lg">
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-gray-700"></div>
+        <div className="absolute inset-0 opacity-10">
+          <div className="w-full h-full bg-[url('data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20200%20200%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cfilter%20id%3D%22noise%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.65%22%20numOctaves%3D%223%22%20stitchTiles%3D%22stitch%22/%3E%3C/filter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url%28%23noise%29%22%20opacity%3D%220.4%22/%3E%3C/svg%3E')] bg-[length:200px_200px]"></div>
+        </div>
+        <div className="relative z-10 flex items-center justify-center h-full">
+          <div className="text-center text-white">
+            <h2 className="text-3xl font-bold mb-2">Noise Texture</h2>
+            <p className="text-white/80">Subtle film grain effect</p>
+          </div>
+        </div>
+      </div>
+    ),
+  },
+  {
+    name: "Geometric Grid Background",
+    description: "Pure CSS grid with glowing lines for modern design",
+    code: `// CSS Version
+<div className="geometric-grid-container relative h-64 overflow-hidden rounded-lg">
+  {/* Grid Pattern */}
+  <div className="absolute inset-0" style={{
+    backgroundImage: \`
+      linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px)
+    \`,
+    backgroundSize: '20px 20px'
+  }}></div>
+  
+  {/* Glowing Lines */}
+  <div className="absolute inset-0" style={{
+    backgroundImage: \`
+      linear-gradient(rgba(59, 130, 246, 0.3) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(59, 130, 246, 0.3) 1px, transparent 1px)
+    \`,
+    backgroundSize: '60px 60px',
+    filter: 'blur(0.5px)'
+  }}></div>
+  
+  {/* Animated Glow */}
+  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-transparent to-purple-500/20 animate-pulse"></div>
+  
+  {/* Content */}
+  <div className="relative z-10 flex items-center justify-center h-full">
+    <div className="text-center text-white">
+      <h2 className="text-3xl font-bold mb-2">Geometric Grid</h2>
+      <p className="text-white/80">Modern grid with glowing lines</p>
+    </div>
+  </div>
+</div>
+
+// CSS Custom Properties
+// Add this CSS to your stylesheet:
+// .geometric-grid-container {
+//   --grid-color: rgba(59, 130, 246, 0.1);
+//   --grid-glow: rgba(59, 130, 246, 0.3);
+//   --grid-size: 20px;
+//   --grid-glow-size: 60px;
+// }`,
+    preview: (
+      <div className="geometric-grid-container relative h-64 overflow-hidden rounded-lg">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `
+            linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px)
+          `,
+          backgroundSize: '20px 20px'
+        }}></div>
+        <div className="absolute inset-0" style={{
+          backgroundImage: `
+            linear-gradient(rgba(59, 130, 246, 0.3) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(59, 130, 246, 0.3) 1px, transparent 1px)
+          `,
+          backgroundSize: '60px 60px',
+          filter: 'blur(0.5px)'
+        }}></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-transparent to-purple-500/20 animate-pulse"></div>
+        <div className="relative z-10 flex items-center justify-center h-full">
+          <div className="text-center text-white">
+            <h2 className="text-3xl font-bold mb-2">Geometric Grid</h2>
+            <p className="text-white/80">Modern grid with glowing lines</p>
+          </div>
+        </div>
+      </div>
+    ),
+  },
+  {
+    name: "Particle Background",
+    description: "Moving dots connected with lines using canvas or CSS transforms",
+    code: `// CSS Version
+<div className="particle-background-container relative h-64 overflow-hidden rounded-lg">
+  {/* Particles */}
+  <div className="absolute inset-0">
+    <div className="particle absolute w-2 h-2 bg-blue-400 rounded-full animate-bounce" style={{ top: '20%', left: '20%', animationDelay: '0s' }}></div>
+    <div className="particle absolute w-2 h-2 bg-purple-400 rounded-full animate-bounce" style={{ top: '30%', left: '80%', animationDelay: '0.5s' }}></div>
+    <div className="particle absolute w-2 h-2 bg-green-400 rounded-full animate-bounce" style={{ top: '70%', left: '30%', animationDelay: '1s' }}></div>
+    <div className="particle absolute w-2 h-2 bg-pink-400 rounded-full animate-bounce" style={{ top: '80%', left: '70%', animationDelay: '1.5s' }}></div>
+  </div>
+  
+  {/* Connection Lines */}
+  <svg className="absolute inset-0 w-full h-full">
+    <line x1="20%" y1="20%" x2="80%" y2="30%" stroke="rgba(59, 130, 246, 0.3)" strokeWidth="1" />
+    <line x1="30%" y1="70%" x2="70%" y2="80%" stroke="rgba(147, 51, 234, 0.3)" strokeWidth="1" />
+    <line x1="20%" y1="20%" x2="30%" y2="70%" stroke="rgba(34, 197, 94, 0.3)" strokeWidth="1" />
+  </svg>
+  
+  {/* Content */}
+  <div className="relative z-10 flex items-center justify-center h-full">
+    <div className="text-center text-white">
+      <h2 className="text-3xl font-bold mb-2">Particle Background</h2>
+      <p className="text-white/80">Connected moving particles</p>
+    </div>
+  </div>
+</div>
+
+// JavaScript Canvas Version
+useEffect(() => {
+  const canvas = document.getElementById('particle-canvas');
+  const ctx = canvas.getContext('2d');
+  
+  const particles = [
+    { x: 100, y: 100, vx: 1, vy: 1, size: 3, color: '#3B82F6' },
+    { x: 300, y: 150, vx: -1, vy: 0.5, size: 3, color: '#8B5CF6' },
+    { x: 200, y: 250, vx: 0.5, vy: -1, size: 3, color: '#10B981' }
+  ];
+  
+  const animate = () => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    particles.forEach(particle => {
+      // Update position
+      particle.x += particle.vx;
+      particle.y += particle.vy;
+      
+      // Bounce off edges
+      if (particle.x <= 0 || particle.x >= canvas.width) particle.vx *= -1;
+      if (particle.y <= 0 || particle.y >= canvas.height) particle.vy *= -1;
+      
+      // Draw particle
+      ctx.beginPath();
+      ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+      ctx.fillStyle = particle.color;
+      ctx.fill();
+    });
+    
+    // Draw connections
+    particles.forEach((p1, i) => {
+      particles.slice(i + 1).forEach(p2 => {
+        const distance = Math.sqrt((p1.x - p2.x) ** 2 + (p1.y - p2.y) ** 2);
+        if (distance < 100) {
+          ctx.beginPath();
+          ctx.moveTo(p1.x, p1.y);
+          ctx.lineTo(p2.x, p2.y);
+          ctx.strokeStyle = \`rgba(59, 130, 246, \${0.3 * (1 - distance / 100)})\`;
+          ctx.stroke();
+        }
+      });
+    });
+    
+    requestAnimationFrame(animate);
+  };
+  
+  animate();
+}, []);`,
+    preview: (
+      <div className="particle-background-container relative h-64 overflow-hidden rounded-lg bg-gradient-to-br from-gray-900 to-gray-700">
+        <div className="absolute inset-0">
+          <div className="particle absolute w-2 h-2 bg-blue-400 rounded-full animate-bounce" style={{ top: '20%', left: '20%', animationDelay: '0s' }}></div>
+          <div className="particle absolute w-2 h-2 bg-purple-400 rounded-full animate-bounce" style={{ top: '30%', left: '80%', animationDelay: '0.5s' }}></div>
+          <div className="particle absolute w-2 h-2 bg-green-400 rounded-full animate-bounce" style={{ top: '70%', left: '30%', animationDelay: '1s' }}></div>
+          <div className="particle absolute w-2 h-2 bg-pink-400 rounded-full animate-bounce" style={{ top: '80%', left: '70%', animationDelay: '1.5s' }}></div>
+        </div>
+        <svg className="absolute inset-0 w-full h-full">
+          <line x1="20%" y1="20%" x2="80%" y2="30%" stroke="rgba(59, 130, 246, 0.3)" strokeWidth="1" />
+          <line x1="30%" y1="70%" x2="70%" y2="80%" stroke="rgba(147, 51, 234, 0.3)" strokeWidth="1" />
+          <line x1="20%" y1="20%" x2="30%" y2="70%" stroke="rgba(34, 197, 94, 0.3)" strokeWidth="1" />
+        </svg>
+        <div className="relative z-10 flex items-center justify-center h-full">
+          <div className="text-center text-white">
+            <h2 className="text-3xl font-bold mb-2">Particle Background</h2>
+            <p className="text-white/80">Connected moving particles</p>
+          </div>
+        </div>
+      </div>
+    ),
+  },
 ]
 
   const filteredComponents = components.filter(
