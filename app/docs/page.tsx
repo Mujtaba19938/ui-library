@@ -39,7 +39,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
 import { cn } from "@/lib/utils"
-import { CalendarIcon, Check, ChevronDown, Info, AlertTriangle, CheckCircle, Bold, Italic, Underline, DollarSign, Users, CreditCard, Activity, Mail, MapPin, FileText, Video, Image, X, Share } from "lucide-react"
+import { CalendarIcon, Check, ChevronDown, Info, AlertTriangle, CheckCircle, Bold, Italic, Underline, DollarSign, Users, CreditCard, Activity, Mail, MapPin, FileText, Video, Image, X, Share, Menu } from "lucide-react"
 import { format } from "date-fns"
 import { ThemeToggle } from "@/components/theme-toggle"
 import {
@@ -2850,7 +2850,311 @@ function App() {
           </div>
         ),
       },
-    ]
+      {
+        name: "Responsive Navbar",
+        description: "Navigation bar with dropdowns and mobile hamburger menu",
+        code: `<header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur-md">
+  <nav className="max-w-7xl mx-auto px-4 py-4">
+    <div className="flex items-center justify-between">
+      <div className="flex items-center gap-8">
+        <Link href="/" className="font-bold text-xl">Logo</Link>
+        <div className="hidden md:flex items-center gap-6">
+          <Link href="/docs" className="hover:text-primary transition-colors">Docs</Link>
+          <Link href="/components" className="hover:text-primary transition-colors">Components</Link>
+          <Link href="/examples" className="hover:text-primary transition-colors">Examples</Link>
+        </div>
+      </div>
+      <div className="flex items-center gap-4">
+        <Button variant="ghost" size="sm">Sign In</Button>
+        <Button size="sm">Get Started</Button>
+        <Sheet>
+          <SheetTrigger asChild className="md:hidden">
+            <Button variant="ghost" size="sm">
+              <Menu className="w-5 h-5" />
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="right">
+            <div className="flex flex-col gap-4 mt-8">
+              <Link href="/docs" className="text-lg">Docs</Link>
+              <Link href="/components" className="text-lg">Components</Link>
+              <Link href="/examples" className="text-lg">Examples</Link>
+            </div>
+          </SheetContent>
+        </Sheet>
+      </div>
+    </div>
+  </nav>
+</header>`,
+        preview: (
+          <header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur-md">
+            <nav className="max-w-7xl mx-auto px-4 py-4">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-8">
+                  <Link href="/" className="font-bold text-xl">Logo</Link>
+                  <div className="hidden md:flex items-center gap-6">
+                    <Link href="/docs" className="hover:text-primary transition-colors">Docs</Link>
+                    <Link href="/components" className="hover:text-primary transition-colors">Components</Link>
+                    <Link href="/examples" className="hover:text-primary transition-colors">Examples</Link>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <Button variant="ghost" size="sm">Sign In</Button>
+                  <Button size="sm">Get Started</Button>
+                  <Sheet>
+                    <SheetTrigger asChild className="md:hidden">
+                      <Button variant="ghost" size="sm">
+                        <Menu className="w-5 h-5" />
+                      </Button>
+                    </SheetTrigger>
+                    <SheetContent side="right">
+                      <div className="flex flex-col gap-4 mt-8">
+                        <Link href="/docs" className="text-lg">Docs</Link>
+                        <Link href="/components" className="text-lg">Components</Link>
+                        <Link href="/examples" className="text-lg">Examples</Link>
+                      </div>
+                    </SheetContent>
+                  </Sheet>
+                </div>
+              </div>
+            </nav>
+          </header>
+        ),
+      },
+      {
+        name: "Sidebar Navigation",
+        description: "Collapsible sidebar with icons and labels for dashboard navigation",
+        code: `<div className="flex h-screen">
+  <aside className="w-64 border-r bg-card">
+    <div className="p-4 border-b">
+      <h2 className="font-semibold text-lg">Dashboard</h2>
+    </div>
+    <nav className="p-4 space-y-2">
+      <Link href="/dashboard" className="flex items-center gap-3 p-2 rounded-lg hover:bg-muted transition-colors">
+        <Home className="w-5 h-5" />
+        <span>Home</span>
+      </Link>
+      <Link href="/analytics" className="flex items-center gap-3 p-2 rounded-lg hover:bg-muted transition-colors">
+        <Activity className="w-5 h-5" />
+        <span>Analytics</span>
+      </Link>
+      <Link href="/users" className="flex items-center gap-3 p-2 rounded-lg hover:bg-muted transition-colors">
+        <Users className="w-5 h-5" />
+        <span>Users</span>
+      </Link>
+      <Link href="/settings" className="flex items-center gap-3 p-2 rounded-lg hover:bg-muted transition-colors">
+        <Settings className="w-5 h-5" />
+        <span>Settings</span>
+      </Link>
+    </nav>
+  </aside>
+  <main className="flex-1 p-8">
+    <h1 className="text-2xl font-bold">Dashboard Content</h1>
+  </main>
+</div>`,
+        preview: (
+          <div className="flex h-64 border rounded-lg overflow-hidden">
+            <aside className="w-32 border-r bg-card flex-shrink-0">
+              <div className="p-3 border-b">
+                <h2 className="font-semibold text-sm">Dashboard</h2>
+              </div>
+              <nav className="p-3 space-y-1">
+                <div className="flex items-center gap-2 p-2 rounded-lg hover:bg-muted transition-colors">
+                  <Home className="w-4 h-4" />
+                  <span className="text-sm">Home</span>
+                </div>
+                <div className="flex items-center gap-2 p-2 rounded-lg hover:bg-muted transition-colors">
+                  <Activity className="w-4 h-4" />
+                  <span className="text-sm">Analytics</span>
+                </div>
+                <div className="flex items-center gap-2 p-2 rounded-lg hover:bg-muted transition-colors">
+                  <Users className="w-4 h-4" />
+                  <span className="text-sm">Users</span>
+                </div>
+                <div className="flex items-center gap-2 p-2 rounded-lg hover:bg-muted transition-colors">
+                  <Settings className="w-4 h-4" />
+                  <span className="text-sm">Settings</span>
+                </div>
+              </nav>
+            </aside>
+            <main className="flex-1 p-4">
+              <h1 className="text-lg font-bold">Dashboard Content</h1>
+            </main>
+          </div>
+        ),
+      },
+      {
+        name: "Breadcrumbs",
+        description: "Navigation breadcrumbs showing user's location in hierarchy",
+        code: `<Breadcrumb>
+  <BreadcrumbList>
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/">Home</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/docs">Documentation</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem>
+      <BreadcrumbPage>Components</BreadcrumbPage>
+    </BreadcrumbItem>
+  </BreadcrumbList>
+</Breadcrumb>`,
+        preview: (
+          <Breadcrumb>
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink href="/">Home</BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbLink href="/docs">Documentation</BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbPage>Components</BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
+        ),
+      },
+      {
+        name: "Advanced Tabs",
+        description: "Horizontal and vertical tabs with smooth animations",
+        code: `<Tabs defaultValue="account" className="w-full">
+  <TabsList className="grid w-full grid-cols-3">
+    <TabsTrigger value="account">Account</TabsTrigger>
+    <TabsTrigger value="password">Password</TabsTrigger>
+    <TabsTrigger value="settings">Settings</TabsTrigger>
+  </TabsList>
+  <TabsContent value="account" className="space-y-4">
+    <div className="space-y-2">
+      <Label htmlFor="name">Name</Label>
+      <Input id="name" placeholder="Enter your name" />
+    </div>
+    <div className="space-y-2">
+      <Label htmlFor="email">Email</Label>
+      <Input id="email" placeholder="Enter your email" />
+    </div>
+  </TabsContent>
+  <TabsContent value="password" className="space-y-4">
+    <div className="space-y-2">
+      <Label htmlFor="current">Current password</Label>
+      <Input id="current" type="password" />
+    </div>
+    <div className="space-y-2">
+      <Label htmlFor="new">New password</Label>
+      <Input id="new" type="password" />
+    </div>
+  </TabsContent>
+  <TabsContent value="settings" className="space-y-4">
+    <div className="space-y-2">
+      <Label htmlFor="theme">Theme</Label>
+      <Select>
+        <SelectTrigger>
+          <SelectValue placeholder="Select theme" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="light">Light</SelectItem>
+          <SelectItem value="dark">Dark</SelectItem>
+          <SelectItem value="system">System</SelectItem>
+        </SelectContent>
+      </Select>
+    </div>
+  </TabsContent>
+</Tabs>`,
+        preview: (
+          <Tabs defaultValue="account" className="w-full">
+            <TabsList className="grid w-full grid-cols-3">
+              <TabsTrigger value="account">Account</TabsTrigger>
+              <TabsTrigger value="password">Password</TabsTrigger>
+              <TabsTrigger value="settings">Settings</TabsTrigger>
+            </TabsList>
+            <TabsContent value="account" className="space-y-4">
+              <div className="space-y-2">
+                <Label htmlFor="name">Name</Label>
+                <Input id="name" placeholder="Enter your name" />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="email">Email</Label>
+                <Input id="email" placeholder="Enter your email" />
+              </div>
+            </TabsContent>
+            <TabsContent value="password" className="space-y-4">
+              <div className="space-y-2">
+                <Label htmlFor="current">Current password</Label>
+                <Input id="current" type="password" />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="new">New password</Label>
+                <Input id="new" type="password" />
+              </div>
+            </TabsContent>
+            <TabsContent value="settings" className="space-y-4">
+              <div className="space-y-2">
+                <Label htmlFor="theme">Theme</Label>
+                <Select>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select theme" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="light">Light</SelectItem>
+                    <SelectItem value="dark">Dark</SelectItem>
+                    <SelectItem value="system">System</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+            </TabsContent>
+          </Tabs>
+        ),
+      },
+      {
+        name: "FAQ Accordion",
+    description: "Expandable FAQ section with smooth animations",
+    code: `<Accordion type="single" collapsible className="w-full">
+  <AccordionItem value="item-1">
+    <AccordionTrigger>What is this component library?</AccordionTrigger>
+    <AccordionContent>
+      This is a comprehensive UI component library built with React, TypeScript, and Tailwind CSS. It provides ready-to-use components for building modern web applications.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="item-2">
+    <AccordionTrigger>How do I get started?</AccordionTrigger>
+    <AccordionContent>
+      Simply install the package and import the components you need. All components are fully customizable and follow accessibility best practices.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="item-3">
+    <AccordionTrigger>Is it free to use?</AccordionTrigger>
+    <AccordionContent>
+      Yes, this component library is completely free and open source. You can use it in both personal and commercial projects.
+    </AccordionContent>
+  </AccordionItem>
+</Accordion>`,
+    preview: (
+      <Accordion type="single" collapsible className="w-full">
+        <AccordionItem value="item-1">
+          <AccordionTrigger>What is this component library?</AccordionTrigger>
+          <AccordionContent>
+            This is a comprehensive UI component library built with React, TypeScript, and Tailwind CSS. It provides ready-to-use components for building modern web applications.
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-2">
+          <AccordionTrigger>How do I get started?</AccordionTrigger>
+          <AccordionContent>
+            Simply install the package and import the components you need. All components are fully customizable and follow accessibility best practices.
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-3">
+          <AccordionTrigger>Is it free to use?</AccordionTrigger>
+          <AccordionContent>
+            Yes, this component library is completely free and open source. You can use it in both personal and commercial projects.
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
+    ),
+  },
+]
 
   const filteredComponents = components.filter(
     (component) =>
