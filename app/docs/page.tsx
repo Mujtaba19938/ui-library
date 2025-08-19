@@ -6872,6 +6872,389 @@ const CloneOnClickFM = () => {
       </div>
     ),
   },
+  {
+    name: "Pulse Click Effect",
+    description: "Button emits concentric waves when clicked",
+    code: `// CSS Version with pulse waves
+const PulseClickEffect = () => {
+  const [pulses, setPulses] = useState<Array<{id: number, x: number, y: number}>>([]);
+  
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const button = e.currentTarget;
+    const rect = button.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    const newPulse = {
+      id: Date.now(),
+      x,
+      y
+    };
+    
+    setPulses(prev => [...prev, newPulse]);
+    
+    // Remove pulse after animation
+    setTimeout(() => {
+      setPulses(prev => prev.filter(p => p.id !== newPulse.id));
+    }, 1000);
+  };
+  
+  return (
+    <div className="relative">
+      <button
+        className="relative overflow-hidden px-6 py-3 bg-blue-500 text-white rounded-lg font-medium transition-colors hover:bg-blue-600 active:bg-blue-700"
+        onClick={handleClick}
+      >
+        Click for Pulse Effect
+        {pulses.map(pulse => (
+          <div
+            key={pulse.id}
+            className="absolute w-0 h-0 bg-blue-300/50 rounded-full animate-pulse-wave pointer-events-none"
+            style={{
+              left: pulse.x,
+              top: pulse.y,
+              transform: 'translate(-50%, -50%)'
+            }}
+          />
+        ))}
+      </button>
+    </div>
+  );
+};
+
+// Framer Motion Version with smooth waves
+const PulseClickEffectFM = () => {
+  const [pulses, setPulses] = useState<Array<{id: number, x: number, y: number}>>([]);
+  
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const button = e.currentTarget;
+    const rect = button.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    const newPulse = {
+      id: Date.now(),
+      x,
+      y
+    };
+    
+    setPulses(prev => [...prev, newPulse]);
+    
+    // Remove pulse after animation
+    setTimeout(() => {
+      setPulses(prev => prev.filter(p => p.id !== newPulse.id));
+    }, 1500);
+  };
+  
+  return (
+    <div className="relative">
+      <motion.button
+        className="px-6 py-3 bg-blue-500 text-white rounded-lg font-medium hover:bg-blue-600 transition-colors"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        onClick={handleClick}
+      >
+        Click for Pulse Effect
+      </motion.button>
+      
+      <AnimatePresence>
+        {pulses.map(pulse => (
+          <motion.div
+            key={pulse.id}
+            className="absolute w-0 h-0 bg-blue-300/50 rounded-full pointer-events-none"
+            style={{
+              left: pulse.x,
+              top: pulse.y,
+            }}
+            initial={{ 
+              scale: 0, 
+              opacity: 1,
+              x: 0,
+              y: 0
+            }}
+            animate={{ 
+              scale: [0, 1, 2, 3, 4],
+              opacity: [1, 0.8, 0.6, 0.4, 0],
+              x: 0,
+              y: 0
+            }}
+            transition={{
+              duration: 1.5,
+              ease: "easeOut"
+            }}
+          />
+        ))}
+      </AnimatePresence>
+    </div>
+  );
+};`,
+    preview: (
+      <div className="flex items-center justify-center h-64">
+        <button className="relative overflow-hidden px-6 py-3 bg-blue-500 text-white rounded-lg font-medium transition-colors hover:bg-blue-600 active:bg-blue-700">
+          Click for Pulse Effect
+        </button>
+      </div>
+    ),
+  },
+  {
+    name: "Ink Spread Effect",
+    description: "Dark ink blot spreads out then fades on click",
+    code: `// CSS Version with ink spread
+const InkSpreadEffect = () => {
+  const [inkBlots, setInkBlots] = useState<Array<{id: number, x: number, y: number}>>([]);
+  
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const button = e.currentTarget;
+    const rect = button.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    const newInkBlot = {
+      id: Date.now(),
+      x,
+      y
+    };
+    
+    setInkBlots(prev => [...prev, newInkBlot]);
+    
+    // Remove ink blot after animation
+    setTimeout(() => {
+      setInkBlots(prev => prev.filter(b => b.id !== newInkBlot.id));
+    }, 2000);
+  };
+  
+  return (
+    <div className="relative">
+      <button
+        className="relative overflow-hidden px-6 py-3 bg-gray-800 text-white rounded-lg font-medium transition-colors hover:bg-gray-700 active:bg-gray-900"
+        onClick={handleClick}
+      >
+        Click for Ink Spread
+        {inkBlots.map(inkBlot => (
+          <div
+            key={inkBlot.id}
+            className="absolute w-0 h-0 bg-black/60 rounded-full animate-ink-spread pointer-events-none"
+            style={{
+              left: inkBlot.x,
+              top: inkBlot.y,
+              transform: 'translate(-50%, -50%)'
+            }}
+          />
+        ))}
+      </button>
+    </div>
+  );
+};
+
+// Framer Motion Version with organic spread
+const InkSpreadEffectFM = () => {
+  const [inkBlots, setInkBlots] = useState<Array<{id: number, x: number, y: number}>>([]);
+  
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const button = e.currentTarget;
+    const rect = button.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    const newInkBlot = {
+      id: Date.now(),
+      x,
+      y
+    };
+    
+    setInkBlots(prev => [...prev, newInkBlot]);
+    
+    // Remove ink blot after animation
+    setTimeout(() => {
+      setInkBlots(prev => prev.filter(b => b.id !== newInkBlot.id));
+    }, 2500);
+  };
+  
+  return (
+    <div className="relative">
+      <motion.button
+        className="px-6 py-3 bg-gray-800 text-white rounded-lg font-medium hover:bg-gray-700 transition-colors"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        onClick={handleClick}
+      >
+        Click for Ink Spread
+      </motion.button>
+      
+      <AnimatePresence>
+        {inkBlots.map(inkBlot => (
+          <motion.div
+            key={inkBlot.id}
+            className="absolute w-0 h-0 bg-black/70 rounded-full pointer-events-none"
+            style={{
+              left: inkBlot.x,
+              top: inkBlot.y,
+            }}
+            initial={{ 
+              scale: 0, 
+              opacity: 1,
+              x: 0,
+              y: 0
+            }}
+            animate={{ 
+              scale: [0, 0.5, 1.5, 2.5, 3.5, 4],
+              opacity: [1, 0.9, 0.7, 0.5, 0.3, 0],
+              x: [0, (Math.random() - 0.5) * 20],
+              y: [0, (Math.random() - 0.5) * 20]
+            }}
+            transition={{
+              duration: 2.5,
+              ease: "easeOut"
+            }}
+          />
+        ))}
+      </AnimatePresence>
+    </div>
+  );
+};`,
+    preview: (
+      <div className="flex items-center justify-center h-64">
+        <button className="relative overflow-hidden px-6 py-3 bg-gray-800 text-white rounded-lg font-medium transition-colors hover:bg-gray-700 active:bg-gray-900">
+          Click for Ink Spread
+        </button>
+      </div>
+    ),
+  },
+  {
+    name: "Firework Click Effect",
+    description: "Spark particles burst out from click point",
+    code: `// CSS Version with firework particles
+const FireworkClickEffect = () => {
+  const [fireworks, setFireworks] = useState<Array<{id: number, x: number, y: number}>>([]);
+  
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const button = e.currentTarget;
+    const rect = button.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    const newFirework = {
+      id: Date.now(),
+      x,
+      y
+    };
+    
+    setFireworks(prev => [...prev, newFirework]);
+    
+    // Remove firework after animation
+    setTimeout(() => {
+      setFireworks(prev => prev.filter(f => f.id !== newFirework.id));
+    }, 1500);
+  };
+  
+  return (
+    <div className="relative">
+      <button
+        className="relative overflow-hidden px-6 py-3 bg-purple-500 text-white rounded-lg font-medium transition-colors hover:bg-purple-600 active:bg-purple-700"
+        onClick={handleClick}
+      >
+        Click for Fireworks
+        {fireworks.map(firework => (
+          <div key={firework.id} className="absolute inset-0 pointer-events-none">
+            {/* Multiple particles in different directions */}
+            {Array.from({ length: 12 }).map((_, i) => (
+              <div
+                key={i}
+                className="absolute w-2 h-2 bg-yellow-300 rounded-full animate-firework-particle"
+                style={{
+                  left: firework.x,
+                  top: firework.y,
+                  transform: 'translate(-50%, -50%)'
+                }}
+              />
+            ))}
+          </div>
+        ))}
+      </button>
+    </div>
+  );
+};
+
+// Framer Motion Version with physics
+const FireworkClickEffectFM = () => {
+  const [fireworks, setFireworks] = useState<Array<{id: number, x: number, y: number}>>([]);
+  
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const button = e.currentTarget;
+    const rect = button.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    const newFirework = {
+      id: Date.now(),
+      x,
+      y
+    };
+    
+    setFireworks(prev => [...prev, newFirework]);
+    
+    // Remove firework after animation
+    setTimeout(() => {
+      setFireworks(prev => prev.filter(f => f.id !== newFirework.id));
+    }, 2000);
+  };
+  
+  return (
+    <div className="relative">
+      <motion.button
+        className="px-6 py-3 bg-purple-500 text-white rounded-lg font-medium hover:bg-purple-600 transition-colors"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        onClick={handleClick}
+      >
+        Click for Fireworks
+      </motion.button>
+      
+      <AnimatePresence>
+        {fireworks.map(firework => (
+          <div key={firework.id} className="absolute inset-0 pointer-events-none">
+            {Array.from({ length: 16 }).map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute w-2 h-2 rounded-full"
+                style={{
+                  left: firework.x,
+                  top: firework.y,
+                  backgroundColor: ['#fbbf24', '#f59e0b', '#ef4444', '#ec4899', '#8b5cf6', '#3b82f6'][i % 6]
+                }}
+                initial={{ 
+                  scale: 0, 
+                  opacity: 1,
+                  x: 0,
+                  y: 0
+                }}
+                animate={{ 
+                  scale: [0, 1, 0],
+                  opacity: [1, 0.8, 0],
+                  x: [0, Math.cos(i * 22.5 * Math.PI / 180) * 120],
+                  y: [0, Math.sin(i * 22.5 * Math.PI / 180) * 120]
+                }}
+                transition={{
+                  duration: 2,
+                  ease: "easeOut",
+                  delay: i * 0.05
+                }}
+              />
+            ))}
+          </div>
+        ))}
+      </AnimatePresence>
+    </div>
+  );
+};`,
+    preview: (
+      <div className="flex items-center justify-center h-64">
+        <button className="relative overflow-hidden px-6 py-3 bg-purple-500 text-white rounded-lg font-medium transition-colors hover:bg-purple-600 active:bg-purple-700">
+          Click for Fireworks
+        </button>
+      </div>
+    ),
+  },
 ]
 
   const filteredComponents = components.filter(
