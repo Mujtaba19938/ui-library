@@ -5129,134 +5129,6 @@ useEffect(() => {
     ),
   },
   {
-    name: "Waves Animation",
-    description: "Sinusoidal wave effect using CSS clip-path or SVG",
-    code: `// CSS Version with clip-path
-<div className="waves-container relative h-64 overflow-hidden rounded-lg">
-  {/* Wave 1 */}
-  <div className="absolute inset-0 bg-blue-500" style={{
-    clipPath: 'polygon(0 50%, 10% 45%, 20% 55%, 30% 40%, 40% 60%, 50% 35%, 60% 65%, 70% 30%, 80% 70%, 90% 25%, 100% 75%, 100% 100%, 0 100%)'
-  }}></div>
-  
-  {/* Wave 2 */}
-  <div className="absolute inset-0 bg-blue-400 opacity-80" style={{
-    clipPath: 'polygon(0 60%, 10% 55%, 20% 65%, 30% 50%, 40% 70%, 50% 45%, 60% 75%, 70% 40%, 80% 80%, 90% 35%, 100% 85%, 100% 100%, 0 100%)'
-  }}></div>
-  
-  {/* Wave 3 */}
-  <div className="absolute inset-0 bg-blue-300 opacity-60" style={{
-    clipPath: 'polygon(0 70%, 10% 65%, 20% 75%, 30% 60%, 40% 80%, 50% 55%, 60% 85%, 70% 50%, 80% 90%, 90% 45%, 100% 95%, 100% 100%, 0 100%)'
-  }}></div>
-  
-  {/* Content */}
-  <div className="relative z-10 flex items-center justify-center h-full">
-    <div className="text-center text-white">
-      <h2 className="text-3xl font-bold mb-2">Waves Animation</h2>
-      <p className="text-white/80">Sinusoidal wave effects</p>
-</div>
-</div>
-</div>`,
-    preview: (
-      <div className="waves-container relative h-64 overflow-hidden rounded-lg">
-        <div className="absolute inset-0 bg-blue-500" style={{
-          clipPath: 'polygon(0 50%, 10% 45%, 20% 55%, 30% 40%, 40% 60%, 50% 35%, 60% 65%, 70% 30%, 80% 70%, 90% 25%, 100% 75%, 100% 100%, 0 100%)'
-        }}></div>
-        <div className="absolute inset-0 bg-blue-400 opacity-80" style={{
-          clipPath: 'polygon(0 60%, 10% 55%, 20% 65%, 30% 50%, 40% 70%, 50% 45%, 60% 75%, 70% 40%, 80% 80%, 90% 35%, 100% 85%, 100% 100%, 0 100%)'
-        }}></div>
-        <div className="absolute inset-0 bg-blue-300 opacity-60" style={{
-          clipPath: 'polygon(0 70%, 10% 65%, 20% 75%, 30% 60%, 40% 80%, 50% 55%, 60% 85%, 70% 50%, 80% 90%, 90% 45%, 100% 95%, 100% 100%, 0 100%)'
-        }}></div>
-        <div className="relative z-10 flex items-center justify-center h-full">
-          <div className="text-center text-white">
-            <h2 className="text-3xl font-bold mb-2">Waves Animation</h2>
-            <p className="text-white/80">Sinusoidal wave effects</p>
-</div>
-</div>
-</div>
-    ),
-  },
-  {
-    name: "Particle Background",
-    description: "Moving dots connected with lines using canvas or CSS transforms",
-    code: `// CSS Version with animated dots
-<div className="particle-container relative h-64 overflow-hidden rounded-lg bg-gray-900">
-  {/* Animated particles */}
-  <div className="absolute inset-0">
-    <div className="particle absolute w-2 h-2 bg-blue-400 rounded-full animate-pulse" style={{
-      top: '20%',
-      left: '10%',
-      animation: 'particle-float 8s ease-in-out infinite'
-    }}></div>
-    <div className="particle absolute w-2 h-2 bg-green-400 rounded-full animate-pulse" style={{
-      top: '30%',
-      left: '80%',
-      animation: 'particle-float 10s ease-in-out infinite reverse'
-    }}></div>
-    <div className="particle absolute w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{
-      top: '70%',
-      left: '20%',
-      animation: 'particle-float 12s ease-in-out infinite'
-    }}></div>
-    <div className="particle absolute w-2 h-2 bg-pink-400 rounded-full animate-pulse" style={{
-      top: '60%',
-      left: '70%',
-      animation: 'particle-float 9s ease-in-out infinite reverse'
-    }}></div>
-</div>
-  
-  {/* Connecting lines */}
-  <svg className="absolute inset-0 w-full h-full" style={{ zIndex: 1 }}>
-    <line x1="10%" y1="20%" x2="80%" y2="30%" stroke="#3B82F6" strokeWidth="1" opacity="0.6" />
-    <line x1="20%" y1="70%" x2="70%" y2="60%" stroke="#8B5CF6" strokeWidth="1" opacity="0.6" />
-    <line x1="10%" y1="20%" x2="20%" y2="70%" stroke="#EC4899" strokeWidth="1" opacity="0.6" />
-    <line x1="80%" y1="30%" x2="70%" y2="60%" stroke="#10B981" strokeWidth="1" opacity="0.6" />
-  </svg>
-  
-  {/* Content */}
-  <div className="relative z-10 flex items-center justify-center h-full">
-    <div className="text-center text-white">
-      <h2 className="text-3xl font-bold mb-2">Particle Background</h2>
-      <p className="text-white/80">Moving dots with connecting lines</p>
-</div>
-</div>
-</div>`,
-    preview: (
-      <div className="particle-container relative h-64 overflow-hidden rounded-lg bg-gray-900">
-        <div className="absolute inset-0">
-          <div className="particle absolute w-2 h-2 bg-blue-400 rounded-full animate-pulse" style={{
-            top: '20%',
-            left: '10%'
-          }}></div>
-          <div className="particle absolute w-2 h-2 bg-green-400 rounded-full animate-pulse" style={{
-            top: '30%',
-            left: '80%'
-          }}></div>
-          <div className="particle absolute w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{
-            top: '70%',
-            left: '20%'
-          }}></div>
-          <div className="particle absolute w-2 h-2 bg-pink-400 rounded-full animate-pulse" style={{
-            top: '60%',
-            left: '70%'
-          }}></div>
-</div>
-        <svg className="absolute inset-0 w-full h-full" style={{ zIndex: 1 }}>
-          <line x1="10%" y1="20%" x2="80%" y2="30%" stroke="#3B82F6" strokeWidth="1" opacity="0.6" />
-          <line x1="20%" y1="70%" x2="70%" y2="60%" stroke="#8B5CF6" strokeWidth="1" opacity="0.6" />
-          <line x1="10%" y1="20%" x2="20%" y2="70%" stroke="#EC4899" strokeWidth="1" opacity="0.6" />
-          <line x1="80%" y1="30%" x2="70%" y2="60%" stroke="#10B981" strokeWidth="1" opacity="0.6" />
-        </svg>
-        <div className="relative z-10 flex items-center justify-center h-full">
-          <div className="text-center text-white">
-            <h2 className="text-3xl font-bold mb-2">Particle Background</h2>
-            <p className="text-white/80">Moving dots with connecting lines</p>
-</div>
-</div>
-</div>
-    ),
-  },
-  {
     name: "Aurora / Neon Glow Background",
     description: "Animated blur blobs blending like northern lights",
     code: `// CSS Version
@@ -5293,54 +5165,6 @@ useEffect(() => {
           <div className="text-center text-white">
             <h2 className="text-3xl font-bold mb-2">Aurora Background</h2>
             <p className="text-white/80">Northern lights effect</p>
-</div>
-</div>
-</div>
-    ),
-  },
-  {
-    name: "Waves Animation",
-    description: "Sinusoidal wave effect using CSS clip-path or SVG",
-    code: `// CSS Version with clip-path
-<div className="waves-container relative h-64 overflow-hidden rounded-lg">
-  {/* Wave 1 */}
-  <div className="absolute inset-0 bg-blue-500" style={{
-    clipPath: 'polygon(0 50%, 10% 45%, 20% 55%, 30% 40%, 40% 60%, 50% 35%, 60% 65%, 70% 30%, 80% 70%, 90% 25%, 100% 75%, 100% 100%, 0 100%)'
-  }}></div>
-  
-  {/* Wave 2 */}
-  <div className="absolute inset-0 bg-blue-400 opacity-80" style={{
-    clipPath: 'polygon(0 60%, 10% 55%, 20% 65%, 30% 50%, 40% 70%, 50% 45%, 60% 75%, 70% 40%, 80% 80%, 90% 35%, 100% 85%, 100% 100%, 0 100%)'
-  }}></div>
-  
-  {/* Wave 3 */}
-  <div className="absolute inset-0 bg-blue-300 opacity-60" style={{
-    clipPath: 'polygon(0 70%, 10% 65%, 20% 75%, 30% 60%, 40% 80%, 50% 55%, 60% 85%, 70% 50%, 80% 90%, 90% 45%, 100% 95%, 100% 100%, 0 100%)'
-  }}></div>
-  
-  {/* Content */}
-  <div className="relative z-10 flex items-center justify-center h-full">
-    <div className="text-center text-white">
-      <h2 className="text-3xl font-bold mb-2">Waves Animation</h2>
-      <p className="text-white/80">Sinusoidal wave effects</p>
-</div>
-</div>
-</div>`,
-    preview: (
-      <div className="waves-container relative h-64 overflow-hidden rounded-lg">
-        <div className="absolute inset-0 bg-blue-500" style={{
-          clipPath: 'polygon(0 50%, 10% 45%, 20% 55%, 30% 40%, 40% 60%, 50% 35%, 60% 65%, 70% 30%, 80% 70%, 90% 25%, 100% 75%, 100% 100%, 0 100%)'
-        }}></div>
-        <div className="absolute inset-0 bg-blue-400 opacity-80" style={{
-          clipPath: 'polygon(0 60%, 10% 55%, 20% 65%, 30% 50%, 40% 70%, 50% 45%, 60% 75%, 70% 40%, 80% 80%, 90% 35%, 100% 85%, 100% 100%, 0 100%)'
-        }}></div>
-        <div className="absolute inset-0 bg-blue-300 opacity-60" style={{
-          clipPath: 'polygon(0 70%, 10% 65%, 20% 75%, 30% 60%, 40% 80%, 50% 55%, 60% 85%, 70% 50%, 80% 90%, 90% 45%, 100% 95%, 100% 100%, 0 100%)'
-        }}></div>
-        <div className="relative z-10 flex items-center justify-center h-full">
-          <div className="text-center text-white">
-            <h2 className="text-3xl font-bold mb-2">Waves Animation</h2>
-            <p className="text-white/80">Sinusoidal wave effects</p>
 </div>
 </div>
 </div>
@@ -5768,6 +5592,396 @@ const MorphingButton = () => {
         </button>
         <button className="px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-full font-medium transition-all duration-500 ease-in-out shadow-lg scale-110">
           ✨ Morphed!
+        </button>
+      </div>
+    ),
+  },
+  {
+    name: "Click-to-Expand Card",
+    description: "Card grows into a modal with animation",
+    code: `// CSS Version with expand animation
+const ExpandableCard = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  
+  return (
+    <div className="relative">
+      <div
+        className={\`transition-all duration-500 ease-out cursor-pointer \${
+          isExpanded 
+            ? 'fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4' 
+            : 'bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 max-w-sm'
+        }\`}
+        onClick={() => setIsExpanded(!isExpanded)}
+      >
+        {isExpanded ? (
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-xl p-8 max-w-2xl w-full max-h-[80vh] overflow-y-auto">
+            <h3 className="text-2xl font-bold mb-4">Expanded Content</h3>
+            <p className="text-gray-600 dark:text-gray-300 mb-4">
+              This card has expanded into a full modal! Click anywhere to collapse it back.
+            </p>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="bg-gray-100 dark:bg-gray-700 p-4 rounded">
+                <h4 className="font-semibold mb-2">Feature 1</h4>
+                <p className="text-sm text-gray-600 dark:text-gray-300">
+                  Amazing feature description goes here.
+                </p>
+              </div>
+              <div className="bg-gray-100 dark:bg-gray-700 p-4 rounded">
+                <h4 className="font-semibold mb-2">Feature 2</h4>
+                <p className="text-sm text-gray-600 dark:text-gray-300">
+                  Another great feature description.
+                </p>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div>
+            <h3 className="text-lg font-semibold mb-2">Click to Expand</h3>
+            <p className="text-gray-600 dark:text-gray-300">
+              Click this card to see it expand into a full modal with smooth animation.
+            </p>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+// Framer Motion Version with layout animation
+const ExpandableCardFM = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  
+  return (
+    <AnimatePresence>
+      {isExpanded && (
+        <motion.div
+          className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={() => setIsExpanded(false)}
+        >
+          <motion.div
+            className="bg-white dark:bg-gray-800 rounded-lg shadow-xl p-8 max-w-2xl w-full max-h-[80vh] overflow-y-auto"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.8, opacity: 0 }}
+            transition={{ type: "spring", damping: 25, stiffness: 300 }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <h3 className="text-2xl font-bold mb-4">Expanded Content</h3>
+            <p className="text-gray-600 dark:text-gray-300 mb-4">
+              This card has expanded into a full modal with Framer Motion!
+            </p>
+            <div className="grid grid-cols-2 gap-4">
+              <motion.div 
+                className="bg-gray-100 dark:bg-gray-700 p-4 rounded"
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.1 }}
+              >
+                <h4 className="font-semibold mb-2">Feature 1</h4>
+                <p className="text-sm text-gray-600 dark:text-gray-300">
+                  Amazing feature description goes here.
+                </p>
+              </motion.div>
+              <motion.div 
+                className="bg-gray-100 dark:bg-gray-700 p-4 rounded"
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.2 }}
+              >
+                <h4 className="font-semibold mb-2">Feature 2</h4>
+                <p className="text-sm text-gray-600 dark:text-gray-300">
+                  Another great feature description.
+                </p>
+              </motion.div>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+      
+      <motion.div
+        className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 max-w-sm cursor-pointer"
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
+        onClick={() => setIsExpanded(true)}
+      >
+        <h3 className="text-lg font-semibold mb-2">Click to Expand</h3>
+        <p className="text-gray-600 dark:text-gray-300">
+          Click this card to see it expand into a full modal with smooth animation.
+        </p>
+      </motion.div>
+    </AnimatePresence>
+  );
+};`,
+    preview: (
+      <div className="flex items-center justify-center h-64">
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 max-w-sm cursor-pointer hover:scale-105 transition-transform">
+          <h3 className="text-lg font-semibold mb-2">Click to Expand</h3>
+          <p className="text-gray-600 dark:text-gray-300">
+            Click this card to see it expand into a full modal with smooth animation.
+          </p>
+        </div>
+      </div>
+    ),
+  },
+  {
+    name: "Click Trail Effect",
+    description: "Fading circles or blobs appear where clicked",
+    code: `// CSS Version with click trail
+const ClickTrail = () => {
+  const [trails, setTrails] = useState<Array<{id: number, x: number, y: number}>>([]);
+  
+  const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    const newTrail = {
+      id: Date.now(),
+      x,
+      y
+    };
+    
+    setTrails(prev => [...prev, newTrail]);
+    
+    // Remove trail after animation
+    setTimeout(() => {
+      setTrails(prev => prev.filter(t => t.id !== newTrail.id));
+    }, 1000);
+  };
+  
+  return (
+    <div 
+      className="relative w-full h-64 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800 rounded-lg cursor-crosshair overflow-hidden"
+      onClick={handleClick}
+    >
+      <div className="absolute inset-0 flex items-center justify-center">
+        <p className="text-gray-600 dark:text-gray-300 text-center">
+          Click anywhere to create fading trails<br />
+          <span className="text-sm opacity-75">Each click leaves a beautiful trail effect</span>
+        </p>
+      </div>
+      
+      {trails.map(trail => (
+        <div
+          key={trail.id}
+          className="absolute w-8 h-8 bg-gradient-to-r from-pink-400 to-purple-500 rounded-full pointer-events-none animate-trail-fade"
+          style={{
+            left: trail.x - 16,
+            top: trail.y - 16,
+            transform: 'translate(-50%, -50%)'
+          }}
+        />
+      ))}
+    </div>
+  );
+};
+
+// Framer Motion Version with physics
+const ClickTrailFM = () => {
+  const [trails, setTrails] = useState<Array<{id: number, x: number, y: number}>>([]);
+  
+  const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    const newTrail = {
+      id: Date.now(),
+      x,
+      y
+    };
+    
+    setTrails(prev => [...prev, newTrail]);
+    
+    // Remove trail after animation
+    setTimeout(() => {
+      setTrails(prev => prev.filter(t => t.id !== newTrail.id));
+    }, 1500);
+  };
+  
+  return (
+    <div 
+      className="relative w-full h-64 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800 rounded-lg cursor-crosshair overflow-hidden"
+      onClick={handleClick}
+    >
+      <div className="absolute inset-0 flex items-center justify-center">
+        <p className="text-gray-600 dark:text-gray-300 text-center">
+          Click anywhere to create animated trails<br />
+          <span className="text-sm opacity-75">Powered by Framer Motion physics</span>
+        </p>
+      </div>
+      
+      <AnimatePresence>
+        {trails.map(trail => (
+          <motion.div
+            key={trail.id}
+            className="absolute w-8 h-8 bg-gradient-to-r from-pink-400 to-purple-500 rounded-full pointer-events-none"
+            style={{
+              left: trail.x - 16,
+              top: trail.y - 16,
+            }}
+            initial={{ 
+              scale: 0, 
+              opacity: 1,
+              x: 0,
+              y: 0
+            }}
+            animate={{ 
+              scale: [0, 1.5, 0],
+              opacity: [1, 0.8, 0],
+              x: [0, (Math.random() - 0.5) * 100],
+              y: [0, (Math.random() - 0.5) * 100]
+            }}
+            transition={{
+              duration: 1.5,
+              ease: "easeOut"
+            }}
+          />
+        ))}
+      </AnimatePresence>
+    </div>
+  );
+};`,
+    preview: (
+      <div className="flex items-center justify-center h-64">
+        <div className="w-full h-64 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800 rounded-lg cursor-crosshair flex items-center justify-center">
+          <p className="text-gray-600 dark:text-gray-300 text-center">
+            Click anywhere to create fading trails<br />
+            <span className="text-sm opacity-75">Each click leaves a beautiful trail effect</span>
+          </p>
+        </div>
+      </div>
+    ),
+  },
+  {
+    name: "Click-to-Clone Element",
+    description: "Clicking creates a duplicate element that animates away",
+    code: `// CSS Version with clone animation
+const CloneOnClick = () => {
+  const [clones, setClones] = useState<Array<{id: number, x: number, y: number}>>([]);
+  
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const button = e.currentTarget;
+    const rect = button.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    const newClone = {
+      id: Date.now(),
+      x,
+      y
+    };
+    
+    setClones(prev => [...prev, newClone]);
+    
+    // Remove clone after animation
+    setTimeout(() => {
+      setClones(prev => prev.filter(c => c.id !== newClone.id));
+    }, 2000);
+  };
+  
+  return (
+    <div className="relative">
+      <button
+        className="px-6 py-3 bg-green-500 text-white rounded-lg font-medium hover:bg-green-600 transition-colors relative overflow-hidden"
+        onClick={handleClick}
+      >
+        Click to Clone Me
+        {clones.map(clone => (
+          <div
+            key={clone.id}
+            className="absolute inset-0 bg-green-500 text-white rounded-lg font-medium animate-clone-float pointer-events-none"
+            style={{
+              left: clone.x - 50,
+              top: clone.y - 20,
+              transform: 'translate(-50%, -50%)'
+            }}
+          >
+            Click to Clone Me
+          </div>
+        ))}
+      </button>
+    </div>
+  );
+};
+
+// Framer Motion Version with physics
+const CloneOnClickFM = () => {
+  const [clones, setClones] = useState<Array<{id: number, x: number, y: number}>>([]);
+  
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const button = e.currentTarget;
+    const rect = button.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    const newClone = {
+      id: Date.now(),
+      x,
+      y
+    };
+    
+    setClones(prev => [...prev, newClone]);
+    
+    // Remove clone after animation
+    setTimeout(() => {
+      setClones(prev => prev.filter(c => c.id !== newClone.id));
+    }, 2500);
+  };
+  
+  return (
+    <div className="relative">
+      <motion.button
+        className="px-6 py-3 bg-green-500 text-white rounded-lg font-medium hover:bg-green-600 transition-colors"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        onClick={handleClick}
+      >
+        Click to Clone Me
+      </motion.button>
+      
+      <AnimatePresence>
+        {clones.map(clone => (
+          <motion.div
+            key={clone.id}
+            className="absolute px-6 py-3 bg-green-500 text-white rounded-lg font-medium pointer-events-none"
+            style={{
+              left: clone.x - 50,
+              top: clone.y - 20,
+            }}
+            initial={{ 
+              scale: 1, 
+              opacity: 1,
+              x: 0,
+              y: 0,
+              rotate: 0
+            }}
+            animate={{ 
+              scale: [1, 1.2, 0.8, 0],
+              opacity: [1, 0.8, 0.6, 0],
+              x: [0, (Math.random() - 0.5) * 200],
+              y: [0, -100 - Math.random() * 100],
+              rotate: [0, Math.random() * 360]
+            }}
+            transition={{
+              duration: 2.5,
+              ease: "easeOut"
+            }}
+          >
+            Click to Clone Me
+          </motion.div>
+        ))}
+      </AnimatePresence>
+    </div>
+  );
+};`,
+    preview: (
+      <div className="flex items-center justify-center h-64">
+        <button className="px-6 py-3 bg-green-500 text-white rounded-lg font-medium hover:bg-green-600 transition-colors">
+          Click to Clone Me
         </button>
       </div>
     ),
