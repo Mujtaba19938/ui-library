@@ -7255,6 +7255,464 @@ const FireworkClickEffectFM = () => {
       </div>
     ),
   },
+  {
+    name: "Exploding Pixel Click Effect",
+    description: "Click makes small square pixels scatter",
+    code: `// CSS Version with exploding pixels
+const ExplodingPixelEffect = () => {
+  const [pixelExplosions, setPixelExplosions] = useState<Array<{id: number, x: number, y: number}>>([]);
+  
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const button = e.currentTarget;
+    const rect = button.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    const newExplosion = {
+      id: Date.now(),
+      x,
+      y
+    };
+    
+    setPixelExplosions(prev => [...prev, newExplosion]);
+    
+    // Remove explosion after animation
+    setTimeout(() => {
+      setPixelExplosions(prev => prev.filter(exp => exp.id !== newExplosion.id));
+    }, 1500);
+  };
+  
+  return (
+    <div className="relative">
+      <button
+        className="relative overflow-hidden px-6 py-3 bg-red-500 text-white rounded-lg font-medium transition-colors hover:bg-red-600 active:bg-red-700"
+        onClick={handleClick}
+      >
+        Click for Pixel Explosion
+        {pixelExplosions.map(explosion => (
+          <div key={explosion.id} className="absolute inset-0 pointer-events-none">
+            {/* Multiple pixels in different directions */}
+            {Array.from({ length: 20 }).map((_, i) => (
+              <div
+                key={i}
+                className="absolute w-1 h-1 bg-white animate-pixel-explosion"
+                style={{
+                  left: explosion.x,
+                  top: explosion.y,
+                  transform: 'translate(-50%, -50%)'
+                }}
+              />
+            ))}
+          </div>
+        ))}
+      </button>
+    </div>
+  );
+};
+
+// Framer Motion Version with physics
+const ExplodingPixelEffectFM = () => {
+  const [pixelExplosions, setPixelExplosions] = useState<Array<{id: number, x: number, y: number}>>([]);
+  
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const button = e.currentTarget;
+    const rect = button.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    const newExplosion = {
+      id: Date.now(),
+      x,
+      y
+    };
+    
+    setPixelExplosions(prev => [...prev, newExplosion]);
+    
+    // Remove explosion after animation
+    setTimeout(() => {
+      setPixelExplosions(prev => prev.filter(exp => exp.id !== newExplosion.id));
+    }, 2000);
+  };
+  
+  return (
+    <div className="relative">
+      <motion.button
+        className="px-6 py-3 bg-red-500 text-white rounded-lg font-medium hover:bg-red-600 transition-colors"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        onClick={handleClick}
+      >
+        Click for Pixel Explosion
+      </motion.button>
+      
+      <AnimatePresence>
+        {pixelExplosions.map(explosion => (
+          <div key={explosion.id} className="absolute inset-0 pointer-events-none">
+            {Array.from({ length: 25 }).map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute w-1 h-1 bg-white"
+                style={{
+                  left: explosion.x,
+                  top: explosion.y,
+                }}
+                initial={{ 
+                  scale: 0, 
+                  opacity: 1,
+                  x: 0,
+                  y: 0
+                }}
+                animate={{ 
+                  scale: [0, 1, 0],
+                  opacity: [1, 0.8, 0],
+                  x: [0, (Math.random() - 0.5) * 150],
+                  y: [0, (Math.random() - 0.5) * 150]
+                }}
+                transition={{
+                  duration: 2,
+                  ease: "easeOut",
+                  delay: i * 0.02
+                }}
+              />
+            ))}
+          </div>
+        ))}
+      </AnimatePresence>
+    </div>
+  );
+};`,
+    preview: (
+      <div className="flex items-center justify-center h-64">
+        <button className="relative overflow-hidden px-6 py-3 bg-red-500 text-white rounded-lg font-medium transition-colors hover:bg-red-600 active:bg-red-700">
+          Click for Pixel Explosion
+        </button>
+      </div>
+    ),
+  },
+  {
+    name: "Click Shockwave Effect",
+    description: "Expanding shockwave ripple with blur",
+    code: `// CSS Version with shockwave effect
+const ShockwaveEffect = () => {
+  const [shockwaves, setShockwaves] = useState<Array<{id: number, x: number, y: number}>>([]);
+  
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const button = e.currentTarget;
+    const rect = button.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    const newShockwave = {
+      id: Date.now(),
+      x,
+      y
+    };
+    
+    setShockwaves(prev => [...prev, newShockwave]);
+    
+    // Remove shockwave after animation
+    setTimeout(() => {
+      setShockwaves(prev => prev.filter(s => s.id !== newShockwave.id));
+    }, 1200);
+  };
+  
+  return (
+    <div className="relative">
+      <button
+        className="relative overflow-hidden px-6 py-3 bg-orange-500 text-white rounded-lg font-medium transition-colors hover:bg-orange-600 active:bg-orange-700"
+        onClick={handleClick}
+      >
+        Click for Shockwave
+        {shockwaves.map(shockwave => (
+          <div
+            key={shockwave.id}
+            className="absolute w-0 h-0 bg-white/30 rounded-full animate-shockwave pointer-events-none"
+            style={{
+              left: shockwave.x,
+              top: shockwave.y,
+              transform: 'translate(-50%, -50%)'
+            }}
+          />
+        ))}
+      </button>
+    </div>
+  );
+};
+
+// Framer Motion Version with blur effect
+const ShockwaveEffectFM = () => {
+  const [shockwaves, setShockwaves] = useState<Array<{id: number, x: number, y: number}>>([]);
+  
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const button = e.currentTarget;
+    const rect = button.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    const newShockwave = {
+      id: Date.now(),
+      x,
+      y
+    };
+    
+    setShockwaves(prev => [...prev, newShockwave]);
+    
+    // Remove shockwave after animation
+    setTimeout(() => {
+      setShockwaves(prev => prev.filter(s => s.id !== newShockwave.id));
+    }, 1500);
+  };
+  
+  return (
+    <div className="relative">
+      <motion.button
+        className="px-6 py-3 bg-orange-500 text-white rounded-lg font-medium hover:bg-orange-600 transition-colors"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        onClick={handleClick}
+      >
+        Click for Shockwave
+      </motion.button>
+      
+      <AnimatePresence>
+        {shockwaves.map(shockwave => (
+          <motion.div
+            key={shockwave.id}
+            className="absolute w-0 h-0 bg-white/40 rounded-full pointer-events-none"
+            style={{
+              left: shockwave.x,
+              top: shockwave.y,
+            }}
+            initial={{ 
+              scale: 0, 
+              opacity: 1,
+              filter: 'blur(0px)'
+            }}
+            animate={{ 
+              scale: [0, 1, 3, 5],
+              opacity: [1, 0.8, 0.4, 0],
+              filter: ['blur(0px)', 'blur(2px)', 'blur(4px)', 'blur(8px)']
+            }}
+            transition={{
+              duration: 1.5,
+              ease: "easeOut"
+            }}
+          />
+        ))}
+      </AnimatePresence>
+    </div>
+  );
+};`,
+    preview: (
+      <div className="flex items-center justify-center h-64">
+        <button className="relative overflow-hidden px-6 py-3 bg-orange-500 text-white rounded-lg font-medium transition-colors hover:bg-orange-600 active:bg-orange-700">
+          Click for Shockwave
+        </button>
+      </div>
+    ),
+  },
+  {
+    name: "Click-to-Bounce",
+    description: "Clicked element bounces before returning to rest",
+    code: `// CSS Version with bounce effect
+const ClickToBounce = () => {
+  const [isBouncing, setIsBouncing] = useState(false);
+  
+  const handleClick = () => {
+    setIsBouncing(true);
+    setTimeout(() => setIsBouncing(false), 600);
+  };
+  
+  return (
+    <div className="flex items-center justify-center h-64">
+      <button
+        className={\`px-6 py-3 bg-green-500 text-white rounded-lg font-medium transition-all duration-300 \${
+          isBouncing ? 'animate-bounce' : ''
+        }\`}
+        onClick={handleClick}
+      >
+        Click to Bounce
+      </button>
+    </div>
+  );
+};
+
+// Framer Motion Version with spring physics
+const ClickToBounceFM = () => {
+  const [isBouncing, setIsBouncing] = useState(false);
+  
+  const handleClick = () => {
+    setIsBouncing(true);
+    setTimeout(() => setIsBouncing(false), 800);
+  };
+  
+  return (
+    <div className="flex items-center justify-center h-64">
+      <motion.button
+        className="px-6 py-3 bg-green-500 text-white rounded-lg font-medium"
+        animate={isBouncing ? {
+          y: [0, -20, 0, -10, 0, -5, 0],
+          scale: [1, 1.1, 1, 1.05, 1, 1.02, 1]
+        } : {}}
+        transition={{
+          type: "spring",
+          stiffness: 400,
+          damping: 10
+        }}
+        onClick={handleClick}
+      >
+        Click to Bounce
+      </motion.button>
+    </div>
+  );
+};`,
+    preview: (
+      <div className="flex items-center justify-center h-64">
+        <button className="px-6 py-3 bg-green-500 text-white rounded-lg font-medium transition-all duration-300 hover:bg-green-600">
+          Click to Bounce
+        </button>
+      </div>
+    ),
+  },
+  {
+    name: "Click Sound Wave Effect",
+    description: "Concentric sound-wave-like circles radiate out",
+    code: `// CSS Version with sound wave circles
+const SoundWaveEffect = () => {
+  const [soundWaves, setSoundWaves] = useState<Array<{id: number, x: number, y: number}>>([]);
+  
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const button = e.currentTarget;
+    const rect = button.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    const newSoundWave = {
+      id: Date.now(),
+      x,
+      y
+    };
+    
+    setSoundWaves(prev => [...prev, newSoundWave]);
+    
+    // Remove sound wave after animation
+    setTimeout(() => {
+      setSoundWaves(prev => prev.filter(w => w.id !== newSoundWave.id));
+    }, 2000);
+  };
+  
+  return (
+    <div className="relative">
+      <button
+        className="relative overflow-hidden px-6 py-3 bg-cyan-500 text-white rounded-lg font-medium transition-colors hover:bg-cyan-600 active:bg-cyan-700"
+        onClick={handleClick}
+      >
+        Click for Sound Waves
+        {soundWaves.map(soundWave => (
+          <div key={soundWave.id} className="absolute inset-0 pointer-events-none">
+            {/* Multiple concentric circles */}
+            {Array.from({ length: 5 }).map((_, i) => (
+              <div
+                key={i}
+                className="absolute border-2 border-white/40 rounded-full animate-sound-wave pointer-events-none"
+                style={{
+                  left: soundWave.x,
+                  top: soundWave.y,
+                  transform: 'translate(-50%, -50%)',
+                  width: \`\${(i + 1) * 20}px\`,
+                  height: \`\${(i + 1) * 20}px\`,
+                  animationDelay: \`\${i * 0.1}s\`
+                }}
+              />
+            ))}
+          </div>
+        ))}
+      </button>
+    </div>
+  );
+};
+
+// Framer Motion Version with staggered waves
+const SoundWaveEffectFM = () => {
+  const [soundWaves, setSoundWaves] = useState<Array<{id: number, x: number, y: number}>>([]);
+  
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const button = e.currentTarget;
+    const rect = button.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    const newSoundWave = {
+      id: Date.now(),
+      x,
+      y
+    };
+    
+    setSoundWaves(prev => [...prev, newSoundWave]);
+    
+    // Remove sound wave after animation
+    setTimeout(() => {
+      setSoundWaves(prev => prev.filter(w => w.id !== newSoundWave.id));
+    }, 2500);
+  };
+  
+  return (
+    <div className="relative">
+      <motion.button
+        className="px-6 py-3 bg-cyan-500 text-white rounded-lg font-medium hover:bg-cyan-600 transition-colors"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        onClick={handleClick}
+      >
+        Click for Sound Waves
+      </motion.button>
+      
+      <AnimatePresence>
+        {soundWaves.map(soundWave => (
+          <div key={soundWave.id} className="absolute inset-0 pointer-events-none">
+            {Array.from({ length: 6 }).map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute border-2 border-white/50 rounded-full"
+                style={{
+                  left: soundWave.x,
+                  top: soundWave.y,
+                  width: (i + 1) * 25,
+                  height: (i + 1) * 25,
+                }}
+                initial={{ 
+                  scale: 0, 
+                  opacity: 1,
+                  x: 0,
+                  y: 0
+                }}
+                animate={{ 
+                  scale: [0, 1, 2, 3],
+                  opacity: [1, 0.8, 0.4, 0],
+                  x: 0,
+                  y: 0
+                }}
+                transition={{
+                  duration: 2.5,
+                  ease: "easeOut",
+                  delay: i * 0.15
+                }}
+              />
+            ))}
+          </div>
+        ))}
+      </AnimatePresence>
+    </div>
+  );
+};`,
+    preview: (
+      <div className="flex items-center justify-center h-64">
+        <button className="relative overflow-hidden px-6 py-3 bg-cyan-500 text-white rounded-lg font-medium transition-colors hover:bg-cyan-600 active:bg-cyan-700">
+          Click for Sound Waves
+        </button>
+      </div>
+    ),
+  },
 ]
 
   const filteredComponents = components.filter(
