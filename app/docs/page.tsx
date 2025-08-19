@@ -4872,6 +4872,383 @@ useEffect(() => {
     ),
   },
   {
+    name: "Text-Fill Cursor",
+    description: "Cursor reveals gradient fill inside hovered text",
+    code: `// CSS Version with text fill effect
+const TextFillCursor = () => {
+  return (
+    <div className="text-fill-container space-y-6">
+      <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600 hover:from-pink-500 hover:to-orange-500 transition-all duration-500 cursor-pointer">
+        Hover for Text Fill Effect
+      </h2>
+      
+      <p className="text-lg text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-600 hover:from-yellow-500 hover:to-red-500 transition-all duration-500 cursor-pointer">
+        This text reveals beautiful gradients on hover
+      </p>
+      
+      <div className="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-600 hover:from-cyan-500 hover:to-green-500 transition-all duration-500 cursor-pointer">
+        Interactive Typography
+      </div>
+    </div>
+  );
+};
+
+// Framer Motion Version with animated gradients
+const TextFillCursorFM = () => {
+  const [hoveredText, setHoveredText] = useState<string | null>(null);
+  
+  const textVariants = {
+    initial: { backgroundPosition: "0% 50%" },
+    hover: { backgroundPosition: "100% 50%" }
+  };
+  
+  return (
+    <div className="text-fill-container space-y-6">
+      <motion.h2 
+        className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 cursor-pointer"
+        style={{ backgroundSize: "200% 200%" }}
+        variants={textVariants}
+        initial="initial"
+        whileHover="hover"
+        transition={{ duration: 0.8, ease: "easeInOut" }}
+        onHoverStart={() => setHoveredText("title")}
+        onHoverEnd={() => setHoveredText(null)}
+      >
+        Animated Text Fill Effect
+      </motion.h2>
+      
+      <motion.p 
+        className="text-lg text-transparent bg-clip-text bg-gradient-to-r from-green-500 via-blue-500 to-purple-500 cursor-pointer"
+        style={{ backgroundSize: "200% 200%" }}
+        variants={textVariants}
+        initial="initial"
+        whileHover="hover"
+        transition={{ duration: 0.8, ease: "easeInOut" }}
+        onHoverStart={() => setHoveredText("paragraph")}
+        onHoverEnd={() => setHoveredText(null)}
+      >
+        Smooth gradient transitions with Framer Motion
+      </motion.p>
+      
+      <motion.div 
+        className="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500 cursor-pointer"
+        style={{ backgroundSize: "200% 200%" }}
+        variants={textVariants}
+        initial="initial"
+        whileHover="hover"
+        transition={{ duration: 0.8, ease: "easeInOut" }}
+        onHoverStart={() => setHoveredText("subtitle")}
+        onHoverEnd={() => setHoveredText(null)}
+      >
+        Interactive Typography Animation
+      </motion.div>
+      
+      {hoveredText && (
+        <motion.div
+          className="text-sm text-muted-foreground bg-muted px-3 py-2 rounded-lg"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 10 }}
+        >
+          Currently hovering: {hoveredText}
+        </motion.div>
+      )}
+    </div>
+  );
+};`,
+    preview: (
+      <div className="text-fill-container space-y-6">
+        <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600 hover:from-pink-500 hover:to-orange-500 transition-all duration-500 cursor-pointer">
+          Hover for Text Fill Effect
+        </h2>
+        <p className="text-lg text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-600 hover:from-yellow-500 hover:to-red-500 transition-all duration-500 cursor-pointer">
+          This text reveals beautiful gradients on hover
+        </p>
+        <div className="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-600 hover:from-cyan-500 hover:to-green-500 transition-all duration-500 cursor-pointer">
+          Interactive Typography
+        </div>
+      </div>
+    ),
+  },
+  {
+    name: "Cursor Spotlight",
+    description: "Circular spotlight that brightens background under cursor",
+    code: `// CSS Version with spotlight effect
+const CursorSpotlight = () => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isVisible, setIsVisible] = useState(false);
+  
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+      setIsVisible(true);
+    };
+    
+    const handleMouseLeave = () => {
+      setIsVisible(false);
+    };
+    
+    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mouseleave', handleMouseLeave);
+    
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseleave', handleMouseLeave);
+    };
+  }, []);
+  
+  return (
+    <div className="spotlight-container relative h-64 overflow-hidden rounded-lg bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
+      {/* Spotlight Effect */}
+      <div 
+        className={\`absolute w-96 h-96 rounded-full pointer-events-none transition-opacity duration-300 \${
+          isVisible ? 'opacity-100' : 'opacity-0'
+        }\`}
+        style={{
+          background: 'radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 40%, transparent 70%)',
+          left: mousePosition.x - 192,
+          top: mousePosition.y - 192,
+          transform: 'translate(-50%, -50%)'
+        }}
+      />
+      
+      {/* Content */}
+      <div className="relative z-10 flex items-center justify-center h-full">
+        <div className="text-center text-white">
+          <h2 className="text-3xl font-bold mb-2">Cursor Spotlight</h2>
+          <p className="text-white/80">Move your cursor around to see the spotlight effect</p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// Framer Motion Version with smooth spotlight
+const CursorSpotlightFM = () => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isVisible, setIsVisible] = useState(false);
+  
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+      setIsVisible(true);
+    };
+    
+    const handleMouseLeave = () => {
+      setIsVisible(false);
+    };
+    
+    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mouseleave', handleMouseLeave);
+    
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseleave', handleMouseLeave);
+    };
+  }, []);
+  
+  return (
+    <div className="spotlight-container relative h-64 overflow-hidden rounded-lg bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
+      <AnimatePresence>
+        {isVisible && (
+          <motion.div 
+            className="absolute w-96 h-96 rounded-full pointer-events-none"
+            style={{
+              background: 'radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.1) 30%, rgba(255,255,255,0.05) 60%, transparent 80%)',
+              left: mousePosition.x - 192,
+              top: mousePosition.y - 192,
+            }}
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ 
+              scale: 1, 
+              opacity: 1,
+              x: 0,
+              y: 0
+            }}
+            exit={{ scale: 0, opacity: 0 }}
+            transition={{ 
+              type: "spring",
+              stiffness: 300,
+              damping: 30
+            }}
+          />
+        )}
+      </AnimatePresence>
+      
+      {/* Content */}
+      <div className="relative z-10 flex items-center justify-center h-full">
+        <div className="text-center text-white">
+          <h2 className="text-3xl font-bold mb-2">Animated Spotlight</h2>
+          <p className="text-white/80">Smooth spotlight following your cursor</p>
+        </div>
+      </div>
+    </div>
+  );
+};`,
+    preview: (
+      <div className="spotlight-container relative h-64 overflow-hidden rounded-lg bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 flex items-center justify-center">
+        <div className="text-center text-white">
+          <h2 className="text-3xl font-bold mb-2">Cursor Spotlight</h2>
+          <p className="text-white/80">Move your cursor around to see the spotlight effect</p>
+        </div>
+      </div>
+    ),
+  },
+  {
+    name: "Pixelated Cursor",
+    description: "Square/pixel-style cursor that feels retro",
+    code: `// CSS Version with pixelated cursor
+const PixelatedCursor = () => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isVisible, setIsVisible] = useState(false);
+  
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+      setIsVisible(true);
+    };
+    
+    const handleMouseLeave = () => {
+      setIsVisible(false);
+    };
+    
+    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mouseleave', handleMouseLeave);
+    
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseleave', handleMouseLeave);
+    };
+  }, []);
+  
+  return (
+    <div className="pixelated-cursor-container relative h-64 overflow-hidden rounded-lg bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900">
+      {/* Pixelated Cursor */}
+      <div 
+        className={\`absolute w-8 h-8 pointer-events-none transition-all duration-100 \${
+          isVisible ? 'opacity-100' : 'opacity-0'
+        }\`}
+        style={{
+          left: mousePosition.x - 16,
+          top: mousePosition.y - 16,
+          transform: 'translate(-50%, -50%)'
+        }}
+      >
+        {/* Pixel Grid */}
+        <div className="w-full h-full grid grid-cols-4 grid-rows-4 gap-px">
+          {Array.from({ length: 16 }).map((_, i) => (
+            <div 
+              key={i}
+              className="bg-white/80 animate-pulse"
+              style={{ animationDelay: \`\${i * 50}ms\` }}
+            />
+          ))}
+        </div>
+      </div>
+      
+      {/* Content */}
+      <div className="relative z-10 flex items-center justify-center h-full">
+        <div className="text-center text-white">
+          <h2 className="text-3xl font-bold mb-2">Pixelated Cursor</h2>
+          <p className="text-white/80">Retro pixel-style cursor following your mouse</p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// Framer Motion Version with animated pixels
+const PixelatedCursorFM = () => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isVisible, setIsVisible] = useState(false);
+  
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+      setIsVisible(true);
+    };
+    
+    const handleMouseLeave = () => {
+      setIsVisible(false);
+    };
+    
+    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mouseleave', handleMouseLeave);
+    
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseleave', handleMouseLeave);
+    };
+  }, []);
+  
+  return (
+    <div className="pixelated-cursor-container relative h-64 overflow-hidden rounded-lg bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900">
+      <AnimatePresence>
+        {isVisible && (
+          <motion.div 
+            className="absolute w-8 h-8 pointer-events-none"
+            style={{
+              left: mousePosition.x - 16,
+              top: mousePosition.y - 16,
+            }}
+            initial={{ scale: 0, rotate: 0 }}
+            animate={{ 
+              scale: 1, 
+              rotate: 360,
+              x: 0,
+              y: 0
+            }}
+            exit={{ scale: 0, rotate: 0 }}
+            transition={{ 
+              type: "spring",
+              stiffness: 400,
+              damping: 20
+            }}
+          >
+            {/* Animated Pixel Grid */}
+            <div className="w-full h-full grid grid-cols-4 grid-rows-4 gap-px">
+              {Array.from({ length: 16 }).map((_, i) => (
+                <motion.div 
+                  key={i}
+                  className="bg-white/90"
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ 
+                    opacity: [0, 1, 0.8, 1], 
+                    scale: [0, 1.2, 0.9, 1] 
+                  }}
+                  transition={{ 
+                    duration: 1.5,
+                    repeat: Infinity,
+                    delay: i * 0.1,
+                    ease: "easeInOut"
+                  }}
+                />
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      
+      {/* Content */}
+      <div className="relative z-10 flex items-center justify-center h-full">
+        <div className="text-center text-white">
+          <h2 className="text-3xl font-bold mb-2">Animated Pixel Cursor</h2>
+          <p className="text-white/80">Dynamic pixel grid with Framer Motion</p>
+        </div>
+      </div>
+    </div>
+  );
+};`,
+    preview: (
+      <div className="pixelated-cursor-container relative h-64 overflow-hidden rounded-lg bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 flex items-center justify-center">
+        <div className="text-center text-white">
+          <h2 className="text-3xl font-bold mb-2">Pixelated Cursor</h2>
+          <p className="text-white/80">Retro pixel-style cursor following your mouse</p>
+        </div>
+      </div>
+    ),
+  },
+  {
     name: "Animated Gradient Background",
     description: "Linear and radial gradients smoothly shifting colors with CSS animations",
     code: `// CSS Version
