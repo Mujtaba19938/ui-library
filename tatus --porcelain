@@ -1,0 +1,48 @@
+warning: in the working copy of 'app/docs/page.tsx', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/app/docs/page.tsx b/app/docs/page.tsx[m
+[1mindex 0f66975..ebb8c6b 100644[m
+[1m--- a/app/docs/page.tsx[m
+[1m+++ b/app/docs/page.tsx[m
+[36m@@ -2982,42 +2982,6 @@[m [mfunction App() {[m
+           </div>[m
+         ),[m
+       },[m
+[31m-      {[m
+[31m-        name: "Breadcrumbs",[m
+[31m-        description: "Navigation breadcrumbs showing user's location in hierarchy",[m
+[31m-        code: `<Breadcrumb>[m
+[31m-  <BreadcrumbList>[m
+[31m-    <BreadcrumbItem>[m
+[31m-      <BreadcrumbLink href="/">Home</BreadcrumbLink>[m
+[31m-    </BreadcrumbItem>[m
+[31m-    <BreadcrumbSeparator />[m
+[31m-    <BreadcrumbItem>[m
+[31m-      <BreadcrumbLink href="/docs">Documentation</BreadcrumbLink>[m
+[31m-    </BreadcrumbItem>[m
+[31m-    <BreadcrumbSeparator />[m
+[31m-    <BreadcrumbItem>[m
+[31m-      <BreadcrumbPage>Components</BreadcrumbPage>[m
+[31m-    </BreadcrumbItem>[m
+[31m-  </BreadcrumbList>[m
+[31m-</Breadcrumb>`,[m
+[31m-        preview: ([m
+[31m-          <Breadcrumb>[m
+[31m-            <BreadcrumbList>[m
+[31m-              <BreadcrumbItem>[m
+[31m-                <BreadcrumbLink href="/">Home</BreadcrumbLink>[m
+[31m-              </BreadcrumbItem>[m
+[31m-              <BreadcrumbSeparator />[m
+[31m-              <BreadcrumbItem>[m
+[31m-                <BreadcrumbLink href="/docs">Documentation</BreadcrumbLink>[m
+[31m-              </BreadcrumbItem>[m
+[31m-              <BreadcrumbSeparator />[m
+[31m-              <BreadcrumbItem>[m
+[31m-                <BreadcrumbPage>Components</BreadcrumbPage>[m
+[31m-              </BreadcrumbItem>[m
+[31m-            </BreadcrumbList>[m
+[31m-          </Breadcrumb>[m
+[31m-        ),[m
+[31m-      },[m
+       {[m
+         name: "Advanced Tabs",[m
+         description: "Horizontal and vertical tabs with smooth animations",[m

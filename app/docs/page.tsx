@@ -336,11 +336,11 @@ export default function DocsPage() {
           <div className="flex items-center space-x-2">
             <RadioGroupItem value="option-one" id="option-one" />
             <Label htmlFor="option-one">Option One</Label>
-          </div>
+</div>
           <div className="flex items-center space-x-2">
             <RadioGroupItem value="option-two" id="option-two" />
             <Label htmlFor="option-two">Option Two</Label>
-          </div>
+</div>
         </RadioGroup>
       ),
     },
@@ -375,7 +375,7 @@ export default function DocsPage() {
         <div className="grid w-full gap-1.5">
           <Label htmlFor="message">Message</Label>
           <Textarea placeholder="Type your message here." />
-        </div>
+</div>
       ),
     },
     {
@@ -383,7 +383,9 @@ export default function DocsPage() {
       description: "Hover tooltip component",
       code: `<TooltipProvider>
   <Tooltip>
-    <TooltipTrigger>Hover me</TooltipTrigger>
+    <TooltipTrigger asChild>
+      <Button variant="outline">Hover me</Button>
+    </TooltipTrigger>
     <TooltipContent>
       <p>Tooltip content</p>
     </TooltipContent>
@@ -488,7 +490,7 @@ export default function DocsPage() {
     </SheetHeader>
     <div className="py-4">
       <p>Sheet content goes here.</p>
-    </div>
+</div>
   </SheetContent>
 </Sheet>`,
       preview: (
@@ -505,7 +507,7 @@ export default function DocsPage() {
             </SheetHeader>
             <div className="py-4">
               <p>Sheet content goes here.</p>
-            </div>
+</div>
           </SheetContent>
         </Sheet>
       ),
@@ -523,7 +525,7 @@ export default function DocsPage() {
           <div>Content above</div>
           <Separator />
           <div>Content below</div>
-        </div>
+</div>
       ),
     },
     {
@@ -542,7 +544,7 @@ export default function DocsPage() {
     </DrawerHeader>
     <div className="p-4">
       <p>Drawer content goes here.</p>
-    </div>
+</div>
   </DrawerContent>
 </Drawer>`,
       preview: (
@@ -559,7 +561,7 @@ export default function DocsPage() {
             </DrawerHeader>
             <div className="p-4">
               <p>Drawer content goes here.</p>
-            </div>
+</div>
           </DrawerContent>
         </Drawer>
       ),
@@ -580,8 +582,8 @@ export default function DocsPage() {
       <div className="space-y-1">
         <h4 className="text-sm font-semibold">@username</h4>
         <p className="text-sm">User description</p>
-      </div>
-    </div>
+</div>
+</div>
   </HoverCardContent>
 </HoverCard>`,
       preview: (
@@ -598,8 +600,8 @@ export default function DocsPage() {
               <div className="space-y-1">
                 <h4 className="text-sm font-semibold">@username</h4>
                 <p className="text-sm">User description</p>
-              </div>
-            </div>
+</div>
+</div>
           </HoverCardContent>
         </HoverCard>
       ),
@@ -804,12 +806,12 @@ export default function DocsPage() {
           <div className="flex items-center space-x-2">
             <Label htmlFor="airplane-mode">Airplane mode</Label>
             <Switch id="airplane-mode" />
-          </div>
+</div>
           <div className="flex items-center space-x-2">
             <Label htmlFor="wifi">Wi-Fi</Label>
             <Switch id="wifi" defaultChecked />
-          </div>
-        </div>
+</div>
+</div>
       ),
     },
     {
@@ -875,13 +877,13 @@ export default function DocsPage() {
   <ResizablePanel defaultSize={25}>
     <div className="flex h-full items-center justify-center p-6">
       <span className="font-semibold">Sidebar</span>
-    </div>
+</div>
   </ResizablePanel>
   <ResizableHandle />
   <ResizablePanel defaultSize={75}>
     <div className="flex h-full items-center justify-center p-6">
       <span className="font-semibold">Content</span>
-    </div>
+</div>
   </ResizablePanel>
 </ResizablePanelGroup>`,
       preview: (
@@ -889,13 +891,13 @@ export default function DocsPage() {
           <ResizablePanel defaultSize={25}>
             <div className="flex h-full items-center justify-center p-6 bg-muted/50">
               <span className="font-semibold">Sidebar</span>
-            </div>
+</div>
           </ResizablePanel>
           <ResizableHandle />
           <ResizablePanel defaultSize={75}>
             <div className="flex h-full items-center justify-center p-6">
               <span className="font-semibold">Content</span>
-            </div>
+</div>
           </ResizablePanel>
         </ResizablePanelGroup>
       ),
@@ -912,7 +914,7 @@ export default function DocsPage() {
             <span className="text-4xl font-semibold">1</span>
           </CardContent>
         </Card>
-      </div>
+</div>
     </CarouselItem>
     <CarouselItem>
       <div className="p-1">
@@ -921,7 +923,7 @@ export default function DocsPage() {
             <span className="text-4xl font-semibold">2</span>
           </CardContent>
         </Card>
-      </div>
+</div>
     </CarouselItem>
     <CarouselItem>
       <div className="p-1">
@@ -930,7 +932,7 @@ export default function DocsPage() {
             <span className="text-4xl font-semibold">3</span>
           </CardContent>
         </Card>
-      </div>
+</div>
     </CarouselItem>
   </CarouselContent>
   <CarouselPrevious />
@@ -946,7 +948,7 @@ export default function DocsPage() {
                     <span className="text-4xl font-semibold">1</span>
                   </CardContent>
                 </Card>
-              </div>
+</div>
             </CarouselItem>
             <CarouselItem>
               <div className="p-1">
@@ -955,7 +957,7 @@ export default function DocsPage() {
                     <span className="text-4xl font-semibold">2</span>
                   </CardContent>
                 </Card>
-              </div>
+</div>
             </CarouselItem>
             <CarouselItem>
               <div className="p-1">
@@ -964,7 +966,7 @@ export default function DocsPage() {
                     <span className="text-4xl font-semibold">3</span>
                   </CardContent>
                 </Card>
-              </div>
+</div>
             </CarouselItem>
           </CarouselContent>
           <CarouselPrevious />
@@ -1078,7 +1080,7 @@ export default function DocsPage() {
       range from family-friendly to slightly edgy, but always delivered with 
       perfect timing and a contagious laugh that makes everyone around him smile.
     </p>
-  </div>
+</div>
 </ScrollArea>`,
       preview: (
         <ScrollArea className="h-[200px] w-[350px] rounded-md border p-4">
@@ -1096,7 +1098,7 @@ export default function DocsPage() {
               range from family-friendly to slightly edgy, but always delivered with 
               perfect timing and a contagious laugh that makes everyone around him smile.
             </p>
-          </div>
+</div>
         </ScrollArea>
       ),
     },
@@ -1144,10 +1146,10 @@ export default function DocsPage() {
   <CollapsibleContent className="space-y-2">
     <div className="rounded-md border px-4 py-3 text-sm">
       <p>This is the collapsible content. You can put any content here.</p>
-    </div>
+</div>
     <div className="rounded-md border px-4 py-3 text-sm">
       <p>More content can be added in multiple sections.</p>
-    </div>
+</div>
   </CollapsibleContent>
 </Collapsible>`,
       preview: (
@@ -1161,10 +1163,10 @@ export default function DocsPage() {
           <CollapsibleContent className="space-y-2">
             <div className="rounded-md border px-4 py-3 text-sm">
               <p>This is the collapsible content. You can put any content here.</p>
-            </div>
+</div>
             <div className="rounded-md border px-4 py-3 text-sm">
               <p>More content can be added in multiple sections.</p>
-            </div>
+</div>
           </CollapsibleContent>
         </Collapsible>
       ),
@@ -1258,7 +1260,7 @@ export default function DocsPage() {
       }
       className="max-w-sm"
     />
-  </div>
+</div>
   <div className="rounded-md border">
     <Table>
       <TableHeader>
@@ -1299,7 +1301,7 @@ export default function DocsPage() {
         )}
       </TableBody>
     </Table>
-  </div>
+</div>
 </div>`,
       preview: (
         <div className="space-y-4">
@@ -1308,7 +1310,7 @@ export default function DocsPage() {
               placeholder="Filter emails..."
               className="max-w-sm"
             />
-          </div>
+</div>
           <div className="rounded-md border">
             <Table>
               <TableHeader>
@@ -1338,8 +1340,8 @@ export default function DocsPage() {
                 </TableRow>
               </TableBody>
             </Table>
-          </div>
-        </div>
+</div>
+</div>
       ),
     },
     {
@@ -1387,13 +1389,13 @@ export default function DocsPage() {
             <p className="text-sm text-muted-foreground">
               This is your public display name.
             </p>
-          </div>
+</div>
           <div className="space-y-2">
             <Label htmlFor="email">Email</Label>
             <Input id="email" placeholder="m@example.com" />
-          </div>
+</div>
           <Button>Submit</Button>
-        </div>
+</div>
       ),
     },
     {
@@ -1404,38 +1406,38 @@ export default function DocsPage() {
     <div className="flex items-center space-x-2">
       <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground text-sm font-medium">
         1
-      </div>
+</div>
       <span className="text-sm font-medium">Account</span>
-    </div>
+</div>
     <div className="h-px w-8 bg-border" />
     <div className="flex items-center space-x-2">
       <div className="flex h-8 w-8 items-center justify-center rounded-full border border-border text-sm font-medium">
         2
-      </div>
+</div>
       <span className="text-sm text-muted-foreground">Profile</span>
-    </div>
+</div>
     <div className="h-px w-8 bg-border" />
     <div className="flex items-center space-x-2">
       <div className="flex h-8 w-8 items-center justify-center rounded-full border border-border text-sm font-medium">
         3
-      </div>
+</div>
       <span className="text-sm text-muted-foreground">Review</span>
-    </div>
-  </div>
+</div>
+</div>
   <div className="space-y-4">
     <div className="space-y-2">
       <Label htmlFor="email">Email</Label>
       <Input id="email" type="email" placeholder="Enter your email" />
-    </div>
+</div>
     <div className="space-y-2">
       <Label htmlFor="password">Password</Label>
       <Input id="password" type="password" placeholder="Enter your password" />
-    </div>
+</div>
     <div className="flex space-x-2">
       <Button variant="outline" className="flex-1">Back</Button>
       <Button className="flex-1">Next</Button>
-    </div>
-  </div>
+</div>
+</div>
 </div>`,
       preview: (
         <div className="space-y-6">
@@ -1443,39 +1445,39 @@ export default function DocsPage() {
             <div className="flex items-center space-x-2">
               <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground text-sm font-medium">
                 1
-              </div>
+</div>
               <span className="text-sm font-medium">Account</span>
-            </div>
+</div>
             <div className="h-px w-8 bg-border" />
             <div className="flex items-center space-x-2">
               <div className="flex h-8 w-8 items-center justify-center rounded-full border border-border text-sm font-medium">
                 2
-              </div>
+</div>
               <span className="text-sm text-muted-foreground">Profile</span>
-            </div>
+</div>
             <div className="h-px w-8 bg-border" />
             <div className="flex items-center space-x-2">
               <div className="flex h-8 w-8 items-center justify-center rounded-full border border-border text-sm font-medium">
                 3
-              </div>
+</div>
               <span className="text-sm text-muted-foreground">Review</span>
-            </div>
-          </div>
+</div>
+</div>
           <div className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
               <Input id="email" type="email" placeholder="Enter your email" />
-            </div>
+</div>
             <div className="space-y-2">
               <Label htmlFor="password">Password</Label>
               <Input id="password" type="password" placeholder="Enter your password" />
-            </div>
+</div>
             <div className="flex space-x-2">
               <Button variant="outline" className="flex-1">Back</Button>
               <Button className="flex-1">Next</Button>
-            </div>
-          </div>
-        </div>
+</div>
+</div>
+</div>
       ),
     },
     {
@@ -1539,7 +1541,7 @@ export default function DocsPage() {
               <p>Content for the third card goes here.</p>
             </CardContent>
           </Card>
-        </div>
+</div>
       ),
     },
     {
@@ -1549,79 +1551,79 @@ export default function DocsPage() {
   <div className="flex items-start space-x-4">
     <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground text-sm font-medium">
       1
-    </div>
+</div>
     <div className="space-y-1">
       <h4 className="text-sm font-medium leading-none">Application submitted</h4>
       <p className="text-sm text-muted-foreground">
         Your application has been submitted successfully.
       </p>
       <p className="text-xs text-muted-foreground">2 hours ago</p>
-    </div>
-  </div>
+</div>
+</div>
   <div className="flex items-start space-x-4">
     <div className="flex h-8 w-8 items-center justify-center rounded-full border border-border text-sm font-medium">
       2
-    </div>
+</div>
     <div className="space-y-1">
       <h4 className="text-sm font-medium leading-none">Under review</h4>
       <p className="text-sm text-muted-foreground">
         Your application is currently being reviewed by our team.
       </p>
       <p className="text-xs text-muted-foreground">1 hour ago</p>
-    </div>
-  </div>
+</div>
+</div>
   <div className="flex items-start space-x-4">
     <div className="flex h-8 w-8 items-center justify-center rounded-full border border-border text-sm font-medium">
       3
-    </div>
+</div>
     <div className="space-y-1">
       <h4 className="text-sm font-medium leading-none">Decision</h4>
       <p className="text-sm text-muted-foreground">
         You will receive a decision within 24-48 hours.
       </p>
       <p className="text-xs text-muted-foreground">Pending</p>
-    </div>
-  </div>
+</div>
+</div>
 </div>`,
       preview: (
         <div className="space-y-8">
           <div className="flex items-start space-x-4">
             <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground text-sm font-medium">
               1
-            </div>
+</div>
             <div className="space-y-1">
               <h4 className="text-sm font-medium leading-none">Application submitted</h4>
               <p className="text-sm text-muted-foreground">
                 Your application has been submitted successfully.
               </p>
               <p className="text-xs text-muted-foreground">2 hours ago</p>
-            </div>
-          </div>
+</div>
+</div>
           <div className="flex items-start space-x-4">
             <div className="flex h-8 w-8 items-center justify-center rounded-full border border-border text-sm font-medium">
               2
-            </div>
+</div>
             <div className="space-y-1">
               <h4 className="text-sm font-medium leading-none">Under review</h4>
               <p className="text-sm text-muted-foreground">
                 Your application is currently being reviewed by our team.
               </p>
               <p className="text-xs text-muted-foreground">1 hour ago</p>
-            </div>
-          </div>
+</div>
+</div>
           <div className="flex items-start space-x-4">
             <div className="flex h-8 w-8 items-center justify-center rounded-full border border-border text-sm font-medium">
               3
-            </div>
+</div>
             <div className="space-y-1">
               <h4 className="text-sm font-medium leading-none">Decision</h4>
               <p className="text-sm text-muted-foreground">
                 You will receive a decision within 24-48 hours.
               </p>
               <p className="text-xs text-muted-foreground">Pending</p>
-            </div>
-          </div>
-        </div>
+</div>
+</div>
+</div>
       ),
     },
     {
@@ -1727,7 +1729,7 @@ export default function DocsPage() {
               </p>
             </CardContent>
           </Card>
-        </div>
+</div>
       ),
     },
 
@@ -1746,16 +1748,16 @@ export default function DocsPage() {
         <div className="flex items-center space-x-2">
           <Check className="h-4 w-4 text-green-500" />
           <span className="text-sm">Up to 10 projects</span>
-        </div>
+</div>
         <div className="flex items-center space-x-2">
           <Check className="h-4 w-4 text-green-500" />
           <span className="text-sm">Basic analytics</span>
-        </div>
+</div>
         <div className="flex items-center space-x-2">
           <Check className="h-4 w-4 text-green-500" />
           <span className="text-sm">Email support</span>
-        </div>
-      </div>
+</div>
+</div>
       <Button className="w-full">Get Started</Button>
     </CardContent>
   </Card>
@@ -1770,16 +1772,16 @@ export default function DocsPage() {
         <div className="flex items-center space-x-2">
           <Check className="h-4 w-4 text-green-500" />
           <span className="text-sm">Unlimited projects</span>
-        </div>
+</div>
         <div className="flex items-center space-x-2">
           <Check className="h-4 w-4 text-green-500" />
           <span className="text-sm">Advanced analytics</span>
-        </div>
+</div>
         <div className="flex items-center space-x-2">
           <Check className="h-4 w-4 text-green-500" />
           <span className="text-sm">Priority support</span>
-        </div>
-      </div>
+</div>
+</div>
       <Button className="w-full">Get Started</Button>
     </CardContent>
   </Card>
@@ -1794,16 +1796,16 @@ export default function DocsPage() {
         <div className="flex items-center space-x-2">
           <Check className="h-4 w-4 text-green-500" />
           <span className="text-sm">Everything in Pro</span>
-        </div>
+</div>
         <div className="flex items-center space-x-2">
           <Check className="h-4 w-4 text-green-500" />
           <span className="text-sm">Custom integrations</span>
-        </div>
+</div>
         <div className="flex items-center space-x-2">
           <Check className="h-4 w-4 text-green-500" />
           <span className="text-sm">Dedicated support</span>
-        </div>
-      </div>
+</div>
+</div>
       <Button className="w-full">Contact Sales</Button>
     </CardContent>
   </Card>
@@ -1821,16 +1823,16 @@ export default function DocsPage() {
                 <div className="flex items-center space-x-2">
                   <Check className="h-4 w-4 text-green-500" />
                   <span className="text-sm">Up to 10 projects</span>
-                </div>
+</div>
                 <div className="flex items-center space-x-2">
                   <Check className="h-4 w-4 text-green-500" />
                   <span className="text-sm">Basic analytics</span>
-                </div>
+</div>
                 <div className="flex items-center space-x-2">
                   <Check className="h-4 w-4 text-green-500" />
                   <span className="text-sm">Email support</span>
-                </div>
-              </div>
+</div>
+</div>
               <Button className="w-full">Get Started</Button>
             </CardContent>
           </Card>
@@ -1845,16 +1847,16 @@ export default function DocsPage() {
                 <div className="flex items-center space-x-2">
                   <Check className="h-4 w-4 text-green-500" />
                   <span className="text-sm">Unlimited projects</span>
-                </div>
+</div>
                 <div className="flex items-center space-x-2">
                   <Check className="h-4 w-4 text-green-500" />
                   <span className="text-sm">Advanced analytics</span>
-                </div>
+</div>
                 <div className="flex items-center space-x-2">
                   <Check className="h-4 w-4 text-green-500" />
                   <span className="text-sm">Priority support</span>
-                </div>
-              </div>
+</div>
+</div>
               <Button className="w-full">Get Started</Button>
             </CardContent>
           </Card>
@@ -1869,20 +1871,20 @@ export default function DocsPage() {
                 <div className="flex items-center space-x-2">
                   <Check className="h-4 w-4 text-green-500" />
                   <span className="text-sm">Everything in Pro</span>
-                </div>
+</div>
                 <div className="flex items-center space-x-2">
                   <Check className="h-4 w-4 text-green-500" />
                   <span className="text-sm">Custom integrations</span>
-                </div>
+</div>
                 <div className="flex items-center space-x-2">
                   <Check className="h-4 w-4 text-green-500" />
                   <span className="text-sm">Dedicated support</span>
-                </div>
-              </div>
+</div>
+</div>
               <Button className="w-full">Contact Sales</Button>
             </CardContent>
           </Card>
-        </div>
+</div>
       ),
     },
     {
@@ -1892,79 +1894,79 @@ export default function DocsPage() {
   <div className="flex items-start space-x-4 rounded-lg border p-4">
     <div className="flex h-8 w-8 items-center justify-center rounded-full bg-green-100">
       <CheckCircle className="h-4 w-4 text-green-600" />
-    </div>
+</div>
     <div className="flex-1 space-y-1">
       <p className="text-sm font-medium">Payment successful</p>
       <p className="text-sm text-muted-foreground">
         Your payment of $29.99 has been processed successfully.
       </p>
       <p className="text-xs text-muted-foreground">2 minutes ago</p>
-    </div>
-  </div>
+</div>
+</div>
   <div className="flex items-start space-x-4 rounded-lg border p-4">
     <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-100">
       <Info className="h-4 w-4 text-blue-600" />
-    </div>
+</div>
     <div className="flex-1 space-y-1">
       <p className="text-sm font-medium">New feature available</p>
       <p className="text-sm text-muted-foreground">
         Check out our new dashboard analytics feature.
       </p>
       <p className="text-xs text-muted-foreground">1 hour ago</p>
-    </div>
-  </div>
+</div>
+</div>
   <div className="flex items-start space-x-4 rounded-lg border p-4">
     <div className="flex h-8 w-8 items-center justify-center rounded-full bg-yellow-100">
       <AlertTriangle className="h-4 w-4 text-yellow-600" />
-    </div>
+</div>
     <div className="flex-1 space-y-1">
       <p className="text-sm font-medium">Storage warning</p>
       <p className="text-sm text-muted-foreground">
         You're using 85% of your storage space.
       </p>
       <p className="text-xs text-muted-foreground">3 hours ago</p>
-    </div>
-  </div>
+</div>
+</div>
 </div>`,
       preview: (
         <div className="space-y-4">
           <div className="flex items-start space-x-4 rounded-lg border p-4">
             <div className="flex h-8 w-8 items-center justify-center rounded-full bg-green-100">
               <CheckCircle className="h-4 w-4 text-green-600" />
-            </div>
+</div>
             <div className="flex-1 space-y-1">
               <p className="text-sm font-medium">Payment successful</p>
               <p className="text-sm text-muted-foreground">
                 Your payment of $29.99 has been processed successfully.
               </p>
               <p className="text-xs text-muted-foreground">2 minutes ago</p>
-            </div>
-          </div>
+</div>
+</div>
           <div className="flex items-start space-x-4 rounded-lg border p-4">
             <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-100">
               <Info className="h-4 w-4 text-blue-600" />
-            </div>
+</div>
             <div className="flex-1 space-y-1">
               <p className="text-sm font-medium">New feature available</p>
               <p className="text-sm text-muted-foreground">
                 Check out our new dashboard analytics feature.
               </p>
               <p className="text-xs text-muted-foreground">1 hour ago</p>
-            </div>
-          </div>
+</div>
+</div>
           <div className="flex items-start space-x-4 rounded-lg border p-4">
             <div className="flex h-8 w-8 items-center justify-center rounded-full bg-yellow-100">
               <AlertTriangle className="h-4 w-4 text-yellow-600" />
-            </div>
+</div>
             <div className="flex-1 space-y-1">
               <p className="text-sm font-medium">Storage warning</p>
               <p className="text-sm text-muted-foreground">
                 You're using 85% of your storage space.
               </p>
               <p className="text-xs text-muted-foreground">3 hours ago</p>
-            </div>
-          </div>
-        </div>
+</div>
+</div>
+</div>
       ),
     },
     {
@@ -1975,7 +1977,7 @@ export default function DocsPage() {
     <div className="flex items-center space-x-2">
       <span className="text-sm text-muted-foreground">Showing 24 results</span>
       <Badge variant="secondary">Filtered</Badge>
-    </div>
+</div>
     <Select defaultValue="relevance">
       <SelectTrigger className="w-[180px]">
         <SelectValue placeholder="Sort by" />
@@ -1987,12 +1989,12 @@ export default function DocsPage() {
         <SelectItem value="popular">Most Popular</SelectItem>
       </SelectContent>
     </Select>
-  </div>
+</div>
   <div className="space-y-3">
     <div className="flex items-start space-x-4 rounded-lg border p-4">
       <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
         <FileText className="h-6 w-6 text-primary" />
-      </div>
+</div>
       <div className="flex-1 space-y-1">
         <h3 className="text-sm font-medium">Getting Started Guide</h3>
         <p className="text-sm text-muted-foreground">
@@ -2002,13 +2004,13 @@ export default function DocsPage() {
           <span>Documentation</span>
           <span>•</span>
           <span>Updated 2 days ago</span>
-        </div>
-      </div>
-    </div>
+</div>
+</div>
+</div>
     <div className="flex items-start space-x-4 rounded-lg border p-4">
       <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
         <Video className="h-6 w-6 text-primary" />
-      </div>
+</div>
       <div className="flex-1 space-y-1">
         <h3 className="text-sm font-medium">Video Tutorial</h3>
         <p className="text-sm text-muted-foreground">
@@ -2018,10 +2020,10 @@ export default function DocsPage() {
           <span>Video</span>
           <span>•</span>
           <span>15 min</span>
-        </div>
-      </div>
-    </div>
-  </div>
+</div>
+</div>
+</div>
+</div>
 </div>`,
       preview: (
         <div className="space-y-4">
@@ -2029,7 +2031,7 @@ export default function DocsPage() {
             <div className="flex items-center space-x-2">
               <span className="text-sm text-muted-foreground">Showing 24 results</span>
               <Badge variant="secondary">Filtered</Badge>
-            </div>
+</div>
             <Select defaultValue="relevance">
               <SelectTrigger className="w-[180px]">
                 <SelectValue placeholder="Sort by" />
@@ -2041,12 +2043,12 @@ export default function DocsPage() {
                 <SelectItem value="popular">Most Popular</SelectItem>
               </SelectContent>
             </Select>
-          </div>
+</div>
           <div className="space-y-3">
             <div className="flex items-start space-x-4 rounded-lg border p-4">
               <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
                 <FileText className="h-6 w-6 text-primary" />
-              </div>
+</div>
               <div className="flex-1 space-y-1">
                 <h3 className="text-sm font-medium">Getting Started Guide</h3>
                 <p className="text-sm text-muted-foreground">
@@ -2056,13 +2058,13 @@ export default function DocsPage() {
                   <span>Documentation</span>
                   <span>•</span>
                   <span>Updated 2 days ago</span>
-                </div>
-              </div>
-            </div>
+</div>
+</div>
+</div>
             <div className="flex items-start space-x-4 rounded-lg border p-4">
               <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
                 <Video className="h-6 w-6 text-primary" />
-              </div>
+</div>
               <div className="flex-1 space-y-1">
                 <h3 className="text-sm font-medium">Video Tutorial</h3>
                 <p className="text-sm text-muted-foreground">
@@ -2072,11 +2074,11 @@ export default function DocsPage() {
                   <span>Video</span>
                   <span>•</span>
                   <span>15 min</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+</div>
+</div>
+</div>
+</div>
+</div>
       ),
     },
     {
@@ -2086,7 +2088,7 @@ export default function DocsPage() {
   <div className="rounded-lg border-2 border-dashed border-border p-8 text-center">
     <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
       <Upload className="h-6 w-6 text-primary" />
-    </div>
+</div>
     <h3 className="mb-2 text-lg font-semibold">Upload files</h3>
     <p className="mb-4 text-sm text-muted-foreground">
       Drag and drop your files here, or click to browse
@@ -2094,11 +2096,11 @@ export default function DocsPage() {
     <div className="flex items-center justify-center space-x-2">
       <Button>Choose Files</Button>
       <span className="text-sm text-muted-foreground">or drag and drop</span>
-    </div>
+</div>
     <p className="mt-2 text-xs text-muted-foreground">
       PNG, JPG, GIF up to 10MB
     </p>
-  </div>
+</div>
   <div className="space-y-2">
     <div className="flex items-center justify-between rounded-lg border p-3">
       <div className="flex items-center space-x-3">
@@ -2106,34 +2108,34 @@ export default function DocsPage() {
         <div>
           <p className="text-sm font-medium">document.pdf</p>
           <p className="text-xs text-muted-foreground">2.4 MB</p>
-        </div>
-      </div>
+</div>
+</div>
       <div className="flex items-center space-x-2">
         <Progress value={75} className="w-20" />
         <Button variant="ghost" size="sm">Remove</Button>
-      </div>
-    </div>
+</div>
+</div>
     <div className="flex items-center justify-between rounded-lg border p-3">
       <div className="flex items-center space-x-3">
         <Image className="h-8 w-8 text-green-500" />
         <div>
           <p className="text-sm font-medium">image.jpg</p>
           <p className="text-xs text-muted-foreground">1.2 MB</p>
-        </div>
-      </div>
+</div>
+</div>
       <div className="flex items-center space-x-2">
         <Check className="h-4 w-4 text-green-500" />
         <Button variant="ghost" size="sm">Remove</Button>
-      </div>
-    </div>
-  </div>
+</div>
+</div>
+</div>
 </div>`,
       preview: (
         <div className="space-y-4">
           <div className="rounded-lg border-2 border-dashed border-border p-8 text-center">
             <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
               <Upload className="h-6 w-6 text-primary" />
-            </div>
+</div>
             <h3 className="mb-2 text-lg font-semibold">Upload files</h3>
             <p className="mb-4 text-sm text-muted-foreground">
               Drag and drop your files here, or click to browse
@@ -2141,11 +2143,11 @@ export default function DocsPage() {
             <div className="flex items-center justify-center space-x-2">
               <Button>Choose Files</Button>
               <span className="text-sm text-muted-foreground">or drag and drop</span>
-            </div>
+</div>
             <p className="mt-2 text-xs text-muted-foreground">
               PNG, JPG, GIF up to 10MB
             </p>
-          </div>
+</div>
           <div className="space-y-2">
             <div className="flex items-center justify-between rounded-lg border p-3">
               <div className="flex items-center space-x-3">
@@ -2153,28 +2155,28 @@ export default function DocsPage() {
                 <div>
                   <p className="text-sm font-medium">document.pdf</p>
                   <p className="text-xs text-muted-foreground">2.4 MB</p>
-                </div>
-              </div>
+</div>
+</div>
               <div className="flex items-center space-x-2">
                 <Progress value={75} className="w-20" />
                 <Button variant="ghost" size="sm">Remove</Button>
-              </div>
-            </div>
+</div>
+</div>
             <div className="flex items-center justify-between rounded-lg border p-3">
               <div className="flex items-center space-x-3">
                 <Image className="h-8 w-8 text-green-500" />
                 <div>
                   <p className="text-sm font-medium">image.jpg</p>
                   <p className="text-xs text-muted-foreground">1.2 MB</p>
-                </div>
-              </div>
+</div>
+</div>
               <div className="flex items-center space-x-2">
                 <Check className="h-4 w-4 text-green-500" />
                 <Button variant="ghost" size="sm">Remove</Button>
-              </div>
-            </div>
-          </div>
-        </div>
+</div>
+</div>
+</div>
+</div>
       ),
     },
     {
@@ -2189,11 +2191,11 @@ export default function DocsPage() {
       <div className="flex items-center space-x-2">
         <span className="text-sm font-medium">John Doe</span>
         <span className="text-sm text-muted-foreground">created a new project</span>
-      </div>
+</div>
       <p className="text-sm text-muted-foreground">Project Alpha</p>
       <p className="text-xs text-muted-foreground">2 minutes ago</p>
-    </div>
-  </div>
+</div>
+</div>
   <div className="flex items-start space-x-4">
     <Avatar className="h-8 w-8">
       <AvatarFallback className="text-xs font-medium">JS</AvatarFallback>
@@ -2203,11 +2205,11 @@ export default function DocsPage() {
         <span className="text-sm font-medium">Jane Smith</span>
         <span className="text-sm text-muted-foreground">commented on</span>
         <span className="text-sm font-medium">Task #123</span>
-      </div>
+</div>
       <p className="text-sm text-muted-foreground">"Great work on this feature!"</p>
       <p className="text-xs text-muted-foreground">15 minutes ago</p>
-    </div>
-  </div>
+</div>
+</div>
   <div className="flex items-start space-x-4">
     <Avatar className="h-8 w-8">
       <AvatarFallback className="text-xs font-medium">MJ</AvatarFallback>
@@ -2217,11 +2219,11 @@ export default function DocsPage() {
         <span className="text-sm font-medium">Mike Johnson</span>
         <span className="text-sm text-muted-foreground">updated the status of</span>
         <span className="text-sm font-medium">Bug #456</span>
-      </div>
+</div>
       <p className="text-sm text-muted-foreground">Status changed from "In Progress" to "Resolved"</p>
       <p className="text-xs text-muted-foreground">1 hour ago</p>
-    </div>
-  </div>
+</div>
+</div>
 </div>`,
       preview: (
         <div className="space-y-6">
@@ -2233,11 +2235,11 @@ export default function DocsPage() {
               <div className="flex items-center space-x-2">
                 <span className="text-sm font-medium">John Doe</span>
                 <span className="text-sm text-muted-foreground">created a new project</span>
-              </div>
+</div>
               <p className="text-sm text-muted-foreground">Project Alpha</p>
               <p className="text-xs text-muted-foreground">2 minutes ago</p>
-            </div>
-          </div>
+</div>
+</div>
           <div className="flex items-start space-x-4">
             <Avatar className="h-8 w-8">
               <AvatarFallback className="text-xs font-medium">JS</AvatarFallback>
@@ -2247,11 +2249,11 @@ export default function DocsPage() {
                 <span className="text-sm font-medium">Jane Smith</span>
                 <span className="text-sm text-muted-foreground">commented on</span>
                 <span className="text-sm font-medium">Task #123</span>
-              </div>
+</div>
               <p className="text-sm text-muted-foreground">"Great work on this feature!"</p>
               <p className="text-xs text-muted-foreground">15 minutes ago</p>
-            </div>
-          </div>
+</div>
+</div>
           <div className="flex items-start space-x-4">
             <Avatar className="h-8 w-8">
               <AvatarFallback className="text-xs font-medium">MJ</AvatarFallback>
@@ -2261,12 +2263,12 @@ export default function DocsPage() {
                 <span className="text-sm font-medium">Mike Johnson</span>
                 <span className="text-sm text-muted-foreground">updated the status of</span>
                 <span className="text-sm font-medium">Bug #456</span>
-              </div>
+</div>
               <p className="text-sm text-muted-foreground">Status changed from "In Progress" to "Resolved"</p>
               <p className="text-xs text-muted-foreground">1 hour ago</p>
-            </div>
-          </div>
-        </div>
+</div>
+</div>
+</div>
       ),
     },
     {
@@ -2276,67 +2278,67 @@ export default function DocsPage() {
   <div className="flex items-center space-x-2">
     <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground text-sm font-medium">
       1
-    </div>
+</div>
     <div className="flex-1">
       <p className="text-sm font-medium">Account Setup</p>
       <p className="text-xs text-muted-foreground">Create your account</p>
-    </div>
+</div>
     <Check className="h-4 w-4 text-green-500" />
-  </div>
+</div>
   <div className="flex items-center space-x-2">
     <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground text-sm font-medium">
       2
-    </div>
+</div>
     <div className="flex-1">
       <p className="text-sm font-medium">Profile Creation</p>
       <p className="text-xs text-muted-foreground">Add your details</p>
-    </div>
+</div>
     <div className="h-4 w-4 rounded-full border-2 border-muted-foreground/20" />
-  </div>
+</div>
   <div className="flex items-center space-x-2">
     <div className="flex h-8 w-8 items-center justify-center rounded-full bg-muted text-muted-foreground text-sm font-medium">
       3
-    </div>
+</div>
     <div className="flex-1">
       <p className="text-sm font-medium text-muted-foreground">Verification</p>
       <p className="text-xs text-muted-foreground">Verify your email</p>
-    </div>
+</div>
     <div className="h-4 w-4 rounded-full border-2 border-muted-foreground/20" />
-  </div>
+</div>
 </div>`,
         preview: (
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground text-sm font-medium">
                 1
-              </div>
+</div>
               <div className="flex-1">
                 <p className="text-sm font-medium">Account Setup</p>
                 <p className="text-xs text-muted-foreground">Create your account</p>
-              </div>
+</div>
               <Check className="h-4 w-4 text-green-500" />
-            </div>
+</div>
             <div className="flex items-center space-x-2">
               <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground text-sm font-medium">
                 2
-              </div>
+</div>
               <div className="flex-1">
                 <p className="text-sm font-medium">Profile Creation</p>
                 <p className="text-xs text-muted-foreground">Add your details</p>
-              </div>
+</div>
               <div className="h-4 w-4 rounded-full border-2 border-muted-foreground/20" />
-            </div>
+</div>
             <div className="flex items-center space-x-2">
               <div className="flex h-8 w-8 items-center justify-center rounded-full bg-muted text-muted-foreground text-sm font-medium">
                 3
-              </div>
+</div>
               <div className="flex-1">
                 <p className="text-sm font-medium text-muted-foreground">Verification</p>
                 <p className="text-xs text-muted-foreground">Verify your email</p>
-              </div>
+</div>
               <div className="h-4 w-4 rounded-full border-2 border-muted-foreground/20" />
-            </div>
-          </div>
+</div>
+</div>
         ),
       },
       {
@@ -2356,11 +2358,11 @@ export default function DocsPage() {
       Tailwind
       <X className="h-3 w-3 cursor-pointer hover:text-destructive" />
     </Badge>
-  </div>
+</div>
   <div className="flex items-center space-x-2">
     <Input placeholder="Add a tag..." className="flex-1" />
     <Button size="sm">Add</Button>
-  </div>
+</div>
 </div>`,
         preview: (
           <div className="space-y-3">
@@ -2377,12 +2379,12 @@ export default function DocsPage() {
                 Tailwind
                 <X className="h-3 w-3 cursor-pointer hover:text-destructive" />
               </Badge>
-            </div>
+</div>
             <div className="flex items-center space-x-2">
               <Input placeholder="Add a tag..." className="flex-1" />
               <Button size="sm">Add</Button>
-            </div>
-          </div>
+</div>
+</div>
         ),
       },
       {
@@ -2392,39 +2394,39 @@ export default function DocsPage() {
   <div className="flex items-center space-x-2">
     <div className="h-2 w-2 rounded-full bg-green-500" />
     <span className="text-sm">Online</span>
-  </div>
+</div>
   <div className="flex items-center space-x-2">
     <div className="h-2 w-2 rounded-full bg-yellow-500" />
     <span className="text-sm">Away</span>
-  </div>
+</div>
   <div className="flex items-center space-x-2">
     <div className="h-2 w-2 rounded-full bg-red-500" />
     <span className="text-sm">Offline</span>
-  </div>
+</div>
   <div className="flex items-center space-x-2">
     <div className="h-2 w-2 rounded-full bg-blue-500" />
     <span className="text-sm">Busy</span>
-  </div>
+</div>
 </div>`,
         preview: (
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <div className="h-2 w-2 rounded-full bg-green-500" />
               <span className="text-sm">Online</span>
-            </div>
+</div>
             <div className="flex items-center space-x-2">
               <div className="h-2 w-2 rounded-full bg-yellow-500" />
               <span className="text-sm">Away</span>
-            </div>
+</div>
             <div className="flex items-center space-x-2">
               <div className="h-2 w-2 rounded-full bg-red-500" />
               <span className="text-sm">Offline</span>
-            </div>
+</div>
             <div className="flex items-center space-x-2">
               <div className="h-2 w-2 rounded-full bg-blue-500" />
               <span className="text-sm">Busy</span>
-            </div>
-          </div>
+</div>
+</div>
         ),
       },
       {
@@ -2450,7 +2452,7 @@ export default function DocsPage() {
                 ★
               </button>
             ))}
-          </div>
+</div>
         ),
       },
       {
@@ -2466,7 +2468,7 @@ export default function DocsPage() {
             <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-primary"></div>
             <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-primary"></div>
             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
-          </div>
+</div>
         ),
       },
       {
@@ -2486,7 +2488,7 @@ export default function DocsPage() {
             <Button variant="outline" size="sm">2</Button>
             <Button variant="outline" size="sm">3</Button>
             <Button variant="outline" size="sm">Next</Button>
-          </div>
+</div>
         ),
       },
 
@@ -2509,7 +2511,7 @@ export default function DocsPage() {
             <span className="absolute -top-2 -right-2 h-5 w-5 rounded-full bg-red-500 text-white text-xs flex items-center justify-center">
               3
             </span>
-          </div>
+</div>
         ),
       },
       {
@@ -2535,7 +2537,7 @@ export default function DocsPage() {
             <Button size="sm" className="absolute right-1 top-1/2 transform -translate-y-1/2 h-7">
               Search
             </Button>
-          </div>
+</div>
         ),
       },
       {
@@ -2567,7 +2569,7 @@ export default function DocsPage() {
   </svg>
   <div className="absolute inset-0 flex items-center justify-center text-sm font-medium">
     70%
-  </div>
+</div>
 </div>`,
         preview: (
           <div className="relative w-16 h-16">
@@ -2596,8 +2598,8 @@ export default function DocsPage() {
             </svg>
             <div className="absolute inset-0 flex items-center justify-center text-sm font-medium">
               70%
-            </div>
-          </div>
+</div>
+</div>
         ),
       },
 
@@ -2634,11 +2636,11 @@ export default function DocsPage() {
       <p className="text-sm text-blue-700 dark:text-blue-300 mt-1">
         Check out our latest component library updates.
       </p>
-    </div>
+</div>
     <Button size="sm" variant="outline" className="text-blue-700 border-blue-300 hover:bg-blue-100 dark:text-blue-300 dark:border-blue-600 dark:hover:bg-blue-900">
       Learn more
     </Button>
-  </div>
+</div>
 </div>`,
         preview: (
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 dark:bg-blue-950 dark:border-blue-800">
@@ -2651,12 +2653,12 @@ export default function DocsPage() {
                 <p className="text-sm text-blue-700 dark:text-blue-300 mt-1">
                   Check out our latest component library updates.
                 </p>
-              </div>
+</div>
               <Button size="sm" variant="outline" className="text-blue-700 border-blue-300 hover:bg-blue-100 dark:text-blue-300 dark:border-blue-600 dark:hover:bg-blue-900">
                 Learn more
               </Button>
-            </div>
-          </div>
+</div>
+</div>
         ),
       },
       {
@@ -2667,12 +2669,12 @@ export default function DocsPage() {
     <div className="h-16 w-full rounded-lg bg-primary"></div>
     <p className="text-sm font-medium">Primary</p>
     <p className="text-xs text-muted-foreground">#0f172a</p>
-  </div>
+</div>
   <div className="space-y-2">
     <div className="h-16 w-full rounded-lg bg-secondary"></div>
     <p className="text-sm font-medium">Secondary</p>
     <p className="text-xs text-muted-foreground">#64748b</p>
-  </div>
+</div>
 </div>`,
         preview: (
           <div className="grid grid-cols-2 gap-4">
@@ -2680,13 +2682,13 @@ export default function DocsPage() {
               <div className="h-16 w-full rounded-lg bg-primary"></div>
               <p className="text-sm font-medium">Primary</p>
               <p className="text-xs text-muted-foreground">#0f172a</p>
-            </div>
+</div>
             <div className="space-y-2">
               <div className="h-16 w-full rounded-lg bg-secondary"></div>
               <p className="text-sm font-medium">Secondary</p>
               <p className="text-xs text-muted-foreground">#64748b</p>
-            </div>
-          </div>
+</div>
+</div>
         ),
       },
       {
@@ -2696,49 +2698,49 @@ export default function DocsPage() {
   <div className="text-center space-y-3">
     <div className="mx-auto w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
       <Zap className="w-6 h-6 text-primary" />
-    </div>
+</div>
     <h3 className="font-semibold">Fast</h3>
     <p className="text-sm text-muted-foreground">Lightning fast performance</p>
-  </div>
+</div>
   <div className="text-center space-y-3">
     <div className="mx-auto w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
       <Shield className="w-6 h-6 text-primary" />
-    </div>
+</div>
     <h3 className="font-semibold">Secure</h3>
     <p className="text-sm text-muted-foreground">Built with security in mind</p>
-  </div>
+</div>
   <div className="text-center space-y-3">
     <div className="mx-auto w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
       <Smartphone className="w-6 h-6 text-primary" />
-    </div>
+</div>
     <h3 className="font-semibold">Responsive</h3>
     <p className="text-sm text-muted-foreground">Works on all devices</p>
-  </div>
+</div>
 </div>`,
         preview: (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="text-center space-y-3">
               <div className="mx-auto w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                 <Zap className="w-6 h-6 text-primary" />
-              </div>
+</div>
               <h3 className="font-semibold">Fast</h3>
               <p className="text-sm text-muted-foreground">Lightning fast performance</p>
-            </div>
+</div>
             <div className="text-center space-y-3">
               <div className="mx-auto w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                 <Shield className="w-6 h-6 text-primary" />
-              </div>
+</div>
               <h3 className="font-semibold">Secure</h3>
               <p className="text-sm text-muted-foreground">Built with security in mind</p>
-            </div>
+</div>
             <div className="text-center space-y-3">
               <div className="mx-auto w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                 <Smartphone className="w-6 h-6 text-primary" />
-              </div>
+</div>
               <h3 className="font-semibold">Responsive</h3>
               <p className="text-sm text-muted-foreground">Works on all devices</p>
-            </div>
-          </div>
+</div>
+</div>
         ),
       },
       {
@@ -2748,13 +2750,13 @@ export default function DocsPage() {
   <div className="flex items-center justify-between mb-2">
     <span className="text-muted-foreground">index.tsx</span>
     <Button size="sm" variant="ghost">Copy</Button>
-  </div>
+</div>
   <pre className="text-foreground">
 function App() {
   return (
     <div className="p-4">
       <h1>Hello World</h1>
-    </div>
+</div>
   )
 }
   </pre>
@@ -2764,17 +2766,17 @@ function App() {
             <div className="flex items-center justify-between mb-2">
               <span className="text-muted-foreground">index.tsx</span>
               <Button size="sm" variant="ghost">Copy</Button>
-            </div>
+</div>
             <pre className="text-foreground">
 {`function App() {
   return (
     <div className="p-4">
       <h1>Hello World</h1>
-    </div>
+</div>
   )
 }`}
             </pre>
-          </div>
+</div>
         ),
       },
       {
@@ -2808,7 +2810,7 @@ function App() {
               <Share className="w-4 h-4" />
               <span>Share</span>
             </Button>
-          </div>
+</div>
         ),
       },
       {
@@ -2819,18 +2821,18 @@ function App() {
     <div className="flex items-center space-x-2">
       <Users className="w-5 h-5 text-blue-500" />
       <span className="text-sm font-medium text-muted-foreground">Total Users</span>
-    </div>
+</div>
     <p className="text-2xl font-bold">12,345</p>
     <p className="text-xs text-green-600">+12% from last month</p>
-  </div>
+</div>
   <div className="p-4 border rounded-lg">
     <div className="flex items-center space-x-2">
       <CreditCard className="w-5 h-5 text-green-500" />
       <span className="text-sm font-medium text-muted-foreground">Revenue</span>
-    </div>
+</div>
     <p className="text-2xl font-bold">$45,678</p>
     <p className="text-xs text-green-600">+8% from last month</p>
-  </div>
+</div>
 </div>`,
         preview: (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -2838,19 +2840,19 @@ function App() {
               <div className="flex items-center space-x-2">
                 <Users className="w-5 h-5 text-blue-500" />
                 <span className="text-sm font-medium text-muted-foreground">Total Users</span>
-              </div>
+</div>
               <p className="text-2xl font-bold">12,345</p>
               <p className="text-xs text-green-600">+12% from last month</p>
-            </div>
+</div>
             <div className="p-4 border rounded-lg">
               <div className="flex items-center space-x-2">
                 <CreditCard className="w-5 h-5 text-green-500" />
                 <span className="text-sm font-medium text-muted-foreground">Revenue</span>
-              </div>
+</div>
               <p className="text-2xl font-bold">$45,678</p>
               <p className="text-xs text-green-600">+8% from last month</p>
-            </div>
-          </div>
+</div>
+</div>
         ),
       },
       {
@@ -2865,8 +2867,8 @@ function App() {
           <Link href="/docs" className="hover:text-primary transition-colors">Docs</Link>
           <Link href="/components" className="hover:text-primary transition-colors">Components</Link>
           <Link href="/examples" className="hover:text-primary transition-colors">Examples</Link>
-        </div>
-      </div>
+</div>
+</div>
       <div className="flex items-center gap-4">
         <Button variant="ghost" size="sm">Sign In</Button>
         <Button size="sm">Get Started</Button>
@@ -2881,11 +2883,11 @@ function App() {
               <Link href="/docs" className="text-lg">Docs</Link>
               <Link href="/components" className="text-lg">Components</Link>
               <Link href="/examples" className="text-lg">Examples</Link>
-            </div>
+</div>
           </SheetContent>
         </Sheet>
-      </div>
-    </div>
+</div>
+</div>
   </nav>
 </header>`,
         preview: (
@@ -2898,8 +2900,8 @@ function App() {
                     <Link href="/docs" className="hover:text-primary transition-colors">Docs</Link>
                     <Link href="/components" className="hover:text-primary transition-colors">Components</Link>
                     <Link href="/examples" className="hover:text-primary transition-colors">Examples</Link>
-                  </div>
-                </div>
+</div>
+</div>
                 <div className="flex items-center gap-4">
                   <Button variant="ghost" size="sm">Sign In</Button>
                   <Button size="sm">Get Started</Button>
@@ -2914,11 +2916,11 @@ function App() {
                         <Link href="/docs" className="text-lg">Docs</Link>
                         <Link href="/components" className="text-lg">Components</Link>
                         <Link href="/examples" className="text-lg">Examples</Link>
-                      </div>
+</div>
                     </SheetContent>
                   </Sheet>
-                </div>
-              </div>
+</div>
+</div>
             </nav>
           </header>
         ),
@@ -2930,7 +2932,7 @@ function App() {
   <aside className="w-64 border-r bg-card">
     <div className="p-4 border-b">
       <h2 className="font-semibold text-lg">Dashboard</h2>
-    </div>
+</div>
     <nav className="p-4 space-y-2">
       <Link href="/dashboard" className="flex items-center gap-3 p-2 rounded-lg hover:bg-muted transition-colors">
         <Home className="w-5 h-5" />
@@ -2959,30 +2961,30 @@ function App() {
             <aside className="w-32 border-r bg-card flex-shrink-0">
               <div className="p-3 border-b">
                 <h2 className="font-semibold text-sm">Dashboard</h2>
-              </div>
+</div>
               <nav className="p-3 space-y-1">
                 <div className="flex items-center gap-2 p-2 rounded-lg hover:bg-muted transition-colors">
                   <Home className="w-4 h-4" />
                   <span className="text-sm">Home</span>
-                </div>
+</div>
                 <div className="flex items-center gap-2 p-2 rounded-lg hover:bg-muted transition-colors">
                   <Activity className="w-4 h-4" />
                   <span className="text-sm">Analytics</span>
-                </div>
+</div>
                 <div className="flex items-center gap-2 p-2 rounded-lg hover:bg-muted transition-colors">
                   <Users className="w-4 h-4" />
                   <span className="text-sm">Users</span>
-                </div>
+</div>
                 <div className="flex items-center gap-2 p-2 rounded-lg hover:bg-muted transition-colors">
                   <Settings className="w-4 h-4" />
                   <span className="text-sm">Settings</span>
-                </div>
+</div>
               </nav>
             </aside>
             <main className="flex-1 p-4">
               <h1 className="text-lg font-bold">Dashboard Content</h1>
             </main>
-          </div>
+</div>
         ),
       },
       {
@@ -2998,21 +3000,21 @@ function App() {
     <div className="space-y-2">
       <Label htmlFor="name">Name</Label>
       <Input id="name" placeholder="Enter your name" />
-    </div>
+</div>
     <div className="space-y-2">
       <Label htmlFor="email">Email</Label>
       <Input id="email" placeholder="Enter your email" />
-    </div>
+</div>
   </TabsContent>
   <TabsContent value="password" className="space-y-4">
     <div className="space-y-2">
       <Label htmlFor="current">Current password</Label>
       <Input id="current" type="password" />
-    </div>
+</div>
     <div className="space-y-2">
       <Label htmlFor="new">New password</Label>
       <Input id="new" type="password" />
-    </div>
+</div>
   </TabsContent>
   <TabsContent value="settings" className="space-y-4">
     <div className="space-y-2">
@@ -3027,7 +3029,7 @@ function App() {
           <SelectItem value="system">System</SelectItem>
         </SelectContent>
       </Select>
-    </div>
+</div>
   </TabsContent>
 </Tabs>`,
         preview: (
@@ -3041,21 +3043,21 @@ function App() {
               <div className="space-y-2">
                 <Label htmlFor="name">Name</Label>
                 <Input id="name" placeholder="Enter your name" />
-              </div>
+</div>
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
                 <Input id="email" placeholder="Enter your email" />
-              </div>
+</div>
             </TabsContent>
             <TabsContent value="password" className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="current">Current password</Label>
                 <Input id="current" type="password" />
-              </div>
+</div>
               <div className="space-y-2">
                 <Label htmlFor="new">New password</Label>
                 <Input id="new" type="password" />
-              </div>
+</div>
             </TabsContent>
             <TabsContent value="settings" className="space-y-4">
               <div className="space-y-2">
@@ -3070,7 +3072,7 @@ function App() {
                     <SelectItem value="system">System</SelectItem>
                   </SelectContent>
                 </Select>
-              </div>
+</div>
             </TabsContent>
           </Tabs>
         ),
@@ -3131,24 +3133,24 @@ function App() {
       <h4 className="font-medium">Project Started</h4>
       <p className="text-sm text-muted-foreground">January 15, 2024</p>
       <p className="text-sm">Initial planning and setup phase completed.</p>
-    </div>
-  </div>
+</div>
+</div>
   <div className="flex items-start space-x-4">
     <div className="w-3 h-3 bg-green-500 rounded-full mt-2"></div>
     <div className="flex-1">
       <h4 className="font-medium">Development Phase</h4>
       <p className="text-sm text-muted-foreground">February 1, 2024</p>
       <p className="text-sm">Core features implementation in progress.</p>
-    </div>
-  </div>
+</div>
+</div>
   <div className="flex items-start space-x-4">
     <div className="w-3 h-3 bg-purple-500 rounded-full mt-2"></div>
     <div className="flex-1">
       <h4 className="font-medium">Testing & Review</h4>
       <p className="text-sm text-muted-foreground">March 1, 2024</p>
       <p className="text-sm">Quality assurance and user testing phase.</p>
-    </div>
-  </div>
+</div>
+</div>
 </div>`,
     preview: (
       <div className="space-y-4">
@@ -3158,25 +3160,25 @@ function App() {
             <h4 className="font-medium">Project Started</h4>
             <p className="text-sm text-muted-foreground">January 15, 2024</p>
             <p className="text-sm">Initial planning and setup phase completed.</p>
-          </div>
-        </div>
+</div>
+</div>
         <div className="flex items-start space-x-4">
           <div className="w-3 h-3 bg-green-500 rounded-full mt-2"></div>
           <div className="flex-1">
             <h4 className="font-medium">Development Phase</h4>
             <p className="text-sm text-muted-foreground">February 1, 2024</p>
             <p className="text-sm">Core features implementation in progress.</p>
-          </div>
-        </div>
+</div>
+</div>
         <div className="flex items-start space-x-4">
           <div className="w-3 h-3 bg-purple-500 rounded-full mt-2"></div>
           <div className="flex-1">
             <h4 className="font-medium">Testing & Review</h4>
             <p className="text-sm text-muted-foreground">March 1, 2024</p>
             <p className="text-sm">Quality assurance and user testing phase.</p>
-          </div>
-        </div>
-      </div>
+</div>
+</div>
+</div>
     ),
   },
   {
@@ -3204,8 +3206,8 @@ function App() {
         <p className="text-sm text-muted-foreground">
           Set the dimensions for the layer.
         </p>
-      </div>
-    </div>
+</div>
+</div>
   </PopoverContent>
 </Popover>`,
     preview: (
@@ -3231,11 +3233,11 @@ function App() {
                 <p className="text-sm text-muted-foreground">
                   Set the dimensions for the layer.
                 </p>
-              </div>
-            </div>
+</div>
+</div>
           </PopoverContent>
         </Popover>
-      </div>
+</div>
     ),
   },
   {
@@ -3244,7 +3246,7 @@ function App() {
     code: `<div className="text-center py-12">
   <div className="w-24 h-24 mx-auto mb-4 bg-muted rounded-full flex items-center justify-center">
     <FileText className="w-12 h-12 text-muted-foreground" />
-  </div>
+</div>
   <h3 className="text-lg font-medium mb-2">No documents found</h3>
   <p className="text-muted-foreground mb-4">
     Get started by creating your first document.
@@ -3255,13 +3257,13 @@ function App() {
       <div className="text-center py-12">
         <div className="w-24 h-24 mx-auto mb-4 bg-muted rounded-full flex items-center justify-center">
           <FileText className="w-12 h-12 text-muted-foreground" />
-        </div>
+</div>
         <h3 className="text-lg font-medium mb-2">No documents found</h3>
         <p className="text-muted-foreground mb-4">
           Get started by creating your first document.
         </p>
         <Button>Create Document</Button>
-      </div>
+</div>
     ),
   },
   {
@@ -3271,38 +3273,38 @@ function App() {
   {/* Line Chart */}
   <div className="h-32 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-lg border flex items-center justify-center">
     <span className="text-sm text-muted-foreground">Line Chart</span>
-  </div>
+</div>
   
   {/* Bar Chart */}
   <div className="h-32 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-lg border flex items-center justify-center">
     <span className="text-sm text-muted-foreground">Bar Chart</span>
-  </div>
+</div>
   
   {/* Pie Chart */}
   <div className="h-32 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-lg border flex items-center justify-center">
     <span className="text-sm text-muted-foreground">Pie Chart</span>
-  </div>
+</div>
   
   {/* Donut Chart */}
   <div className="h-32 bg-gradient-to-r from-pink-500/20 to-rose-500/20 rounded-lg border flex items-center justify-center">
     <span className="text-sm text-muted-foreground">Donut Chart</span>
-  </div>
+</div>
 </div>`,
     preview: (
       <div className="space-y-6">
         <div className="h-32 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-lg border flex items-center justify-center">
           <span className="text-sm text-muted-foreground">Line Chart</span>
-        </div>
+</div>
         <div className="h-32 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-lg border flex items-center justify-center">
           <span className="text-sm text-muted-foreground">Bar Chart</span>
-        </div>
+</div>
         <div className="h-32 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-lg border flex items-center justify-center">
           <span className="text-sm text-muted-foreground">Pie Chart</span>
-        </div>
+</div>
         <div className="h-32 bg-gradient-to-r from-pink-500/20 to-rose-500/20 rounded-lg border flex items-center justify-center">
           <span className="text-sm text-muted-foreground">Donut Chart</span>
-        </div>
-      </div>
+</div>
+</div>
     ),
   },
   {
@@ -3314,14 +3316,14 @@ function App() {
     {Array.from({ length: 35 }).map((_, i) => (
       <div key={i} className="w-8 h-8 bg-green-500/20 rounded border flex items-center justify-center">
         <span className="text-xs text-muted-foreground">{i + 1}</span>
-      </div>
+</div>
     ))}
-  </div>
+</div>
   
   {/* Calendar Chart */}
   <div className="h-32 bg-gradient-to-r from-indigo-500/20 to-blue-500/20 rounded-lg border flex items-center justify-center">
     <span className="text-sm text-muted-foreground">Calendar Chart</span>
-  </div>
+</div>
 </div>`,
     preview: (
       <div className="space-y-4">
@@ -3329,13 +3331,13 @@ function App() {
           {Array.from({ length: 35 }).map((_, i) => (
             <div key={i} className="w-8 h-8 bg-green-500/20 rounded border flex items-center justify-center">
               <span className="text-xs text-muted-foreground">{i + 1}</span>
-            </div>
+</div>
           ))}
-        </div>
+</div>
         <div className="h-32 bg-gradient-to-r from-indigo-500/20 to-blue-500/20 rounded-lg border flex items-center justify-center">
           <span className="text-sm text-muted-foreground">Calendar Chart</span>
-        </div>
-      </div>
+</div>
+</div>
     ),
   },
   {
@@ -3351,8 +3353,8 @@ function App() {
       <h1 className="text-3xl font-bold">John Doe</h1>
       <p className="text-muted-foreground">Software Developer</p>
       <p className="text-sm text-muted-foreground">john.doe@example.com</p>
-    </div>
-  </div>
+</div>
+</div>
   
   {/* Settings Form */}
   <Card>
@@ -3365,16 +3367,16 @@ function App() {
         <div>
           <Label htmlFor="firstName">First Name</Label>
           <Input id="firstName" defaultValue="John" />
-        </div>
+</div>
         <div>
           <Label htmlFor="lastName">Last Name</Label>
           <Input id="lastName" defaultValue="Doe" />
-        </div>
-      </div>
+</div>
+</div>
       <div>
         <Label htmlFor="email">Email</Label>
         <Input id="email" type="email" defaultValue="john.doe@example.com" />
-      </div>
+</div>
       <Button>Save Changes</Button>
     </CardContent>
   </Card>
@@ -3389,16 +3391,16 @@ function App() {
         <div className="flex items-center space-x-3">
           <div className="w-2 h-2 bg-green-500 rounded-full"></div>
           <span className="text-sm">Profile updated - 2 hours ago</span>
-        </div>
+</div>
         <div className="flex items-center space-x-3">
           <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
           <span className="text-sm">Password changed - 1 day ago</span>
-        </div>
+</div>
         <div className="flex items-center space-x-3">
           <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
           <span className="text-sm">Login from new device - 3 days ago</span>
-        </div>
-      </div>
+</div>
+</div>
     </CardContent>
   </Card>
 </div>`,
@@ -3412,8 +3414,8 @@ function App() {
             <h1 className="text-3xl font-bold">John Doe</h1>
             <p className="text-muted-foreground">Software Developer</p>
             <p className="text-sm text-muted-foreground">john.doe@example.com</p>
-          </div>
-        </div>
+</div>
+</div>
         <Card>
           <CardHeader>
             <CardTitle>Profile Settings</CardTitle>
@@ -3424,16 +3426,16 @@ function App() {
               <div>
                 <Label htmlFor="firstName">First Name</Label>
                 <Input id="firstName" defaultValue="John" />
-              </div>
+</div>
               <div>
                 <Label htmlFor="lastName">Last Name</Label>
                 <Input id="lastName" defaultValue="Doe" />
-              </div>
-            </div>
+</div>
+</div>
             <div>
               <Label htmlFor="email">Email</Label>
               <Input id="email" type="email" defaultValue="john.doe@example.com" />
-            </div>
+</div>
             <Button>Save Changes</Button>
           </CardContent>
         </Card>
@@ -3446,19 +3448,19 @@ function App() {
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                 <span className="text-sm">Profile updated - 2 hours ago</span>
-              </div>
+</div>
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
                 <span className="text-sm">Password changed - 1 day ago</span>
-              </div>
+</div>
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
                 <span className="text-sm">Login from new device - 3 days ago</span>
-              </div>
-            </div>
+</div>
+</div>
           </CardContent>
         </Card>
-      </div>
+</div>
     ),
   },
   {
@@ -3469,7 +3471,7 @@ function App() {
     <CardHeader className="text-center">
       <div className="w-20 h-20 mx-auto mb-4 bg-primary/20 rounded-full flex items-center justify-center">
         <Lock className="w-10 h-10 text-primary" />
-      </div>
+</div>
       <CardTitle>Device Locked</CardTitle>
       <CardDescription>Enter your password to unlock</CardDescription>
     </CardHeader>
@@ -3482,7 +3484,7 @@ function App() {
           placeholder="Enter password"
           className="text-center text-lg"
         />
-      </div>
+</div>
       <Button className="w-full" size="lg">
         Unlock
       </Button>
@@ -3490,7 +3492,7 @@ function App() {
         <Button variant="link" size="sm">
           Forgot password?
         </Button>
-      </div>
+</div>
     </CardContent>
   </Card>
 </div>`,
@@ -3500,7 +3502,7 @@ function App() {
           <CardHeader className="text-center">
             <div className="w-20 h-20 mx-auto mb-4 bg-primary/20 rounded-full flex items-center justify-center">
               <Lock className="w-10 h-10 text-primary" />
-            </div>
+</div>
             <CardTitle>Device Locked</CardTitle>
             <CardDescription>Enter your password to unlock</CardDescription>
           </CardHeader>
@@ -3513,7 +3515,7 @@ function App() {
                 placeholder="Enter password"
                 className="text-center text-lg"
               />
-            </div>
+</div>
             <Button className="w-full" size="lg">
               Unlock
             </Button>
@@ -3521,10 +3523,10 @@ function App() {
               <Button variant="link" size="sm">
                 Forgot password?
               </Button>
-            </div>
+</div>
           </CardContent>
         </Card>
-      </div>
+</div>
     ),
   },
   {
@@ -3547,9 +3549,9 @@ function App() {
         <Button variant="outline" size="lg" className="text-white border-white hover:bg-white hover:text-blue-600">
           Learn more
         </Button>
-      </div>
-    </div>
-  </div>
+</div>
+</div>
+</div>
 </div>`,
     preview: (
       <div className="relative overflow-hidden bg-gradient-to-r from-blue-600 to-purple-700 py-24">
@@ -3569,10 +3571,10 @@ function App() {
               <Button variant="outline" size="lg" className="text-white border-white hover:bg-white hover:text-blue-600">
                 Learn more
               </Button>
-            </div>
-          </div>
-        </div>
-      </div>
+</div>
+</div>
+</div>
+</div>
     ),
   },
   {
@@ -3585,26 +3587,26 @@ function App() {
         <div className="text-center p-6">
           <div className="w-16 h-16 mx-auto mb-4 bg-primary/20 rounded-full flex items-center justify-center">
             <Quote className="w-8 h-8 text-primary" />
-          </div>
+</div>
           <blockquote className="text-lg italic mb-4">
             "This component library has transformed how we build our applications. 
             The quality and consistency are outstanding."
           </blockquote>
           <div className="font-semibold">Sarah Johnson</div>
           <div className="text-sm text-muted-foreground">Product Manager, TechCorp</div>
-        </div>
+</div>
       </CarouselItem>
       <CarouselItem>
         <div className="text-center p-6">
           <div className="w-16 h-16 mx-auto mb-4 bg-primary/20 rounded-full flex items-center justify-center">
             <Quote className="w-8 h-8 text-primary" />
-          </div>
+</div>
           <blockquote className="text-lg italic mb-4">
             "The best UI library I've ever used. Clean, accessible, and incredibly well-designed."
           </blockquote>
           <div className="font-semibold">Mike Chen</div>
           <div className="text-sm text-muted-foreground">Frontend Developer, StartupXYZ</div>
-        </div>
+</div>
       </CarouselItem>
     </CarouselContent>
     <CarouselPrevious />
@@ -3619,32 +3621,32 @@ function App() {
               <div className="text-center p-6">
                 <div className="w-16 h-16 mx-auto mb-4 bg-primary/20 rounded-full flex items-center justify-center">
                   <Quote className="w-8 h-8 text-primary" />
-                </div>
+</div>
                 <blockquote className="text-lg italic mb-4">
                   "This component library has transformed how we build our applications. 
                   The quality and consistency are outstanding."
                 </blockquote>
                 <div className="font-semibold">Sarah Johnson</div>
                 <div className="text-sm text-muted-foreground">Product Manager, TechCorp</div>
-              </div>
+</div>
             </CarouselItem>
             <CarouselItem>
               <div className="text-center p-6">
                 <div className="w-16 h-16 mx-auto mb-4 bg-primary/20 rounded-full flex items-center justify-center">
                   <Quote className="w-8 h-8 text-primary" />
-                </div>
+</div>
                 <blockquote className="text-lg italic mb-4">
                   "The best UI library I've ever used. Clean, accessible, and incredibly well-designed."
                 </blockquote>
                 <div className="font-semibold">Mike Chen</div>
                 <div className="text-sm text-muted-foreground">Frontend Developer, StartupXYZ</div>
-              </div>
+</div>
             </CarouselItem>
           </CarouselContent>
           <CarouselPrevious />
           <CarouselNext />
         </Carousel>
-      </div>
+</div>
     ),
   },
   {
@@ -3655,7 +3657,7 @@ function App() {
   <div className="w-80 border-r bg-muted/50">
     <div className="p-4 border-b">
       <h3 className="font-semibold">Conversations</h3>
-    </div>
+</div>
     <div className="space-y-1">
       <div className="p-3 hover:bg-muted cursor-pointer">
         <div className="flex items-center space-x-3">
@@ -3665,9 +3667,9 @@ function App() {
           <div className="flex-1 min-w-0">
             <p className="font-medium">John Doe</p>
             <p className="text-sm text-muted-foreground truncate">Hey, how's the project going?</p>
-          </div>
-        </div>
-      </div>
+</div>
+</div>
+</div>
       <div className="p-3 hover:bg-muted cursor-pointer">
         <div className="flex items-center space-x-3">
           <Avatar className="w-10 h-10">
@@ -3676,43 +3678,43 @@ function App() {
           <div className="flex-1 min-w-0">
             <p className="font-medium">Sarah Miller</p>
             <p className="text-sm text-muted-foreground truncate">Can we schedule a meeting?</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
   
   {/* Chat Window */}
   <div className="flex-1 flex flex-col">
     <div className="p-4 border-b">
       <h3 className="font-semibold">John Doe</h3>
-    </div>
+</div>
     <div className="flex-1 p-4 space-y-4 overflow-y-auto">
       <div className="flex justify-end">
         <div className="bg-primary text-primary-foreground rounded-lg px-3 py-2 max-w-xs">
           <p>Hey! How's the project going?</p>
-        </div>
-      </div>
+</div>
+</div>
       <div className="flex justify-start">
         <div className="bg-muted rounded-lg px-3 py-2 max-w-xs">
           <p>It's going great! We're on track to finish by Friday.</p>
-        </div>
-      </div>
-    </div>
+</div>
+</div>
+</div>
     <div className="p-4 border-t">
       <div className="flex space-x-2">
         <Input placeholder="Type a message..." className="flex-1" />
         <Button>Send</Button>
-      </div>
-    </div>
-  </div>
+</div>
+</div>
+</div>
 </div>`,
     preview: (
       <div className="flex h-96 border rounded-lg">
         <div className="w-80 border-r bg-muted/50">
           <div className="p-4 border-b">
             <h3 className="font-semibold">Conversations</h3>
-          </div>
+</div>
           <div className="space-y-1">
             <div className="p-3 hover:bg-muted cursor-pointer">
               <div className="flex items-center space-x-3">
@@ -3722,9 +3724,9 @@ function App() {
                 <div className="flex-1 min-w-0">
                   <p className="font-medium">John Doe</p>
                   <p className="text-sm text-muted-foreground truncate">Hey, how's the project going?</p>
-                </div>
-              </div>
-            </div>
+</div>
+</div>
+</div>
             <div className="p-3 hover:bg-muted cursor-pointer">
               <div className="flex items-center space-x-3">
                 <Avatar className="w-10 h-10">
@@ -3733,35 +3735,35 @@ function App() {
                 <div className="flex-1 min-w-0">
                   <p className="font-medium">Sarah Miller</p>
                   <p className="text-sm text-muted-foreground truncate">Can we schedule a meeting?</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+</div>
+</div>
+</div>
+</div>
+</div>
         <div className="flex-1 flex flex-col">
           <div className="p-4 border-b">
             <h3 className="font-semibold">John Doe</h3>
-          </div>
+</div>
           <div className="flex-1 p-4 space-y-4 overflow-y-auto">
             <div className="flex justify-end">
               <div className="bg-primary text-primary-foreground rounded-lg px-3 py-2 max-w-xs">
                 <p>Hey! How's the project going?</p>
-              </div>
-            </div>
+</div>
+</div>
             <div className="flex justify-start">
               <div className="bg-muted rounded-lg px-3 py-2 max-w-xs">
                 <p>It's going great! We're on track to finish by Friday.</p>
-              </div>
-            </div>
-          </div>
+</div>
+</div>
+</div>
           <div className="p-4 border-t">
             <div className="flex space-x-2">
               <Input placeholder="Type a message..." className="flex-1" />
               <Button>Send</Button>
-            </div>
-          </div>
-        </div>
-      </div>
+</div>
+</div>
+</div>
+</div>
     ),
   },
   {
@@ -3771,7 +3773,7 @@ function App() {
   <div className="flex justify-between items-center">
     <h2 className="text-2xl font-bold">Project Tasks</h2>
     <Button>Add Task</Button>
-  </div>
+</div>
   
   <div className="grid grid-cols-3 gap-6">
     {/* To Do */}
@@ -3780,7 +3782,7 @@ function App() {
         <div className="w-3 h-3 bg-gray-400 rounded-full"></div>
         <h3 className="font-semibold">To Do</h3>
         <Badge variant="secondary">3</Badge>
-      </div>
+</div>
       <div className="space-y-3">
         <Card className="p-4">
           <h4 className="font-medium mb-2">Design homepage</h4>
@@ -3788,7 +3790,7 @@ function App() {
           <div className="flex items-center justify-between">
             <Badge variant="outline">Design</Badge>
             <span className="text-xs text-muted-foreground">Due: Today</span>
-          </div>
+</div>
         </Card>
         <Card className="p-4">
           <h4 className="font-medium mb-2">Setup database</h4>
@@ -3796,10 +3798,10 @@ function App() {
           <div className="flex items-center justify-between">
             <Badge variant="outline">Backend</Badge>
             <span className="text-xs text-muted-foreground">Due: Tomorrow</span>
-          </div>
+</div>
         </Card>
-      </div>
-    </div>
+</div>
+</div>
     
     {/* In Progress */}
     <div className="space-y-4">
@@ -3807,7 +3809,7 @@ function App() {
         <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
         <h3 className="font-semibold">In Progress</h3>
         <Badge variant="secondary">2</Badge>
-      </div>
+</div>
       <div className="space-y-3">
         <Card className="p-4">
           <h4 className="font-medium mb-2">API development</h4>
@@ -3815,10 +3817,10 @@ function App() {
           <div className="flex items-center justify-between">
             <Badge variant="outline">Backend</Badge>
             <span className="text-xs text-muted-foreground">Due: Friday</span>
-          </div>
+</div>
         </Card>
-      </div>
-    </div>
+</div>
+</div>
     
     {/* Done */}
     <div className="space-y-4">
@@ -3826,7 +3828,7 @@ function App() {
         <div className="w-3 h-3 bg-green-500 rounded-full"></div>
         <h3 className="font-semibold">Done</h3>
         <Badge variant="secondary">1</Badge>
-      </div>
+</div>
       <div className="space-y-3">
         <Card className="p-4">
           <h4 className="font-medium mb-2">Project setup</h4>
@@ -3834,25 +3836,25 @@ function App() {
           <div className="flex items-center justify-between">
             <Badge variant="outline">Setup</Badge>
             <span className="text-xs text-muted-foreground">Completed</span>
-          </div>
+</div>
         </Card>
-      </div>
-    </div>
-  </div>
+</div>
+</div>
+</div>
 </div>`,
     preview: (
       <div className="space-y-6">
         <div className="flex justify-between items-center">
           <h2 className="text-2xl font-bold">Project Tasks</h2>
           <Button>Add Task</Button>
-        </div>
+</div>
         <div className="grid grid-cols-3 gap-6">
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <div className="w-3 h-3 bg-gray-400 rounded-full"></div>
               <h3 className="font-semibold">To Do</h3>
               <Badge variant="secondary">3</Badge>
-            </div>
+</div>
             <div className="space-y-3">
               <Card className="p-4">
                 <h4 className="font-medium mb-2">Design homepage</h4>
@@ -3860,7 +3862,7 @@ function App() {
                 <div className="flex items-center justify-between">
                   <Badge variant="outline">Design</Badge>
                   <span className="text-xs text-muted-foreground">Due: Today</span>
-                </div>
+</div>
               </Card>
               <Card className="p-4">
                 <h4 className="font-medium mb-2">Setup database</h4>
@@ -3868,16 +3870,16 @@ function App() {
                 <div className="flex items-center justify-between">
                   <Badge variant="outline">Backend</Badge>
                   <span className="text-xs text-muted-foreground">Due: Tomorrow</span>
-                </div>
+</div>
               </Card>
-            </div>
-          </div>
+</div>
+</div>
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
               <h3 className="font-semibold">In Progress</h3>
               <Badge variant="secondary">2</Badge>
-            </div>
+</div>
             <div className="space-y-3">
               <Card className="p-4">
                 <h4 className="font-medium mb-2">API development</h4>
@@ -3885,16 +3887,16 @@ function App() {
                 <div className="flex items-center justify-between">
                   <Badge variant="outline">Backend</Badge>
                   <span className="text-xs text-muted-foreground">Due: Friday</span>
-                </div>
+</div>
               </Card>
-            </div>
-          </div>
+</div>
+</div>
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <div className="w-3 h-3 bg-green-500 rounded-full"></div>
               <h3 className="font-semibold">Done</h3>
               <Badge variant="secondary">1</Badge>
-            </div>
+</div>
             <div className="space-y-3">
               <Card className="p-4">
                 <h4 className="font-medium mb-2">Project setup</h4>
@@ -3902,12 +3904,12 @@ function App() {
                 <div className="flex items-center justify-between">
                   <Badge variant="outline">Setup</Badge>
                   <span className="text-xs text-muted-foreground">Completed</span>
-                </div>
+</div>
               </Card>
-            </div>
-          </div>
-        </div>
-      </div>
+</div>
+</div>
+</div>
+</div>
     ),
   },
   {
@@ -3917,38 +3919,38 @@ function App() {
   <div className="flex items-center justify-between">
     <h3 className="text-lg font-medium">Theme Settings</h3>
     <ThemeToggle />
-  </div>
+</div>
   
   <div className="grid grid-cols-3 gap-4">
     <div className="space-y-3">
       <div className="text-center">
         <div className="w-20 h-20 mx-auto bg-white border-2 border-gray-200 rounded-lg flex items-center justify-center">
           <Sun className="w-8 h-8 text-yellow-500" />
-        </div>
+</div>
         <p className="text-sm font-medium mt-2">Light</p>
-      </div>
-    </div>
+</div>
+</div>
     
     <div className="space-y-3">
       <div className="text-center">
         <div className="text-center">
           <div className="w-20 h-20 mx-auto bg-gray-900 border-2 border-gray-700 rounded-lg flex items-center justify-center">
             <Moon className="w-8 h-8 text-blue-400" />
-          </div>
+</div>
           <p className="text-sm font-medium mt-2">Dark</p>
-        </div>
-      </div>
-    </div>
+</div>
+</div>
+</div>
     
     <div className="space-y-3">
       <div className="text-center">
         <div className="w-20 h-20 mx-auto bg-gradient-to-br from-blue-500 to-purple-600 border-2 border-blue-300 rounded-lg flex items-center justify-center">
           <Palette className="w-8 h-8 text-white" />
-        </div>
+</div>
         <p className="text-sm font-medium mt-2">Custom</p>
-      </div>
-    </div>
-  </div>
+</div>
+</div>
+</div>
   
   <div className="space-y-3">
     <Label>Accent Color</Label>
@@ -3957,43 +3959,43 @@ function App() {
       <div className="w-8 h-8 bg-green-500 rounded-full cursor-pointer border-2 border-transparent"></div>
       <div className="w-8 h-8 bg-purple-500 rounded-full cursor-pointer border-2 border-transparent"></div>
       <div className="w-8 h-8 bg-orange-500 rounded-full cursor-pointer border-2 border-transparent"></div>
-    </div>
-  </div>
+</div>
+</div>
 </div>`,
     preview: (
       <div className="space-y-6">
         <div className="flex items-center justify-between">
           <h3 className="text-lg font-medium">Theme Settings</h3>
           <ThemeToggle />
-        </div>
+</div>
         <div className="grid grid-cols-3 gap-4">
           <div className="space-y-3">
             <div className="text-center">
               <div className="w-20 h-20 mx-auto bg-white border-2 border-gray-200 rounded-lg flex items-center justify-center">
                 <Sun className="w-8 h-8 text-yellow-500" />
-              </div>
+</div>
               <p className="text-sm font-medium mt-2">Light</p>
-            </div>
-          </div>
+</div>
+</div>
           <div className="space-y-3">
             <div className="text-center">
               <div className="text-center">
                 <div className="w-20 h-20 mx-auto bg-gray-900 border-2 border-gray-700 rounded-lg flex items-center justify-center">
                   <Moon className="w-8 h-8 text-blue-400" />
-                </div>
+</div>
                 <p className="text-sm font-medium mt-2">Dark</p>
-              </div>
-            </div>
-          </div>
+</div>
+</div>
+</div>
           <div className="space-y-3">
             <div className="text-center">
               <div className="w-20 h-20 mx-auto bg-gradient-to-br from-blue-500 to-purple-600 border-2 border-blue-300 rounded-lg flex items-center justify-center">
                 <Palette className="w-8 h-8 text-white" />
-              </div>
+</div>
               <p className="text-sm font-medium mt-2">Custom</p>
-            </div>
-          </div>
-        </div>
+</div>
+</div>
+</div>
         <div className="space-y-3">
           <Label>Accent Color</Label>
           <div className="flex gap-2">
@@ -4001,9 +4003,9 @@ function App() {
             <div className="w-8 h-8 bg-green-500 rounded-full cursor-pointer border-2 border-transparent"></div>
             <div className="w-8 h-8 bg-purple-500 rounded-full cursor-pointer border-2 border-transparent"></div>
             <div className="w-8 h-8 bg-orange-500 rounded-full cursor-pointer border-2 border-transparent"></div>
-          </div>
-        </div>
-      </div>
+</div>
+</div>
+</div>
     ),
   },
   {
@@ -4019,7 +4021,7 @@ function App() {
         <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce"></div>
         <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
         <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
-      </div>
+</div>
     ),
   },
   {
@@ -4035,7 +4037,7 @@ function App() {
         <div className="h-4 bg-gray-200 rounded animate-pulse"></div>
         <div className="h-4 bg-gray-200 rounded w-5/6 animate-pulse"></div>
         <div className="h-4 bg-gray-200 rounded w-4/6 animate-pulse"></div>
-      </div>
+</div>
     ),
   },
   {
@@ -4063,7 +4065,7 @@ function App() {
         <Button size="icon" className="hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-200">
           <Zap className="w-4 h-4" />
         </Button>
-      </div>
+</div>
     ),
   },
   {
@@ -4081,7 +4083,7 @@ function App() {
           <Heart className="w-5 h-5 text-gray-400 group-hover:text-red-500 transition-colors duration-200" />
         </Button>
         <span className="text-sm text-muted-foreground">42 likes</span>
-      </div>
+</div>
     ),
   },
   {
@@ -4229,14 +4231,14 @@ function App() {
       <div className="relative h-20">
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2">
           <div className="w-4 h-4 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full animate-bounce"></div>
-        </div>
+</div>
         <div className="absolute top-2 left-1/3 transform -translate-x-1/2">
           <div className="w-3 h-3 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
-        </div>
+</div>
         <div className="absolute top-4 right-1/3 transform -translate-x-1/2">
           <div className="w-3 h-3 bg-gradient-to-r from-green-400 to-blue-500 rounded-full animate-bounce" style={{ animationDelay: '0.4s' }}></div>
-        </div>
-      </div>
+</div>
+</div>
     ),
   },
   {
@@ -4247,7 +4249,7 @@ function App() {
   <div className="text-4xl font-bold text-primary animate-pulse">1,234</div>
   <div className="w-full bg-gray-200 rounded-full h-2">
     <div className="bg-primary h-2 rounded-full transition-all duration-1000 ease-out" style={{ width: '75%' }}></div>
-  </div>
+</div>
 </div>
 
 // Framer Motion Version
@@ -4264,9 +4266,9 @@ function App() {
         <div className="text-4xl font-bold text-primary animate-pulse">1,234</div>
         <div className="w-full bg-gray-200 rounded-full h-2">
           <div className="bg-primary h-2 rounded-full transition-all duration-1000 ease-out" style={{ width: '75%' }}></div>
-        </div>
+</div>
         <div className="text-2xl font-semibold text-muted-foreground">75% Complete</div>
-      </div>
+</div>
     ),
   },
   {
@@ -4277,11 +4279,11 @@ function App() {
   <div className="timeline-item opacity-0 translate-x-[-50px] transition-all duration-700 ease-out">
     <h3 className="text-xl font-semibold">Event 1</h3>
     <p className="text-muted-foreground">Description of the first event</p>
-  </div>
+</div>
   <div className="timeline-item opacity-0 translate-x-[-50px] transition-all duration-700 ease-out" style={{ transitionDelay: '0.2s' }}>
     <h3 className="text-xl font-semibold">Event 2</h3>
     <p className="text-muted-foreground">Description of the second event</p>
-  </div>
+</div>
 </div>
 
 // GSAP Version
@@ -4302,16 +4304,16 @@ useEffect(() => {
         <div className="opacity-100 translate-x-0 transition-all duration-700 ease-out">
           <h3 className="text-xl font-semibold">Event 1</h3>
           <p className="text-muted-foreground">Description of the first event</p>
-        </div>
+</div>
         <div className="opacity-100 translate-x-0 transition-all duration-700 ease-out">
           <h3 className="text-xl font-semibold">Event 2</h3>
           <p className="text-muted-foreground">Description of the second event</p>
-        </div>
+</div>
         <div className="opacity-100 translate-x-0 transition-all duration-700 ease-out">
           <h3 className="text-xl font-semibold">Event 3</h3>
           <p className="text-muted-foreground">Description of the third event</p>
-        </div>
-      </div>
+</div>
+</div>
     ),
   },
   {
@@ -4324,7 +4326,7 @@ useEffect(() => {
       <h3 className="text-lg font-semibold">Hover Card</h3>
       <p className="text-muted-foreground">Hover to see the lift effect</p>
     </Card>
-  </div>
+</div>
 </div>
 
 // Framer Motion Version
@@ -4349,8 +4351,8 @@ useEffect(() => {
             <h3 className="text-lg font-semibold">Hover Card</h3>
             <p className="text-muted-foreground">Hover to see the lift effect</p>
           </Card>
-        </div>
-      </div>
+</div>
+</div>
     ),
   },
   {
@@ -4376,7 +4378,7 @@ useEffect(() => {
       <div className="opacity-100 animate-in fade-in duration-500">
         <h1 className="text-3xl font-bold">Welcome Page</h1>
         <p className="text-muted-foreground">This page fades in smoothly</p>
-      </div>
+</div>
     ),
   },
   {
@@ -4409,8 +4411,8 @@ useEffect(() => {
         <p className="text-muted-foreground">This content appears when scrolled into view</p>
         <div className="mt-4 p-4 bg-muted rounded-lg">
           <p className="text-sm">Additional content that reveals on scroll</p>
-        </div>
-      </div>
+</div>
+</div>
     ),
   },
   {
@@ -4454,7 +4456,7 @@ useEffect(() => {
         <p className="text-xl text-muted-foreground mt-4 animate-fade-in" style={{ animationDelay: '0.5s' }}>
           Build amazing experiences with modern animations
         </p>
-      </div>
+</div>
     ),
   },
   {
@@ -4466,7 +4468,7 @@ useEffect(() => {
   <div className="parallax-layer absolute inset-0 bg-purple-500/20" style={{ transform: 'translateZ(-2px) scale(3)' }}></div>
   <div className="parallax-content relative z-10 flex items-center justify-center h-full">
     <h2 className="text-4xl font-bold text-white">Parallax Effect</h2>
-  </div>
+</div>
 </div>
 
 // GSAP Version
@@ -4490,9 +4492,9 @@ useEffect(() => {
           <div className="text-center">
             <h2 className="text-4xl font-bold text-white mb-4">Parallax Effect</h2>
             <p className="text-white/80">Multi-layer background with scroll sync</p>
-          </div>
-        </div>
-      </div>
+</div>
+</div>
+</div>
     ),
   },
   {
@@ -4505,7 +4507,7 @@ useEffect(() => {
   <div className="content p-8">
     <h2 className="text-2xl font-bold mb-4">Hover around this area</h2>
     <p className="text-muted-foreground">Move your mouse to see the custom cursor effect</p>
-  </div>
+</div>
 </div>
 
 // JavaScript Version
@@ -4528,8 +4530,8 @@ useEffect(() => {
         <div className="text-center">
           <h2 className="text-2xl font-bold mb-4">Dot + Trail Cursor</h2>
           <p className="text-muted-foreground">Small dot with trailing ghost effect</p>
-        </div>
-      </div>
+</div>
+</div>
     ),
   },
   {
@@ -4571,7 +4573,7 @@ useEffect(() => {
           <span className="relative z-10">Another Button</span>
           <div className="absolute inset-0 bg-primary/10 scale-0 group-hover:scale-100 transition-transform duration-300 ease-out"></div>
         </Button>
-      </div>
+</div>
     ),
   },
   {
@@ -4583,7 +4585,7 @@ useEffect(() => {
   <div className="content p-8">
     <h2 className="text-2xl font-bold mb-4">Blob Cursor Effect</h2>
     <p className="text-muted-foreground">Move your mouse to see the morphing blob</p>
-  </div>
+</div>
 </div>
 
 // JavaScript Version
@@ -4623,9 +4625,9 @@ useEffect(() => {
           <p className="text-muted-foreground">Smooth morphing blob with hover expansion</p>
           <div className="mt-4 space-y-2">
             <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mx-auto mix-blend-multiply transition-transform duration-300 hover:scale-150"></div>
-          </div>
-        </div>
-      </div>
+</div>
+</div>
+</div>
     ),
   },
   {
@@ -4682,7 +4684,7 @@ useEffect(() => {
           </span>
         </h2>
         <p className="text-muted-foreground">Move your cursor over the text to see the underline effect</p>
-      </div>
+</div>
     ),
   },
   {
@@ -4692,11 +4694,11 @@ useEffect(() => {
 <div className="tooltip-cursor-container">
   <div className="cursor-tooltip fixed w-32 h-32 bg-white border rounded-lg shadow-lg pointer-events-none z-50 opacity-0 transition-opacity duration-200">
     <img src="/placeholder-image.jpg" alt="Preview" className="w-full h-full object-cover rounded" />
-  </div>
+</div>
   <div className="content p-8">
     <h2 className="text-2xl font-bold mb-4">Hover for Tooltip</h2>
     <p className="text-muted-foreground">Move your cursor over this area to see the tooltip cursor</p>
-  </div>
+</div>
 </div>
 
 // JavaScript Version
@@ -4732,13 +4734,13 @@ useEffect(() => {
         <div className="w-32 h-32 bg-white border rounded-lg shadow-lg mx-auto mb-4 flex items-center justify-center">
           <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg flex items-center justify-center">
             <span className="text-white font-bold text-sm">Preview</span>
-          </div>
-        </div>
+</div>
+</div>
         <div className="text-center">
           <h2 className="text-2xl font-bold mb-4">Cursor as Tooltip</h2>
           <p className="text-muted-foreground">Hover to see tooltip cursor effect</p>
-        </div>
-      </div>
+</div>
+</div>
     ),
   },
   {
@@ -4748,11 +4750,11 @@ useEffect(() => {
 <div className="gradient-cursor-container">
   <div className="gradient-cursor fixed w-12 h-12 rounded-full pointer-events-none z-50">
     <div className="w-full h-full rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 animate-spin"></div>
-  </div>
+</div>
   <div className="content p-8">
     <h2 className="text-2xl font-bold mb-4">Gradient Circle Cursor</h2>
     <p className="text-muted-foreground">Move your mouse to see the animated gradient circle</p>
-  </div>
+</div>
 </div>
 
 // JavaScript Version
@@ -4785,16 +4787,16 @@ useEffect(() => {
       <div className="gradient-cursor-container border rounded-lg p-8 bg-muted/30">
         <div className="w-12 h-12 rounded-full mx-auto mb-4">
           <div className="w-full h-full rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 animate-spin"></div>
-        </div>
+</div>
         <div className="text-center">
           <h2 className="text-2xl font-bold mb-4">Gradient Circle Cursor</h2>
           <p className="text-muted-foreground">Animated gradient circle following mouse</p>
           <div className="mt-4 space-y-2">
             <div className="w-8 h-8 rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 animate-spin mx-auto"></div>
             <div className="w-6 h-6 rounded-full bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 animate-spin mx-auto" style={{ animationDirection: 'reverse' }}></div>
-          </div>
-        </div>
-      </div>
+</div>
+</div>
+</div>
     ),
   },
   {
@@ -4805,17 +4807,17 @@ useEffect(() => {
   <div className="draggable-item p-4 border rounded-lg cursor-grab active:cursor-grabbing hover:bg-muted/50 transition-colors">
     <h3 className="font-semibold">Drag Me (Grab)</h3>
     <p className="text-sm text-muted-foreground">Click and drag to see cursor change</p>
-  </div>
+</div>
   
   <div className="resizable-item p-4 border rounded-lg cursor-ns-resize hover:bg-muted/50 transition-colors">
     <h3 className="font-semibold">Resize Me (NS)</h3>
     <p className="text-sm text-muted-foreground">North-south resize cursor</p>
-  </div>
+</div>
   
   <div className="moveable-item p-4 border rounded-lg cursor-move hover:bg-muted/50 transition-colors">
     <h3 className="font-semibold">Move Me (Move)</h3>
     <p className="text-sm text-muted-foreground">Move cursor for repositioning</p>
-  </div>
+</div>
 </div>
 
 // JavaScript Version
@@ -4851,22 +4853,22 @@ useEffect(() => {
         <div className="draggable-item p-4 border rounded-lg cursor-grab active:cursor-grabbing hover:bg-muted/50 transition-colors">
           <h3 className="font-semibold">Drag Me (Grab)</h3>
           <p className="text-sm text-muted-foreground">Click and drag to see cursor change</p>
-        </div>
+</div>
         
         <div className="resizable-item p-4 border rounded-lg cursor-ns-resize hover:bg-muted/50 transition-colors">
           <h3 className="font-semibold">Resize Me (NS)</h3>
           <p className="text-sm text-muted-foreground">North-south resize cursor</p>
-        </div>
+</div>
         
         <div className="moveable-item p-4 border rounded-lg cursor-move hover:bg-muted/50 transition-colors">
           <h3 className="font-semibold">Move Me (Move)</h3>
           <p className="text-sm text-muted-foreground">Move cursor for repositioning</p>
-        </div>
+</div>
         
         <div className="text-center text-sm text-muted-foreground">
           <p>Try clicking and dragging on the items above</p>
-        </div>
-      </div>
+</div>
+</div>
     ),
   },
   {
@@ -4885,8 +4887,8 @@ useEffect(() => {
     <div className="text-center text-white">
       <h2 className="text-3xl font-bold mb-2">Animated Background</h2>
       <p className="text-white/80">Smoothly shifting gradient colors</p>
-    </div>
-  </div>
+</div>
+</div>
 </div>
 
 // Custom CSS Animation
@@ -4908,9 +4910,9 @@ useEffect(() => {
           <div className="text-center text-white">
             <h2 className="text-3xl font-bold mb-2">Animated Background</h2>
             <p className="text-white/80">Smoothly shifting gradient colors</p>
-          </div>
-        </div>
-      </div>
+</div>
+</div>
+</div>
     ),
   },
   {
@@ -4927,15 +4929,15 @@ useEffect(() => {
       backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noise"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%" height="100%" filter="url(%23noise)" opacity="0.4"/%3E%3C/svg%3E")',
       backgroundSize: '200px 200px'
     }}></div>
-  </div>
+</div>
   
   {/* Content */}
   <div className="relative z-10 flex items-center justify-center h-full">
     <div className="text-center text-white">
       <h2 className="text-3xl font-bold mb-2">Noise Texture</h2>
       <p className="text-white/80">Subtle film grain effect</p>
-    </div>
-  </div>
+</div>
+</div>
 </div>
 
 // JavaScript Version with Canvas
@@ -4965,14 +4967,14 @@ useEffect(() => {
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-gray-700"></div>
         <div className="absolute inset-0 opacity-10">
           <div className="w-full h-full bg-[url('data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20200%20200%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cfilter%20id%3D%22noise%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.65%22%20numOctaves%3D%223%22%20stitchTiles%3D%22stitch%22/%3E%3C/filter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url%28%23noise%29%22%20opacity%3D%220.4%22/%3E%3C/svg%3E')] bg-[length:200px_200px]"></div>
-        </div>
+</div>
         <div className="relative z-10 flex items-center justify-center h-full">
           <div className="text-center text-white">
             <h2 className="text-3xl font-bold mb-2">Noise Texture</h2>
             <p className="text-white/80">Subtle film grain effect</p>
-          </div>
-        </div>
-      </div>
+</div>
+</div>
+</div>
     ),
   },
   {
@@ -5007,8 +5009,8 @@ useEffect(() => {
     <div className="text-center text-white">
       <h2 className="text-3xl font-bold mb-2">Geometric Grid</h2>
       <p className="text-white/80">Modern grid with glowing lines</p>
-    </div>
-  </div>
+</div>
+</div>
 </div>
 
 // CSS Custom Properties
@@ -5041,108 +5043,732 @@ useEffect(() => {
           <div className="text-center text-white">
             <h2 className="text-3xl font-bold mb-2">Geometric Grid</h2>
             <p className="text-white/80">Modern grid with glowing lines</p>
-          </div>
-        </div>
-      </div>
+</div>
+</div>
+</div>
     ),
   },
   {
     name: "Particle Background",
     description: "Moving dots connected with lines using canvas or CSS transforms",
-    code: `// CSS Version
-<div className="particle-background-container relative h-64 overflow-hidden rounded-lg">
-  {/* Particles */}
+    code: `// CSS Version with animated dots
+<div className="particle-container relative h-64 overflow-hidden rounded-lg bg-gray-900">
+  {/* Animated particles */}
   <div className="absolute inset-0">
-    <div className="particle absolute w-2 h-2 bg-blue-400 rounded-full animate-bounce" style={{ top: '20%', left: '20%', animationDelay: '0s' }}></div>
-    <div className="particle absolute w-2 h-2 bg-purple-400 rounded-full animate-bounce" style={{ top: '30%', left: '80%', animationDelay: '0.5s' }}></div>
-    <div className="particle absolute w-2 h-2 bg-green-400 rounded-full animate-bounce" style={{ top: '70%', left: '30%', animationDelay: '1s' }}></div>
-    <div className="particle absolute w-2 h-2 bg-pink-400 rounded-full animate-bounce" style={{ top: '80%', left: '70%', animationDelay: '1.5s' }}></div>
-  </div>
+    <div className="particle absolute w-2 h-2 bg-blue-400 rounded-full animate-pulse" style={{
+      top: '20%',
+      left: '10%',
+      animation: 'particle-float 8s ease-in-out infinite'
+    }}></div>
+    <div className="particle absolute w-2 h-2 bg-green-400 rounded-full animate-pulse" style={{
+      top: '30%',
+      left: '80%',
+      animation: 'particle-float 10s ease-in-out infinite reverse'
+    }}></div>
+    <div className="particle absolute w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{
+      top: '70%',
+      left: '20%',
+      animation: 'particle-float 12s ease-in-out infinite'
+    }}></div>
+    <div className="particle absolute w-2 h-2 bg-pink-400 rounded-full animate-pulse" style={{
+      top: '60%',
+      left: '70%',
+      animation: 'particle-float 9s ease-in-out infinite reverse'
+    }}></div>
+</div>
   
-  {/* Connection Lines */}
-  <svg className="absolute inset-0 w-full h-full">
-    <line x1="20%" y1="20%" x2="80%" y2="30%" stroke="rgba(59, 130, 246, 0.3)" strokeWidth="1" />
-    <line x1="30%" y1="70%" x2="70%" y2="80%" stroke="rgba(147, 51, 234, 0.3)" strokeWidth="1" />
-    <line x1="20%" y1="20%" x2="30%" y2="70%" stroke="rgba(34, 197, 94, 0.3)" strokeWidth="1" />
+  {/* Connecting lines */}
+  <svg className="absolute inset-0 w-full h-full" style={{ zIndex: 1 }}>
+    <line x1="10%" y1="20%" x2="80%" y2="30%" stroke="#3B82F6" strokeWidth="1" opacity="0.6" />
+    <line x1="20%" y1="70%" x2="70%" y2="60%" stroke="#8B5CF6" strokeWidth="1" opacity="0.6" />
+    <line x1="10%" y1="20%" x2="20%" y2="70%" stroke="#EC4899" strokeWidth="1" opacity="0.6" />
+    <line x1="80%" y1="30%" x2="70%" y2="60%" stroke="#10B981" strokeWidth="1" opacity="0.6" />
   </svg>
   
   {/* Content */}
   <div className="relative z-10 flex items-center justify-center h-full">
     <div className="text-center text-white">
       <h2 className="text-3xl font-bold mb-2">Particle Background</h2>
-      <p className="text-white/80">Connected moving particles</p>
-    </div>
-  </div>
+      <p className="text-white/80">Moving dots with connecting lines</p>
 </div>
-
-// JavaScript Canvas Version
-useEffect(() => {
-  const canvas = document.getElementById('particle-canvas');
-  const ctx = canvas.getContext('2d');
-  
-  const particles = [
-    { x: 100, y: 100, vx: 1, vy: 1, size: 3, color: '#3B82F6' },
-    { x: 300, y: 150, vx: -1, vy: 0.5, size: 3, color: '#8B5CF6' },
-    { x: 200, y: 250, vx: 0.5, vy: -1, size: 3, color: '#10B981' }
-  ];
-  
-  const animate = () => {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
-    particles.forEach(particle => {
-      // Update position
-      particle.x += particle.vx;
-      particle.y += particle.vy;
-      
-      // Bounce off edges
-      if (particle.x <= 0 || particle.x >= canvas.width) particle.vx *= -1;
-      if (particle.y <= 0 || particle.y >= canvas.height) particle.vy *= -1;
-      
-      // Draw particle
-      ctx.beginPath();
-      ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-      ctx.fillStyle = particle.color;
-      ctx.fill();
-    });
-    
-    // Draw connections
-    particles.forEach((p1, i) => {
-      particles.slice(i + 1).forEach(p2 => {
-        const distance = Math.sqrt((p1.x - p2.x) ** 2 + (p1.y - p2.y) ** 2);
-        if (distance < 100) {
-          ctx.beginPath();
-          ctx.moveTo(p1.x, p1.y);
-          ctx.lineTo(p2.x, p2.y);
-          ctx.strokeStyle = \`rgba(59, 130, 246, \${0.3 * (1 - distance / 100)})\`;
-          ctx.stroke();
-        }
-      });
-    });
-    
-    requestAnimationFrame(animate);
-  };
-  
-  animate();
-}, []);`,
+</div>
+</div>`,
     preview: (
-      <div className="particle-background-container relative h-64 overflow-hidden rounded-lg bg-gradient-to-br from-gray-900 to-gray-700">
+      <div className="particle-container relative h-64 overflow-hidden rounded-lg bg-gray-900">
         <div className="absolute inset-0">
-          <div className="particle absolute w-2 h-2 bg-blue-400 rounded-full animate-bounce" style={{ top: '20%', left: '20%', animationDelay: '0s' }}></div>
-          <div className="particle absolute w-2 h-2 bg-purple-400 rounded-full animate-bounce" style={{ top: '30%', left: '80%', animationDelay: '0.5s' }}></div>
-          <div className="particle absolute w-2 h-2 bg-green-400 rounded-full animate-bounce" style={{ top: '70%', left: '30%', animationDelay: '1s' }}></div>
-          <div className="particle absolute w-2 h-2 bg-pink-400 rounded-full animate-bounce" style={{ top: '80%', left: '70%', animationDelay: '1.5s' }}></div>
-        </div>
-        <svg className="absolute inset-0 w-full h-full">
-          <line x1="20%" y1="20%" x2="80%" y2="30%" stroke="rgba(59, 130, 246, 0.3)" strokeWidth="1" />
-          <line x1="30%" y1="70%" x2="70%" y2="80%" stroke="rgba(147, 51, 234, 0.3)" strokeWidth="1" />
-          <line x1="20%" y1="20%" x2="30%" y2="70%" stroke="rgba(34, 197, 94, 0.3)" strokeWidth="1" />
+          <div className="particle absolute w-2 h-2 bg-blue-400 rounded-full animate-pulse" style={{
+            top: '20%',
+            left: '10%'
+          }}></div>
+          <div className="particle absolute w-2 h-2 bg-green-400 rounded-full animate-pulse" style={{
+            top: '30%',
+            left: '80%'
+          }}></div>
+          <div className="particle absolute w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{
+            top: '70%',
+            left: '20%'
+          }}></div>
+          <div className="particle absolute w-2 h-2 bg-pink-400 rounded-full animate-pulse" style={{
+            top: '60%',
+            left: '70%'
+          }}></div>
+</div>
+        <svg className="absolute inset-0 w-full h-full" style={{ zIndex: 1 }}>
+          <line x1="10%" y1="20%" x2="80%" y2="30%" stroke="#3B82F6" strokeWidth="1" opacity="0.6" />
+          <line x1="20%" y1="70%" x2="70%" y2="60%" stroke="#8B5CF6" strokeWidth="1" opacity="0.6" />
+          <line x1="10%" y1="20%" x2="20%" y2="70%" stroke="#EC4899" strokeWidth="1" opacity="0.6" />
+          <line x1="80%" y1="30%" x2="70%" y2="60%" stroke="#10B981" strokeWidth="1" opacity="0.6" />
         </svg>
         <div className="relative z-10 flex items-center justify-center h-full">
           <div className="text-center text-white">
             <h2 className="text-3xl font-bold mb-2">Particle Background</h2>
-            <p className="text-white/80">Connected moving particles</p>
-          </div>
+            <p className="text-white/80">Moving dots with connecting lines</p>
+</div>
+</div>
+</div>
+    ),
+  },
+  {
+    name: "Waves Animation",
+    description: "Sinusoidal wave effect using CSS clip-path or SVG",
+    code: `// CSS Version with clip-path
+<div className="waves-container relative h-64 overflow-hidden rounded-lg">
+  {/* Wave 1 */}
+  <div className="absolute inset-0 bg-blue-500" style={{
+    clipPath: 'polygon(0 50%, 10% 45%, 20% 55%, 30% 40%, 40% 60%, 50% 35%, 60% 65%, 70% 30%, 80% 70%, 90% 25%, 100% 75%, 100% 100%, 0 100%)'
+  }}></div>
+  
+  {/* Wave 2 */}
+  <div className="absolute inset-0 bg-blue-400 opacity-80" style={{
+    clipPath: 'polygon(0 60%, 10% 55%, 20% 65%, 30% 50%, 40% 70%, 50% 45%, 60% 75%, 70% 40%, 80% 80%, 90% 35%, 100% 85%, 100% 100%, 0 100%)'
+  }}></div>
+  
+  {/* Wave 3 */}
+  <div className="absolute inset-0 bg-blue-300 opacity-60" style={{
+    clipPath: 'polygon(0 70%, 10% 65%, 20% 75%, 30% 60%, 40% 80%, 50% 55%, 60% 85%, 70% 50%, 80% 90%, 90% 45%, 100% 95%, 100% 100%, 0 100%)'
+  }}></div>
+  
+  {/* Content */}
+  <div className="relative z-10 flex items-center justify-center h-full">
+    <div className="text-center text-white">
+      <h2 className="text-3xl font-bold mb-2">Waves Animation</h2>
+      <p className="text-white/80">Sinusoidal wave effects</p>
+</div>
+</div>
+</div>`,
+    preview: (
+      <div className="waves-container relative h-64 overflow-hidden rounded-lg">
+        <div className="absolute inset-0 bg-blue-500" style={{
+          clipPath: 'polygon(0 50%, 10% 45%, 20% 55%, 30% 40%, 40% 60%, 50% 35%, 60% 65%, 70% 30%, 80% 70%, 90% 25%, 100% 75%, 100% 100%, 0 100%)'
+        }}></div>
+        <div className="absolute inset-0 bg-blue-400 opacity-80" style={{
+          clipPath: 'polygon(0 60%, 10% 55%, 20% 65%, 30% 50%, 40% 70%, 50% 45%, 60% 75%, 70% 40%, 80% 80%, 90% 35%, 100% 85%, 100% 100%, 0 100%)'
+        }}></div>
+        <div className="absolute inset-0 bg-blue-300 opacity-60" style={{
+          clipPath: 'polygon(0 70%, 10% 65%, 20% 75%, 30% 60%, 40% 80%, 50% 55%, 60% 85%, 70% 50%, 80% 90%, 90% 45%, 100% 95%, 100% 100%, 0 100%)'
+        }}></div>
+        <div className="relative z-10 flex items-center justify-center h-full">
+          <div className="text-center text-white">
+            <h2 className="text-3xl font-bold mb-2">Waves Animation</h2>
+            <p className="text-white/80">Sinusoidal wave effects</p>
+</div>
+</div>
+</div>
+    ),
+  },
+  {
+    name: "Particle Background",
+    description: "Moving dots connected with lines using canvas or CSS transforms",
+    code: `// CSS Version with animated dots
+<div className="particle-container relative h-64 overflow-hidden rounded-lg bg-gray-900">
+  {/* Animated particles */}
+  <div className="absolute inset-0">
+    <div className="particle absolute w-2 h-2 bg-blue-400 rounded-full animate-pulse" style={{
+      top: '20%',
+      left: '10%',
+      animation: 'particle-float 8s ease-in-out infinite'
+    }}></div>
+    <div className="particle absolute w-2 h-2 bg-green-400 rounded-full animate-pulse" style={{
+      top: '30%',
+      left: '80%',
+      animation: 'particle-float 10s ease-in-out infinite reverse'
+    }}></div>
+    <div className="particle absolute w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{
+      top: '70%',
+      left: '20%',
+      animation: 'particle-float 12s ease-in-out infinite'
+    }}></div>
+    <div className="particle absolute w-2 h-2 bg-pink-400 rounded-full animate-pulse" style={{
+      top: '60%',
+      left: '70%',
+      animation: 'particle-float 9s ease-in-out infinite reverse'
+    }}></div>
+</div>
+  
+  {/* Connecting lines */}
+  <svg className="absolute inset-0 w-full h-full" style={{ zIndex: 1 }}>
+    <line x1="10%" y1="20%" x2="80%" y2="30%" stroke="#3B82F6" strokeWidth="1" opacity="0.6" />
+    <line x1="20%" y1="70%" x2="70%" y2="60%" stroke="#8B5CF6" strokeWidth="1" opacity="0.6" />
+    <line x1="10%" y1="20%" x2="20%" y2="70%" stroke="#EC4899" strokeWidth="1" opacity="0.6" />
+    <line x1="80%" y1="30%" x2="70%" y2="60%" stroke="#10B981" strokeWidth="1" opacity="0.6" />
+  </svg>
+  
+  {/* Content */}
+  <div className="relative z-10 flex items-center justify-center h-full">
+    <div className="text-center text-white">
+      <h2 className="text-3xl font-bold mb-2">Particle Background</h2>
+      <p className="text-white/80">Moving dots with connecting lines</p>
+</div>
+</div>
+</div>`,
+    preview: (
+      <div className="particle-container relative h-64 overflow-hidden rounded-lg bg-gray-900">
+        <div className="absolute inset-0">
+          <div className="particle absolute w-2 h-2 bg-blue-400 rounded-full animate-pulse" style={{
+            top: '20%',
+            left: '10%'
+          }}></div>
+          <div className="particle absolute w-2 h-2 bg-green-400 rounded-full animate-pulse" style={{
+            top: '30%',
+            left: '80%'
+          }}></div>
+          <div className="particle absolute w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{
+            top: '70%',
+            left: '20%'
+          }}></div>
+          <div className="particle absolute w-2 h-2 bg-pink-400 rounded-full animate-pulse" style={{
+            top: '60%',
+            left: '70%'
+          }}></div>
+</div>
+        <svg className="absolute inset-0 w-full h-full" style={{ zIndex: 1 }}>
+          <line x1="10%" y1="20%" x2="80%" y2="30%" stroke="#3B82F6" strokeWidth="1" opacity="0.6" />
+          <line x1="20%" y1="70%" x2="70%" y2="60%" stroke="#8B5CF6" strokeWidth="1" opacity="0.6" />
+          <line x1="10%" y1="20%" x2="20%" y2="70%" stroke="#EC4899" strokeWidth="1" opacity="0.6" />
+          <line x1="80%" y1="30%" x2="70%" y2="60%" stroke="#10B981" strokeWidth="1" opacity="0.6" />
+        </svg>
+        <div className="relative z-10 flex items-center justify-center h-full">
+          <div className="text-center text-white">
+            <h2 className="text-3xl font-bold mb-2">Particle Background</h2>
+            <p className="text-white/80">Moving dots with connecting lines</p>
+</div>
+</div>
+</div>
+    ),
+  },
+  {
+    name: "Aurora / Neon Glow Background",
+    description: "Animated blur blobs blending like northern lights",
+    code: `// CSS Version
+<div className="aurora-container relative h-64 overflow-hidden rounded-lg">
+  {/* Aurora Blob 1 */}
+  <div className="absolute top-0 left-1/4 w-32 h-32 bg-green-400 rounded-full blur-3xl opacity-60 animate-pulse" style={{
+    animation: 'aurora-float 8s ease-in-out infinite'
+  }}></div>
+  
+  {/* Aurora Blob 2 */}
+  <div className="absolute top-1/4 right-1/4 w-40 h-40 bg-blue-400 rounded-full blur-3xl opacity-50 animate-pulse" style={{
+    animation: 'aurora-float 10s ease-in-out infinite reverse'
+  }}></div>
+  
+  {/* Aurora Blob 3 */}
+  <div className="absolute bottom-1/4 left-1/3 w-36 h-36 bg-purple-400 rounded-full blur-3xl opacity-70 animate-pulse" style={{
+    animation: 'aurora-float 12s ease-in-out infinite'
+  }}></div>
+  
+  {/* Content */}
+  <div className="relative z-10 flex items-center justify-center h-full">
+    <div className="text-center text-white">
+      <h2 className="text-3xl font-bold mb-2">Aurora Background</h2>
+      <p className="text-white/80">Northern lights effect</p>
+</div>
+</div>
+</div>`,
+    preview: (
+      <div className="aurora-container relative h-64 overflow-hidden rounded-lg bg-gray-900">
+        <div className="absolute top-0 left-1/4 w-32 h-32 bg-green-400 rounded-full blur-3xl opacity-60 animate-pulse"></div>
+        <div className="absolute top-1/4 right-1/4 w-40 h-40 bg-blue-400 rounded-full blur-3xl opacity-50 animate-pulse"></div>
+        <div className="absolute bottom-1/4 left-1/3 w-36 h-36 bg-purple-400 rounded-full blur-3xl opacity-70 animate-pulse"></div>
+        <div className="relative z-10 flex items-center justify-center h-full">
+          <div className="text-center text-white">
+            <h2 className="text-3xl font-bold mb-2">Aurora Background</h2>
+            <p className="text-white/80">Northern lights effect</p>
+</div>
+</div>
+</div>
+    ),
+  },
+  {
+    name: "Waves Animation",
+    description: "Sinusoidal wave effect using CSS clip-path or SVG",
+    code: `// CSS Version with clip-path
+<div className="waves-container relative h-64 overflow-hidden rounded-lg">
+  {/* Wave 1 */}
+  <div className="absolute inset-0 bg-blue-500" style={{
+    clipPath: 'polygon(0 50%, 10% 45%, 20% 55%, 30% 40%, 40% 60%, 50% 35%, 60% 65%, 70% 30%, 80% 70%, 90% 25%, 100% 75%, 100% 100%, 0 100%)'
+  }}></div>
+  
+  {/* Wave 2 */}
+  <div className="absolute inset-0 bg-blue-400 opacity-80" style={{
+    clipPath: 'polygon(0 60%, 10% 55%, 20% 65%, 30% 50%, 40% 70%, 50% 45%, 60% 75%, 70% 40%, 80% 80%, 90% 35%, 100% 85%, 100% 100%, 0 100%)'
+  }}></div>
+  
+  {/* Wave 3 */}
+  <div className="absolute inset-0 bg-blue-300 opacity-60" style={{
+    clipPath: 'polygon(0 70%, 10% 65%, 20% 75%, 30% 60%, 40% 80%, 50% 55%, 60% 85%, 70% 50%, 80% 90%, 90% 45%, 100% 95%, 100% 100%, 0 100%)'
+  }}></div>
+  
+  {/* Content */}
+  <div className="relative z-10 flex items-center justify-center h-full">
+    <div className="text-center text-white">
+      <h2 className="text-3xl font-bold mb-2">Waves Animation</h2>
+      <p className="text-white/80">Sinusoidal wave effects</p>
+</div>
+</div>
+</div>`,
+    preview: (
+      <div className="waves-container relative h-64 overflow-hidden rounded-lg">
+        <div className="absolute inset-0 bg-blue-500" style={{
+          clipPath: 'polygon(0 50%, 10% 45%, 20% 55%, 30% 40%, 40% 60%, 50% 35%, 60% 65%, 70% 30%, 80% 70%, 90% 25%, 100% 75%, 100% 100%, 0 100%)'
+        }}></div>
+        <div className="absolute inset-0 bg-blue-400 opacity-80" style={{
+          clipPath: 'polygon(0 60%, 10% 55%, 20% 65%, 30% 50%, 40% 70%, 50% 45%, 60% 75%, 70% 40%, 80% 80%, 90% 35%, 100% 85%, 100% 100%, 0 100%)'
+        }}></div>
+        <div className="absolute inset-0 bg-blue-300 opacity-60" style={{
+          clipPath: 'polygon(0 70%, 10% 65%, 20% 75%, 30% 60%, 40% 80%, 50% 55%, 60% 85%, 70% 50%, 80% 90%, 90% 45%, 100% 95%, 100% 100%, 0 100%)'
+        }}></div>
+        <div className="relative z-10 flex items-center justify-center h-full">
+          <div className="text-center text-white">
+            <h2 className="text-3xl font-bold mb-2">Waves Animation</h2>
+            <p className="text-white/80">Sinusoidal wave effects</p>
+</div>
+</div>
+</div>
+    ),
+  },
+  {
+    name: "Particle Background",
+    description: "Moving dots connected with lines using canvas or CSS transforms",
+    code: `// CSS Version with animated dots
+<div className="particle-container relative h-64 overflow-hidden rounded-lg bg-gray-900">
+  {/* Animated particles */}
+  <div className="absolute inset-0">
+    <div className="particle absolute w-2 h-2 bg-blue-400 rounded-full animate-pulse" style={{
+      top: '20%',
+      left: '10%',
+      animation: 'particle-float 8s ease-in-out infinite'
+    }}></div>
+    <div className="particle absolute w-2 h-2 bg-green-400 rounded-full animate-pulse" style={{
+      top: '30%',
+      left: '80%',
+      animation: 'particle-float 10s ease-in-out infinite reverse'
+    }}></div>
+    <div className="particle absolute w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{
+      top: '70%',
+      left: '20%',
+      animation: 'particle-float 12s ease-in-out infinite'
+    }}></div>
+    <div className="particle absolute w-2 h-2 bg-pink-400 rounded-full animate-pulse" style={{
+      top: '60%',
+      left: '70%',
+      animation: 'particle-float 9s ease-in-out infinite reverse'
+    }}></div>
+</div>
+  
+  {/* Connecting lines */}
+  <svg className="absolute inset-0 w-full h-full" style={{ zIndex: 1 }}>
+    <line x1="10%" y1="20%" x2="80%" y2="30%" stroke="#3B82F6" strokeWidth="1" opacity="0.6" />
+    <line x1="20%" y1="70%" x2="70%" y2="60%" stroke="#8B5CF6" strokeWidth="1" opacity="0.6" />
+    <line x1="10%" y1="20%" x2="20%" y2="70%" stroke="#EC4899" strokeWidth="1" opacity="0.6" />
+    <line x1="80%" y1="30%" x2="70%" y2="60%" stroke="#10B981" strokeWidth="1" opacity="0.6" />
+  </svg>
+  
+  {/* Content */}
+  <div className="relative z-10 flex items-center justify-center h-full">
+    <div className="text-center text-white">
+      <h2 className="text-3xl font-bold mb-2">Particle Background</h2>
+      <p className="text-white/80">Moving dots with connecting lines</p>
+</div>
+</div>
+</div>`,
+    preview: (
+      <div className="particle-container relative h-64 overflow-hidden rounded-lg bg-gray-900">
+        <div className="absolute inset-0">
+          <div className="particle absolute w-2 h-2 bg-blue-400 rounded-full animate-pulse" style={{
+            top: '20%',
+            left: '10%'
+          }}></div>
+          <div className="particle absolute w-2 h-2 bg-green-400 rounded-full animate-pulse" style={{
+            top: '30%',
+            left: '80%'
+          }}></div>
+          <div className="particle absolute w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{
+            top: '70%',
+            left: '20%'
+          }}></div>
+          <div className="particle absolute w-2 h-2 bg-pink-400 rounded-full animate-pulse" style={{
+            top: '60%',
+            left: '70%'
+          }}></div>
+</div>
+        <svg className="absolute inset-0 w-full h-full" style={{ zIndex: 1 }}>
+          <line x1="10%" y1="20%" x2="80%" y2="30%" stroke="#3B82F6" strokeWidth="1" opacity="0.6" />
+          <line x1="20%" y1="70%" x2="70%" y2="60%" stroke="#8B5CF6" strokeWidth="1" opacity="0.6" />
+          <line x1="10%" y1="20%" x2="20%" y2="70%" stroke="#EC4899" strokeWidth="1" opacity="0.6" />
+          <line x1="80%" y1="30%" x2="70%" y2="60%" stroke="#10B981" strokeWidth="1" opacity="0.6" />
+        </svg>
+        <div className="relative z-10 flex items-center justify-center h-full">
+          <div className="text-center text-white">
+            <h2 className="text-3xl font-bold mb-2">Particle Background</h2>
+            <p className="text-white/80">Moving dots with connecting lines</p>
+</div>
+</div>
+</div>
+    ),
+  },
+  {
+    name: "Scrolling Parallax Background",
+    description: "Multiple layers moving at different speeds",
+    code: `// CSS Version
+<div className="parallax-container relative h-96 overflow-hidden rounded-lg">
+  {/* Background Layer 1 - Slowest */}
+  <div className="absolute inset-0 bg-gradient-to-br from-blue-900 to-purple-900 transform translate-y-0" style={{
+    transform: 'translateY(calc(var(--scroll-y, 0) * 0.1px))'
+  }}></div>
+  
+  {/* Background Layer 2 - Medium */}
+  <div className="absolute inset-0 bg-gradient-to-tl from-green-800 to-blue-800 opacity-50 transform translate-y-0" style={{
+    transform: 'translateY(calc(var(--scroll-y, 0) * 0.3px))'
+  }}></div>
+  
+  {/* Background Layer 3 - Fastest */}
+  <div className="absolute inset-0 bg-gradient-to-r from-purple-800 to-pink-800 opacity-30 transform translate-y-0" style={{
+    transform: 'translateY(calc(var(--scroll-y, 0) * 0.5px))'
+  }}></div>
+  
+  {/* Content */}
+  <div className="relative z-10 flex items-center justify-center h-full">
+    <div className="text-center text-white">
+      <h2 className="text-3xl font-bold mb-2">Parallax Background</h2>
+      <p className="text-white/80">Multiple layers at different speeds</p>
+</div>
+</div>
+</div>
+
+// JavaScript Version
+useEffect(() => {
+  const handleScroll = () => {
+    const scrolled = window.pageYOffset;
+    document.documentElement.style.setProperty('--scroll-y', scrolled.toString());
+  };
+  
+  window.addEventListener('scroll', handleScroll);
+  return () => window.removeEventListener('scroll', handleScroll);
+}, []);`,
+    preview: (
+      <div className="parallax-container relative h-96 overflow-hidden rounded-lg">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900 to-purple-900"></div>
+        <div className="absolute inset-0 bg-gradient-to-tl from-green-800 to-blue-800 opacity-50"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-800 to-pink-800 opacity-30"></div>
+        <div className="relative z-10 flex items-center justify-center h-full">
+          <div className="text-center text-white">
+            <h2 className="text-3xl font-bold mb-2">Parallax Background</h2>
+            <p className="text-white/80">Multiple layers at different speeds</p>
+</div>
+</div>
+</div>
+    ),
+  },
+  {
+    name: "Checkerboard / Isometric Pattern",
+    description: "CSS gradients to form repeating patterns",
+    code: `// CSS Version - Checkerboard
+<div className="pattern-container relative h-64 overflow-hidden rounded-lg">
+  {/* Checkerboard Pattern */}
+  <div className="absolute inset-0" style={{
+    backgroundImage: \`
+      linear-gradient(45deg, #3B82F6 25%, transparent 25%),
+      linear-gradient(-45deg, #3B82F6 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, #3B82F6 75%),
+      linear-gradient(-45deg, transparent 75%, #3B82F6 75%)
+    \`,
+    backgroundSize: '40px 40px',
+    backgroundPosition: '0 0, 0 20px, 20px -20px, -20px 0px'
+  }}></div>
+  
+  {/* Isometric Pattern */}
+  <div className="absolute inset-0 opacity-50" style={{
+    backgroundImage: \`
+      linear-gradient(30deg, #8B5CF6 12%, transparent 12.5%, transparent 87%, #8B5CF6 87.5%, #8B5CF6),
+      linear-gradient(150deg, #8B5CF6 12%, transparent 12.5%, transparent 87%, #8B5CF6 87.5%, #8B5CF6),
+      linear-gradient(30deg, #8B5CF6 12%, transparent 12.5%, transparent 87%, #8B5CF6 87.5%, #8B5CF6),
+      linear-gradient(150deg, #8B5CF6 12%, transparent 12.5%, transparent 87%, #8B5CF6 87.5%, #8B5CF6),
+      linear-gradient(60deg, #EC4899 25%, transparent 25.5%, transparent 75%, #EC4899 75%, #EC4899),
+      linear-gradient(60deg, #EC4899 25%, transparent 25.5%, transparent 75%, #EC4899 75%, #EC4899)
+    \`,
+    backgroundSize: '80px 140px',
+    backgroundPosition: '0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px'
+  }}></div>
+  
+  {/* Content */}
+  <div className="relative z-10 flex items-center justify-center h-full">
+    <div className="text-center text-white">
+      <h2 className="text-3xl font-bold mb-2">Pattern Background</h2>
+      <p className="text-white/80">Checkerboard and isometric patterns</p>
+</div>
+</div>
+</div>
+
+// CSS Custom Properties
+// Add this CSS to your stylesheet:
+// .pattern-container {
+//   --pattern-size: 40px;
+//   --pattern-color: #3B82F6;
+//   --isometric-size: 80px;
+//   --isometric-color: #8B5CF6;
+// }`,
+    preview: (
+      <div className="pattern-container relative h-64 overflow-hidden rounded-lg">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `
+            linear-gradient(45deg, #3B82F6 25%, transparent 25%),
+            linear-gradient(-45deg, #3B82F6 25%, transparent 25%),
+            linear-gradient(45deg, transparent 75%, #3B82F6 75%),
+            linear-gradient(-45deg, transparent 75%, #3B82F6 75%)
+          `,
+          backgroundSize: '40px 40px',
+          backgroundPosition: '0 0, 0 20px, 20px -20px, -20px 0px'
+        }}></div>
+        <div className="absolute inset-0 opacity-50" style={{
+          backgroundImage: `
+            linear-gradient(30deg, #8B5CF6 12%, transparent 12.5%, transparent 87%, #8B5CF6 87.5%, #8B5CF6),
+            linear-gradient(150deg, #8B5CF6 12%, transparent 12.5%, transparent 87%, #8B5CF6 87.5%, #8B5CF6),
+            linear-gradient(30deg, #8B5CF6 12%, transparent 12.5%, transparent 87%, #8B5CF6 87.5%, #8B5CF6),
+            linear-gradient(150deg, #8B5CF6 12%, transparent 12.5%, transparent 87%, #8B5CF6 87.5%, #8B5CF6),
+            linear-gradient(60deg, #EC4899 25%, transparent 25.5%, transparent 75%, #EC4899 75%, #EC4899),
+            linear-gradient(60deg, #EC4899 25%, transparent 25.5%, transparent 75%, #EC4899 75%, #EC4899)
+          `,
+          backgroundSize: '80px 140px',
+          backgroundPosition: '0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px'
+        }}></div>
+        <div className="relative z-10 flex items-center justify-center h-full">
+          <div className="text-center text-white">
+            <h2 className="text-3xl font-bold mb-2">Pattern Background</h2>
+            <p className="text-white/80">Checkerboard and isometric patterns</p>
+</div>
+</div>
+</div>
+    ),
+  },
+  {
+    name: "Ripple Click Effect",
+    description: "Expanding ripple when user clicks (like Material Design)",
+    code: `// CSS Version with ripple effect
+const RippleButton = () => {
+  const [ripples, setRipples] = useState<Array<{id: number, x: number, y: number}>>([]);
+  
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const button = e.currentTarget;
+    const rect = button.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    const newRipple = {
+      id: Date.now(),
+      x,
+      y
+    };
+    
+    setRipples(prev => [...prev, newRipple]);
+    
+    // Remove ripple after animation
+    setTimeout(() => {
+      setRipples(prev => prev.filter(r => r.id !== newRipple.id));
+    }, 600);
+  };
+  
+  return (
+    <button 
+      className="relative overflow-hidden px-6 py-3 bg-blue-500 text-white rounded-lg font-medium transition-colors hover:bg-blue-600 active:bg-blue-700"
+      onClick={handleClick}
+    >
+      Click for Ripple Effect
+      {ripples.map(ripple => (
+        <span
+          key={ripple.id}
+          className="absolute w-0 h-0 bg-white/30 rounded-full animate-ripple"
+          style={{
+            left: ripple.x,
+            top: ripple.y,
+            transform: 'translate(-50%, -50%)'
+          }}
+        />
+      ))}
+    </button>
+  );
+};`,
+    preview: (
+      <div className="flex items-center justify-center h-64">
+        <button className="relative overflow-hidden px-6 py-3 bg-blue-500 text-white rounded-lg font-medium transition-colors hover:bg-blue-600 active:bg-blue-700">
+          Click for Ripple Effect
+        </button>
+      </div>
+    ),
+  },
+  {
+    name: "Confetti Burst on Click",
+    description: "Little triangles/circles explode outward",
+    code: `// Confetti burst effect component
+const ConfettiButton = () => {
+  const [confetti, setConfetti] = useState<Array<{id: number, x: number, y: number, color: string, rotation: number, scale: number}>>([]);
+  
+  const colors = ['#ef4444', '#f59e0b', '#10b981', '#3b82f6', '#8b5cf6', '#ec4899'];
+  
+  const handleClick = () => {
+    const newConfetti = Array.from({ length: 20 }, (_, i) => ({
+      id: Date.now() + i,
+      x: Math.random() * 200 - 100,
+      y: Math.random() * 200 - 100,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      rotation: Math.random() * 360,
+      scale: Math.random() * 0.5 + 0.5
+    }));
+    
+    setConfetti(prev => [...prev, ...newConfetti]);
+    
+    // Remove confetti after animation
+    setTimeout(() => {
+      setConfetti(prev => prev.filter(c => !newConfetti.some(nc => nc.id === c.id)));
+    }, 2000);
+  };
+  
+  return (
+    <div className="relative">
+      <button 
+        className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg font-medium transition-transform hover:scale-105 active:scale-95"
+        onClick={handleClick}
+      >
+        🎉 Confetti Burst!
+      </button>
+      
+      {confetti.map(particle => (
+        <div
+          key={particle.id}
+          className="absolute w-2 h-2 animate-confetti-burst"
+          style={{
+            left: '50%',
+            top: '50%',
+            backgroundColor: particle.color,
+            transform: \`translate(-50%, -50%) translate(\${particle.x}px, \${particle.y}px) rotate(\${particle.rotation}deg) scale(\${particle.scale})\`
+          }}
+        />
+      ))}
+    </div>
+  );
+};`,
+    preview: (
+      <div className="flex items-center justify-center h-64">
+        <button className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg font-medium transition-transform hover:scale-105 active:scale-95">
+          🎉 Confetti Burst!
+        </button>
+      </div>
+    ),
+  },
+  {
+    name: "Sparkle Click Effect",
+    description: "Stars or sparkles appear then fade",
+    code: `// Sparkle click effect component
+const SparkleButton = () => {
+  const [sparkles, setSparkles] = useState<Array<{id: number, x: number, y: number, delay: number}>>([]);
+  
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const button = e.currentTarget;
+    const rect = button.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    const newSparkles = Array.from({ length: 8 }, (_, i) => ({
+      id: Date.now() + i,
+      x: x + (Math.random() - 0.5) * 100,
+      y: y + (Math.random() - 0.5) * 100,
+      delay: i * 100
+    }));
+    
+    setSparkles(prev => [...prev, ...newSparkles]);
+    
+    // Remove sparkles after animation
+    setTimeout(() => {
+      setSparkles(prev => prev.filter(s => !newSparkles.some(ns => ns.id === s.id)));
+    }, 1500);
+  };
+  
+  return (
+    <div className="relative">
+      <button 
+        className="px-6 py-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-white rounded-lg font-medium transition-all hover:shadow-lg hover:scale-105"
+        onClick={handleClick}
+      >
+        ✨ Sparkle Effect
+      </button>
+      
+      {sparkles.map(sparkle => (
+        <div
+          key={sparkle.id}
+          className="absolute w-4 h-4 animate-sparkle"
+          style={{
+            left: sparkle.x,
+            top: sparkle.y,
+            animationDelay: \`\${sparkle.delay}ms\`
+          }}
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full text-yellow-300">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
         </div>
+      ))}
+    </div>
+  );
+};`,
+    preview: (
+      <div className="flex items-center justify-center h-64">
+        <button className="px-6 py-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-white rounded-lg font-medium transition-all hover:shadow-lg hover:scale-105">
+          ✨ Sparkle Effect
+        </button>
+      </div>
+    ),
+  },
+  {
+    name: "Morphing Button on Click",
+    description: "Button smoothly transforms shape or color",
+    code: `// Morphing button component
+const MorphingButton = () => {
+  const [isMorphed, setIsMorphed] = useState(false);
+  
+  const handleClick = () => {
+    setIsMorphed(!isMorphed);
+  };
+  
+  return (
+    <button 
+      className={\`px-6 py-3 font-medium transition-all duration-500 ease-in-out \${
+        isMorphed 
+          ? 'bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-full shadow-lg scale-110' 
+          : 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-lg hover:shadow-md'
+      }\`}
+      onClick={handleClick}
+    >
+      {isMorphed ? '✨ Morphed!' : 'Click to Morph'}
+    </button>
+  );
+};`,
+    preview: (
+      <div className="flex items-center justify-center h-64 space-x-4">
+        <button className="px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-lg font-medium transition-all duration-500 ease-in-out hover:shadow-md">
+          Click to Morph
+        </button>
+        <button className="px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-full font-medium transition-all duration-500 ease-in-out shadow-lg scale-110">
+          ✨ Morphed!
+        </button>
       </div>
     ),
   },
@@ -5164,12 +5790,12 @@ useEffect(() => {
               <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
                 <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
                   <span className="text-white font-bold text-sm">UI</span>
-                </div>
+</div>
                 <span className="font-semibold text-lg text-foreground">Components</span>
               </Link>
               <ChevronRight className="w-4 h-4 text-muted-foreground" />
               <span className="text-muted-foreground">Documentation</span>
-            </div>
+</div>
 
             <div className="flex items-center gap-4">
               <div className="relative">
@@ -5180,11 +5806,11 @@ useEffect(() => {
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="pl-10 w-64"
                 />
-              </div>
+</div>
               <ThemeToggle />
-            </div>
-          </div>
-        </div>
+</div>
+</div>
+</div>
       </header>
 
       <div className="max-w-7xl mx-auto px-4 py-8">
@@ -5211,7 +5837,7 @@ useEffect(() => {
                   )
                 })}
               </nav>
-            </div>
+</div>
           </aside>
 
           {/* Main Content */}
@@ -5225,7 +5851,7 @@ useEffect(() => {
                   <p className="text-lg text-muted-foreground">
                     Welcome to our modern UI Components Library. Built with React, TypeScript, and Tailwind CSS.
                   </p>
-                </div>
+</div>
 
                 <div className="grid gap-6 md:grid-cols-2">
                   <Card>
@@ -5248,11 +5874,11 @@ useEffect(() => {
                           >
                             {copiedCode === "install" ? <CheckIcon className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
                           </Button>
-                        </div>
+</div>
                         <code className="text-sm text-green-600 dark:text-green-400">
                           npm install @ui/components
                         </code>
-                      </div>
+</div>
                     </CardContent>
                   </Card>
 
@@ -5274,13 +5900,13 @@ useEffect(() => {
                           <div key={index} className="flex items-center gap-3">
                             <feature.icon className="w-4 h-4 text-primary" />
                             <span className="text-muted-foreground">{feature.text}</span>
-                          </div>
+</div>
                         ))}
-                      </div>
+</div>
                     </CardContent>
                   </Card>
-                </div>
-              </div>
+</div>
+</div>
             )}
 
             {activeSection === "installation" && (
@@ -5292,7 +5918,7 @@ useEffect(() => {
                   <p className="text-lg text-muted-foreground">
                     Multiple ways to install and use our components in your project.
                   </p>
-                </div>
+</div>
 
                 <div className="grid gap-6">
                   <Card>
@@ -5316,8 +5942,8 @@ useEffect(() => {
                                   <Copy className="w-4 h-4" />
                                 )}
                               </Button>
-                            </div>
-                          </div>
+</div>
+</div>
                         ),
                       )}
                     </CardContent>
@@ -5340,15 +5966,15 @@ useEffect(() => {
                           >
                             {copiedCode === "import" ? <CheckIcon className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
                           </Button>
-                        </div>
+</div>
                         <code className="text-sm text-green-600 dark:text-green-400">
                           import {`{ Button }`} from "@ui/components"
                         </code>
-                      </div>
+</div>
                     </CardContent>
                   </Card>
-                </div>
-              </div>
+</div>
+</div>
             )}
 
             {activeSection === "components" && (
@@ -5358,7 +5984,7 @@ useEffect(() => {
                   <p className="text-lg text-muted-foreground">
                     Explore our collection of {components.length} reusable UI components.
                   </p>
-                </div>
+</div>
 
                 <div className="grid gap-10">
                   {filteredComponents.map((component, index) => (
@@ -5376,8 +6002,8 @@ useEffect(() => {
                           </h4>
                           <div className="p-8 rounded-lg border bg-muted/50 border-border">
                             {component.preview}
-                          </div>
-                        </div>
+</div>
+</div>
                         <div>
                           <div className="flex items-center justify-between mb-4">
                             <h4 className="text-sm font-semibold text-foreground uppercase tracking-wide">
@@ -5388,329 +6014,23 @@ useEffect(() => {
                               size="sm"
                               onClick={() => copyToClipboard(component.code, `code-${index}`)}
                             >
-                              {copiedCode === `code-${index}` ? (
-                                <CheckIcon className="w-4 h-4" />
-                              ) : (
-                                <Copy className="w-4 h-4" />
-                              )}
+                              {copiedCode === `code-${index}` ? <CheckIcon className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
                             </Button>
-                          </div>
-                          <div className="p-6 rounded-lg bg-muted/30 border border-border">
-                            <pre className="text-sm overflow-x-auto">
-                              <code className="text-foreground font-mono">{component.code}</code>
-                            </pre>
-                          </div>
-                        </div>
+</div>
+                          <pre className="text-sm text-muted-foreground">
+                            {component.code}
+                          </pre>
+</div>
                       </CardContent>
                     </Card>
                   ))}
-                </div>
-              </div>
-            )}
-
-            {activeSection === "create-component" && (
-              <div className="space-y-8">
-                <div>
-                  <h1 className="text-4xl font-bold mb-4 text-foreground">
-                    Create Your Own Component
-                  </h1>
-                  <p className="text-lg text-muted-foreground">
-                    Build and share your custom React components with the community.
-                  </p>
-                </div>
-
-                <div className="grid gap-6 md:grid-cols-2">
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>Component Builder</CardTitle>
-                      <CardDescription>
-                        Create components using our interactive builder
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                      <div className="p-4 rounded-lg border bg-muted border-border">
-                        <h4 className="font-medium mb-2 text-foreground">Features</h4>
-                        <ul className="space-y-1 text-sm text-muted-foreground">
-                          <li>• Visual component editor</li>
-                          <li>• Real-time preview</li>
-                          <li>• TypeScript support</li>
-                          <li>• Theme integration</li>
-                        </ul>
-                      </div>
-                      <Button className="w-full">
-                        <Settings className="w-4 h-4 mr-2" />
-                        Start Building
-                      </Button>
-                    </CardContent>
-                  </Card>
-
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>Upload Component</CardTitle>
-                      <CardDescription>
-                        Share your existing components
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                      <div className="p-4 rounded-lg border-2 border-dashed border-border">
-                        <div className="text-center">
-                          <Upload className="w-8 h-8 mx-auto mb-2 text-muted-foreground" />
-                          <p className="text-sm text-muted-foreground">
-                            Drag and drop your component files here
-                          </p>
-                          <p className="text-xs text-muted-foreground">
-                            Supports .tsx, .jsx, .ts, .js files
-                          </p>
-                        </div>
-                      </div>
-                      <Button variant="outline" className="w-full">
-                        <Upload className="w-4 h-4 mr-2" />
-                        Choose Files
-                      </Button>
-                    </CardContent>
-                  </Card>
-                </div>
-
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Component Guidelines</CardTitle>
-                    <CardDescription>
-                      Follow these guidelines to ensure your components integrate well
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="grid gap-4 md:grid-cols-2">
-                      <div className="space-y-3">
-                        <h4 className="font-medium text-foreground">Code Standards</h4>
-                        <ul className="space-y-2 text-sm text-muted-foreground">
-                          <li>• Use TypeScript for type safety</li>
-                          <li>• Follow React best practices</li>
-                          <li>• Include proper JSDoc comments</li>
-                          <li>• Use semantic HTML elements</li>
-                        </ul>
-                      </div>
-                      <div className="space-y-3">
-                        <h4 className="font-medium text-foreground">Design Principles</h4>
-                        <ul className="space-y-2 text-sm text-muted-foreground">
-                          <li>• Support dark/light themes</li>
-                          <li>• Ensure accessibility compliance</li>
-                          <li>• Make components responsive</li>
-                          <li>• Use consistent spacing</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Community Gallery</CardTitle>
-                    <CardDescription>
-                      Browse components created by the community
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="grid gap-4 md:grid-cols-3">
-                      {[
-                        { name: "Data Table", author: "John Doe", downloads: "1.2k", rating: 4.8 },
-                        { name: "File Upload", author: "Jane Smith", downloads: "856", rating: 4.6 },
-                        { name: "Rich Text Editor", author: "Mike Johnson", downloads: "2.1k", rating: 4.9 },
-                      ].map((component, index) => (
-                        <div key={index} className="p-4 rounded-lg border bg-muted border-border">
-                          <h4 className="font-medium mb-2 text-foreground">{component.name}</h4>
-                          <p className="text-sm mb-2 text-muted-foreground">by {component.author}</p>
-                          <div className="flex justify-between items-center">
-                            <span className="text-xs text-muted-foreground">{component.downloads} downloads</span>
-                            <div className="flex items-center gap-1">
-                              <Star className="w-3 h-3 fill-yellow-400 text-yellow-400" />
-                              <span className="text-xs text-foreground">{component.rating}</span>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            )}
-
-            {activeSection === "theming" && (
-              <div className="space-y-8">
-                <div>
-                  <h1 className="text-4xl font-bold mb-4 text-foreground">Theming</h1>
-                  <p className="text-lg text-muted-foreground">
-                    Customize the look and feel of components to match your brand.
-                  </p>
-                </div>
-
-                <div className="grid gap-6 md:grid-cols-2">
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>CSS Variables</CardTitle>
-                      <CardDescription>
-                        Customize colors using CSS custom properties
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="p-4 rounded-lg bg-muted">
-                        <pre className="text-sm text-foreground">
-                          <code>{`:root {
-  --primary: 222.2 84% 4.9%;
-  --primary-foreground: 210 40% 98%;
-  --secondary: 210 40% 96%;
-  --secondary-foreground: 222.2 84% 4.9%;
-}`}</code>
-                        </pre>
-                      </div>
-                    </CardContent>
-                  </Card>
-
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>Dark Mode</CardTitle>
-                      <CardDescription>
-                        Automatic dark mode support
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="space-y-3">
-                        <div className="flex items-center gap-3">
-                          <div className="w-4 h-4 bg-blue-500 rounded"></div>
-                          <span className="text-muted-foreground">Primary colors</span>
-                        </div>
-                        <div className="flex items-center gap-3">
-                          <div className="w-4 h-4 bg-gray-500 rounded"></div>
-                          <span className="text-muted-foreground">Neutral colors</span>
-                        </div>
-                        <div className="flex items-center gap-3">
-                          <div className="w-4 h-4 bg-green-500 rounded"></div>
-                          <span className="text-muted-foreground">Success colors</span>
-                        </div>
-                        <div className="flex items-center gap-3">
-                          <div className="w-4 h-4 bg-red-500 rounded"></div>
-                          <span className="text-muted-foreground">Error colors</span>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-              </div>
-            )}
-
-            {activeSection === "accessibility" && (
-              <div className="space-y-8">
-                <div>
-                  <h1 className="text-4xl font-bold mb-4 text-foreground">
-                    Accessibility
-                  </h1>
-                  <p className="text-lg text-muted-foreground">
-                    Our components are built with accessibility in mind, following WCAG guidelines.
-                  </p>
-                </div>
-
-                <div className="grid gap-6 md:grid-cols-2">
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>Keyboard Navigation</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-muted-foreground">
-                        All interactive components support keyboard navigation with proper focus management.
-                      </p>
-                    </CardContent>
-                  </Card>
-
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>Screen Reader Support</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-muted-foreground">
-                        Proper ARIA labels and semantic HTML ensure compatibility with screen readers.
-                      </p>
-                    </CardContent>
-                  </Card>
-
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>Color Contrast</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-muted-foreground">
-                        All color combinations meet WCAG AA contrast requirements for readability.
-                      </p>
-                    </CardContent>
-                  </Card>
-
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>Focus Indicators</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-muted-foreground">
-                        Clear focus indicators help users understand which element is currently active.
-                      </p>
-                    </CardContent>
-                  </Card>
-                </div>
-              </div>
-            )}
-
-            {activeSection === "responsive" && (
-              <div className="space-y-8">
-                <div>
-                  <h1 className="text-4xl font-bold mb-4 text-foreground">
-                    Responsive Design
-                  </h1>
-                  <p className="text-lg text-muted-foreground">
-                    All components are designed to work seamlessly across different screen sizes.
-                  </p>
-                </div>
-
-                <div className="grid gap-6">
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>Breakpoints</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="grid gap-4">
-                        {[
-                          { name: "Mobile", size: "< 640px", class: "sm:", color: "bg-red-500" },
-                          { name: "Tablet", size: "640px - 768px", class: "md:", color: "bg-yellow-500" },
-                          { name: "Desktop", size: "768px - 1024px", class: "lg:", color: "bg-green-500" },
-                          { name: "Large", size: "> 1024px", class: "xl:", color: "bg-blue-500" },
-                        ].map((breakpoint, index) => (
-                          <div key={index} className="flex justify-between items-center">
-                            <div className="flex items-center gap-3">
-                              <div className={`w-3 h-3 ${breakpoint.color} rounded-full`}></div>
-                              <span className="font-medium text-foreground">
-                                {breakpoint.name}
-                              </span>
-                            </div>
-                            <span className="text-muted-foreground">{breakpoint.size}</span>
-                            <Badge variant="outline">{breakpoint.class}</Badge>
-                          </div>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
-
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>Mobile First</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-muted-foreground">
-                        Components are built with a mobile-first approach, ensuring optimal performance and usability on all devices.
-                      </p>
-                    </CardContent>
-                  </Card>
-                </div>
-              </div>
+</div>
+</div>
             )}
           </main>
-        </div>
-      </div>
-    </div>
+</div>
+</div>
+</div>
   )
 }
+
