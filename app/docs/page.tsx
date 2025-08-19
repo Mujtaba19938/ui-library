@@ -5762,6 +5762,515 @@ useEffect(() => {
     ),
   },
   {
+    name: "CSS Starfield Background",
+    description: "Small stars twinkling with subtle animation",
+    code: `// CSS Version with animated starfield
+const StarfieldBackground = () => {
+  return (
+    <div className="starfield-container relative h-64 overflow-hidden rounded-lg bg-gradient-to-b from-gray-900 via-blue-900 to-black">
+      {/* Multiple star layers for depth */}
+      <div className="absolute inset-0">
+        {/* Far stars - small and slow */}
+        <div className="stars-far absolute inset-0" style={{
+          backgroundImage: \`
+            radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+            radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+            radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+            radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.6), transparent),
+            radial-gradient(2px 2px at 160px 30px, #ddd, transparent)
+          \`,
+          backgroundRepeat: 'repeat',
+          backgroundSize: '200px 100px',
+          animation: 'twinkle 4s ease-in-out infinite'
+        }}></div>
+        
+        {/* Medium stars - medium size and speed */}
+        <div className="stars-medium absolute inset-0" style={{
+          backgroundImage: \`
+            radial-gradient(3px 3px at 50px 20px, #fff, transparent),
+            radial-gradient(3px 3px at 120px 60px, rgba(255,255,255,0.9), transparent),
+            radial-gradient(2px 2px at 180px 40px, #eee, transparent),
+            radial-gradient(2px 2px at 220px 80px, rgba(255,255,255,0.7), transparent)
+          \`,
+          backgroundRepeat: 'repeat',
+          backgroundSize: '250px 120px',
+          animation: 'twinkle 3s ease-in-out infinite 1s'
+        }}></div>
+        
+        {/* Close stars - larger and faster */}
+        <div className="stars-close absolute inset-0" style={{
+          backgroundImage: \`
+            radial-gradient(4px 4px at 80px 50px, #fff, transparent),
+            radial-gradient(4px 4px at 150px 90px, rgba(255,255,255,1), transparent),
+            radial-gradient(3px 3px at 200px 30px, #f0f0f0, transparent),
+            radial-gradient(3px 3px at 280px 70px, rgba(255,255,255,0.8), transparent)
+          \`,
+          backgroundRepeat: 'repeat',
+          backgroundSize: '300px 150px',
+          animation: 'twinkle 2s ease-in-out infinite 0.5s'
+        }}></div>
+      </div>
+      
+      {/* Content */}
+      <div className="relative z-10 flex items-center justify-center h-full">
+        <div className="text-center text-white">
+          <h2 className="text-3xl font-bold mb-2">Starfield Background</h2>
+          <p className="text-white/80">Twinkling stars with multiple layers</p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// CSS Animations
+// Add this CSS to your stylesheet:
+// @keyframes twinkle {
+//   0%, 100% { opacity: 0.3; }
+//   50% { opacity: 1; }
+// }
+// 
+// .stars-far { animation-delay: 0s; }
+// .stars-medium { animation-delay: 1s; }
+// .stars-close { animation-delay: 0.5s; }`,
+    preview: (
+      <div className="starfield-container relative h-64 overflow-hidden rounded-lg bg-gradient-to-b from-gray-900 via-blue-900 to-black flex items-center justify-center">
+        <div className="text-center text-white">
+          <h2 className="text-3xl font-bold mb-2">Starfield Background</h2>
+          <p className="text-white/80">Twinkling stars with multiple layers</p>
+        </div>
+      </div>
+    ),
+  },
+  {
+    name: "CSS Rain Effect",
+    description: "Falling gradient lines like Matrix code rain",
+    code: `// CSS Version with Matrix-style rain
+const RainEffect = () => {
+  return (
+    <div className="rain-container relative h-64 overflow-hidden rounded-lg bg-black">
+      {/* Rain drops - multiple columns */}
+      <div className="rain-drops absolute inset-0">
+        {/* Column 1 */}
+        <div className="rain-column absolute left-1/4 h-full" style={{
+          background: 'linear-gradient(180deg, transparent 0%, #00ff00 50%, transparent 100%)',
+          width: '2px',
+          animation: 'rain-fall 2s linear infinite'
+        }}></div>
+        
+        {/* Column 2 */}
+        <div className="rain-column absolute left-2/4 h-full" style={{
+          background: 'linear-gradient(180deg, transparent 0%, #00ff88 50%, transparent 100%)',
+          width: '2px',
+          animation: 'rain-fall 1.8s linear infinite 0.3s'
+        }}></div>
+        
+        {/* Column 3 */}
+        <div className="rain-column absolute left-3/4 h-full" style={{
+          background: 'linear-gradient(180deg, transparent 0%, #88ff00 50%, transparent 100%)',
+          width: '2px',
+          animation: 'rain-fall 2.2s linear infinite 0.7s'
+        }}></div>
+        
+        {/* Additional random columns */}
+        <div className="rain-column absolute left-1/6 h-full" style={{
+          background: 'linear-gradient(180deg, transparent 0%, #00ffff 50%, transparent 100%)',
+          width: '1px',
+          animation: 'rain-fall 1.5s linear infinite 0.1s'
+        }}></div>
+        
+        <div className="rain-column absolute left-5/6 h-full" style={{
+          background: 'linear-gradient(180deg, transparent 0%, #ffff00 50%, transparent 100%)',
+          width: '1px',
+          animation: 'rain-fall 1.9s linear infinite 0.5s'
+        }}></div>
+      </div>
+      
+      {/* Matrix-style overlay */}
+      <div className="matrix-overlay absolute inset-0 opacity-20" style={{
+        backgroundImage: \`
+          repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 255, 0, 0.1) 2px,
+            rgba(0, 255, 0, 0.1) 4px
+          )
+        \`,
+        backgroundSize: '4px 100%'
+      }}></div>
+      
+      {/* Content */}
+      <div className="relative z-10 flex items-center justify-center h-full">
+        <div className="text-center text-white">
+          <h2 className="text-3xl font-bold mb-2 text-green-400">Matrix Rain</h2>
+          <p className="text-green-300/80">Digital rain effect with gradient lines</p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// CSS Animations
+// Add this CSS to your stylesheet:
+// @keyframes rain-fall {
+//   0% { transform: translateY(-100%); }
+//   100% { transform: translateY(100vh); }
+// }
+// 
+// .rain-column {
+//   animation-timing-function: linear;
+//   animation-iteration-count: infinite;
+// }`,
+    preview: (
+      <div className="rain-container relative h-64 overflow-hidden rounded-lg bg-black flex items-center justify-center">
+        <div className="text-center text-white">
+          <h2 className="text-3xl font-bold mb-2 text-green-400">Matrix Rain</h2>
+          <p className="text-green-300/80">Digital rain effect with gradient lines</p>
+        </div>
+      </div>
+    ),
+  },
+  {
+    name: "CSS Fireflies Background",
+    description: "Glowing dots that fade in/out randomly",
+    code: `// CSS Version with animated fireflies
+const FirefliesBackground = () => {
+  return (
+    <div className="fireflies-container relative h-64 overflow-hidden rounded-lg bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900">
+      {/* Firefly elements with different animations */}
+      <div className="fireflies absolute inset-0">
+        {/* Firefly 1 */}
+        <div className="firefly absolute w-2 h-2 bg-yellow-300 rounded-full shadow-lg shadow-yellow-300/50" style={{
+          left: '20%',
+          top: '30%',
+          animation: 'firefly-float 6s ease-in-out infinite, firefly-glow 4s ease-in-out infinite'
+        }}></div>
+        
+        {/* Firefly 2 */}
+        <div className="firefly absolute w-3 h-3 bg-green-300 rounded-full shadow-lg shadow-green-300/50" style={{
+          left: '60%',
+          top: '20%',
+          animation: 'firefly-float 8s ease-in-out infinite 1s, firefly-glow 5s ease-in-out infinite 0.5s'
+        }}></div>
+        
+        {/* Firefly 3 */}
+        <div className="firefly absolute w-2 h-2 bg-blue-300 rounded-full shadow-lg shadow-blue-300/50" style={{
+          left: '80%',
+          top: '50%',
+          animation: 'firefly-float 7s ease-in-out infinite 2s, firefly-glow 3s ease-in-out infinite 1s'
+        }}></div>
+        
+        {/* Firefly 4 */}
+        <div className="firefly absolute w-2.5 h-2.5 bg-orange-300 rounded-full shadow-lg shadow-orange-300/50" style={{
+          left: '40%',
+          top: '70%',
+          animation: 'firefly-float 9s ease-in-out infinite 0.5s, firefly-glow 6s ease-in-out infinite 2s'
+        }}></div>
+        
+        {/* Firefly 5 */}
+        <div className="firefly absolute w-2 h-2 bg-pink-300 rounded-full shadow-lg shadow-pink-300/50" style={{
+          left: '70%',
+          top: '80%',
+          animation: 'firefly-float 5s ease-in-out infinite 1.5s, firefly-glow 4.5s ease-in-out infinite 0.8s'
+        }}></div>
+        
+        {/* Additional smaller fireflies */}
+        <div className="firefly absolute w-1.5 h-1.5 bg-white rounded-full shadow-lg shadow-white/50" style={{
+          left: '15%',
+          top: '60%',
+          animation: 'firefly-float 10s ease-in-out infinite 0.2s, firefly-glow 7s ease-in-out infinite 1.2s'
+        }}></div>
+        
+        <div className="firefly absolute w-1 h-1 bg-cyan-300 rounded-full shadow-lg shadow-cyan-300/50" style={{
+          left: '90%',
+          top: '25%',
+          animation: 'firefly-float 11s ease-in-out infinite 0.7s, firefly-glow 8s ease-in-out infinite 1.5s'
+        }}></div>
+      </div>
+      
+      {/* Subtle background glow */}
+      <div className="background-glow absolute inset-0 opacity-30" style={{
+        background: 'radial-gradient(circle at 30% 20%, rgba(255, 255, 0, 0.1) 0%, transparent 50%), radial-gradient(circle at 70% 80%, rgba(255, 192, 203, 0.1) 0%, transparent 50%)'
+      }}></div>
+      
+      {/* Content */}
+      <div className="relative z-10 flex items-center justify-center h-full">
+        <div className="text-center text-white">
+          <h2 className="text-3xl font-bold mb-2">Fireflies Background</h2>
+          <p className="text-white/80">Glowing dots with random animations</p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// CSS Animations
+// Add this CSS to your stylesheet:
+// @keyframes firefly-float {
+//   0%, 100% { transform: translateY(0px) translateX(0px); }
+//   25% { transform: translateY(-20px) translateX(10px); }
+//   50% { transform: translateY(-10px) translateX(-15px); }
+//   75% { transform: translateY(-30px) translateX(5px); }
+// }
+// 
+// @keyframes firefly-glow {
+//   0%, 100% { opacity: 0.3; transform: scale(0.8); }
+//   50% { opacity: 1; transform: scale(1.2); }
+// }
+// 
+// .firefly {
+//   filter: blur(0.5px);
+// }`,
+    preview: (
+      <div className="fireflies-container relative h-64 overflow-hidden rounded-lg bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 flex items-center justify-center">
+        <div className="text-center text-white">
+          <h2 className="text-3xl font-bold mb-2">Fireflies Background</h2>
+          <p className="text-white/80">Glowing dots with random animations</p>
+        </div>
+      </div>
+    ),
+  },
+  {
+    name: "Morphing Gradient Shapes",
+    description: "Blobs that morph slowly in the background",
+    code: `// CSS Version with morphing gradient shapes
+const MorphingGradientShapes = () => {
+  return (
+    <div className="morphing-shapes-container relative h-64 overflow-hidden rounded-lg">
+      {/* Morphing blob 1 */}
+      <div className="morphing-blob absolute w-64 h-64 rounded-full blur-xl" style={{
+        background: 'radial-gradient(circle, rgba(147, 51, 234, 0.6) 0%, rgba(79, 70, 229, 0.4) 50%, rgba(236, 72, 153, 0.2) 100%)',
+        left: '10%',
+        top: '20%',
+        animation: 'morph-blob-1 8s ease-in-out infinite'
+      }}></div>
+      
+      {/* Morphing blob 2 */}
+      <div className="morphing-blob absolute w-80 h-80 rounded-full blur-xl" style={{
+        background: 'radial-gradient(circle, rgba(34, 197, 94, 0.5) 0%, rgba(59, 130, 246, 0.3) 50%, rgba(168, 85, 247, 0.1) 100%)',
+        right: '5%',
+        bottom: '10%',
+        animation: 'morph-blob-2 12s ease-in-out infinite'
+      }}></div>
+      
+      {/* Morphing blob 3 */}
+      <div className="morphing-blob absolute w-72 h-72 rounded-full blur-xl" style={{
+        background: 'radial-gradient(circle, rgba(251, 146, 60, 0.4) 0%, rgba(239, 68, 68, 0.2) 50%, rgba(16, 185, 129, 0.1) 100%)',
+        left: '50%',
+        top: '50%',
+        transform: 'translate(-50%, -50%)',
+        animation: 'morph-blob-3 10s ease-in-out infinite'
+      }}></div>
+      
+      {/* Subtle overlay for depth */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent"></div>
+      
+      {/* Content */}
+      <div className="relative z-10 flex items-center justify-center h-full">
+        <div className="text-center text-white">
+          <h2 className="text-3xl font-bold mb-2">Morphing Shapes</h2>
+          <p className="text-white/80">Gradient blobs that slowly morph and change</p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// CSS Animations
+// Add this CSS to your stylesheet:
+// @keyframes morph-blob-1 {
+//   0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+//   25% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+//   50% { border-radius: 50% 60% 30% 80% / 25% 80% 20% 75%; }
+//   75% { border-radius: 20% 60% 40% 70% / 60% 30% 70% 40%; }
+// }
+// 
+// @keyframes morph-blob-2 {
+//   0%, 100% { border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%; }
+//   33% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+//   66% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+// }
+// 
+// @keyframes morph-blob-3 {
+//   0%, 100% { border-radius: 40% 60% 60% 40% / 40% 60% 60% 40%; }
+//   50% { border-radius: 60% 40% 40% 60% / 60% 40% 40% 60%; }
+// }`,
+    preview: (
+      <div className="morphing-shapes-container relative h-64 overflow-hidden rounded-lg bg-gradient-to-br from-purple-900 via-blue-900 to-pink-900 flex items-center justify-center">
+        <div className="text-center text-white">
+          <h2 className="text-3xl font-bold mb-2">Morphing Shapes</h2>
+          <p className="text-white/80">Gradient blobs that slowly morph and change</p>
+        </div>
+      </div>
+    ),
+  },
+  {
+    name: "CSS Kaleidoscope Background",
+    description: "Repeating radial pattern that rotates",
+    code: `// CSS Version with rotating kaleidoscope
+const KaleidoscopeBackground = () => {
+  return (
+    <div className="kaleidoscope-container relative h-64 overflow-hidden rounded-lg bg-gradient-to-br from-gray-900 via-purple-900 to-indigo-900">
+      {/* Rotating kaleidoscope pattern */}
+      <div className="kaleidoscope-pattern absolute inset-0" style={{
+        backgroundImage: \`
+          conic-gradient(from 0deg at 50% 50%, 
+            #ef4444 0deg, #f59e0b 60deg, #10b981 120deg, 
+            #3b82f6 180deg, #8b5cf6 240deg, #ec4899 300deg, #ef4444 360deg
+          )
+        \`,
+        backgroundSize: '200px 200px',
+        backgroundPosition: 'center',
+        animation: 'rotate-kaleidoscope 20s linear infinite'
+      }}></div>
+      
+      {/* Second layer with different pattern */}
+      <div className="kaleidoscope-layer absolute inset-0 opacity-60" style={{
+        backgroundImage: \`
+          conic-gradient(from 180deg at 50% 50%, 
+            #06b6d4 0deg, #84cc16 60deg, #f97316 120deg, 
+            #dc2626 180deg, #7c3aed 240deg, #be185d 300deg, #06b6d4 360deg
+          )
+        \`,
+        backgroundSize: '150px 150px',
+        backgroundPosition: 'center',
+        animation: 'rotate-kaleidoscope 15s linear infinite reverse'
+      }}></div>
+      
+      {/* Third layer with smaller pattern */}
+      <div className="kaleidoscope-layer absolute inset-0 opacity-40" style={{
+        backgroundImage: \`
+          conic-gradient(from 90deg at 50% 50%, 
+            #fbbf24 0deg, #34d399 60deg, #60a5fa 120deg, 
+            #a78bfa 180deg, #fb7185 240deg, #f59e0b 300deg, #fbbf24 360deg
+          )
+        \`,
+        backgroundSize: '100px 100px',
+        backgroundPosition: 'center',
+        animation: 'rotate-kaleidoscope 25s linear infinite'
+      }}></div>
+      
+      {/* Subtle overlay for depth */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black/20 to-transparent"></div>
+      
+      {/* Content */}
+      <div className="relative z-10 flex items-center justify-center h-full">
+        <div className="text-center text-white">
+          <h2 className="text-3xl font-bold mb-2">Kaleidoscope</h2>
+          <p className="text-white/80">Rotating radial patterns with multiple layers</p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// CSS Animations
+// Add this CSS to your stylesheet:
+// @keyframes rotate-kaleidoscope {
+//   0% { transform: rotate(0deg); }
+//   100% { transform: rotate(360deg); }
+// }
+// 
+// .kaleidoscope-pattern {
+//   transform-origin: center;
+// }
+// 
+// .kaleidoscope-layer {
+//   transform-origin: center;
+// }`,
+    preview: (
+      <div className="kaleidoscope-container relative h-64 overflow-hidden rounded-lg bg-gradient-to-br from-gray-900 via-purple-900 to-indigo-900 flex items-center justify-center">
+        <div className="text-center text-white">
+          <h2 className="text-3xl font-bold mb-2">Kaleidoscope</h2>
+          <p className="text-white/80">Rotating radial patterns with multiple layers</p>
+        </div>
+      </div>
+    ),
+  },
+  {
+    name: "Wave Layered Background",
+    description: "Multiple wave layers moving at different speeds",
+    code: `// CSS Version with layered waves
+const WaveLayeredBackground = () => {
+  return (
+    <div className="wave-layered-container relative h-64 overflow-hidden rounded-lg bg-gradient-to-b from-blue-900 via-purple-900 to-pink-900">
+      {/* Wave layer 1 - slow and large */}
+      <div className="wave-layer absolute inset-0" style={{
+        backgroundImage: \`
+          url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z' opacity='.25' fill='%23ffffff'/%3E%3C/svg%3E")
+        \`,
+        backgroundSize: '1200px 120px',
+        backgroundRepeat: 'repeat-x',
+        backgroundPosition: '0 bottom',
+        animation: 'wave-move-1 20s linear infinite'
+      }}></div>
+      
+      {/* Wave layer 2 - medium speed and size */}
+      <div className="wave-layer absolute inset-0 opacity-60" style={{
+        backgroundImage: \`
+          url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' opacity='.5' fill='%23ffffff'/%3E%3C/svg%3E")
+        \`,
+        backgroundSize: '1000px 100px',
+        backgroundRepeat: 'repeat-x',
+        backgroundPosition: '0 bottom',
+        animation: 'wave-move-2 15s linear infinite'
+      }}></div>
+      
+      {/* Wave layer 3 - fast and small */}
+      <div className="wave-layer absolute inset-0 opacity-40" style={{
+        backgroundImage: \`
+          url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19.84,81.9-31.13,123.56-35.14C474.34,6.29,537.56,4.62,600,4.32c62.43.29,125.66,1.97,187.72,5.57,69.09,4.13,138.31,11.66,206.14,23.28,23.27,5.25,47.84,9.25,72.19,12.25V0Z' opacity='.75' fill='%23ffffff'/%3E%3C/svg%3E")
+        \`,
+        backgroundSize: '800px 80px',
+        backgroundRepeat: 'repeat-x',
+        backgroundPosition: '0 bottom',
+        animation: 'wave-move-3 10s linear infinite'
+      }}></div>
+      
+      {/* Subtle overlay for depth */}
+      <div className="absolute inset-0 bg-gradient-to-t from-transparent to-black/10"></div>
+      
+      {/* Content */}
+      <div className="relative z-10 flex items-center justify-center h-full">
+        <div className="text-center text-white">
+          <h2 className="text-3xl font-bold mb-2">Layered Waves</h2>
+          <p className="text-white/80">Multiple wave layers moving at different speeds</p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// CSS Animations
+// Add this CSS to your stylesheet:
+// @keyframes wave-move-1 {
+//   0% { transform: translateX(0); }
+//   100% { transform: translateX(-1200px); }
+// }
+// 
+// @keyframes wave-move-2 {
+//   0% { transform: translateX(0); }
+//   100% { transform: translateX(-1000px); }
+// }
+// 
+// @keyframes wave-move-3 {
+//   0% { transform: translateX(0); }
+//   100% { transform: translateX(-800px); }
+// }
+// 
+// .wave-layer {
+//   background-position: 0 bottom;
+// }`,
+    preview: (
+      <div className="wave-layered-container relative h-64 overflow-hidden rounded-lg bg-gradient-to-b from-blue-900 via-purple-900 to-pink-900 flex items-center justify-center">
+        <div className="text-center text-white">
+          <h2 className="text-3xl font-bold mb-2">Layered Waves</h2>
+          <p className="text-white/80">Multiple wave layers moving at different speeds</p>
+        </div>
+      </div>
+    ),
+  },
+  {
     name: "Ripple Click Effect",
     description: "Expanding ripple when user clicks (like Material Design)",
     code: `// CSS Version with ripple effect
