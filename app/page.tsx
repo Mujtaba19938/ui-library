@@ -252,19 +252,19 @@ export default function HomePage() {
         {/* Retro Computer Monitor */}
         <div className="relative">
           {/* Monitor Glow */}
-          <div className="absolute -inset-3 rounded-xl blur-xl animate-pulse bg-gray-900/20 dark:bg-blue-500/20"></div>
+          <div className="absolute -inset-3 rounded-xl blur-xl animate-pulse bg-black/20 dark:bg-blue-500/20"></div>
 
           {/* Monitor Frame */}
-          <div className="relative p-2 rounded-lg shadow-2xl bg-gray-900 dark:bg-blue-500">
-            <div className="p-1.5 rounded-md bg-gray-900/80 dark:bg-blue-500/80">
+          <div className="relative p-2 rounded-lg shadow-2xl bg-black dark:bg-blue-500">
+            <div className="p-1.5 rounded-md bg-black/80 dark:bg-blue-500/80">
               <div className="p-3 rounded-md min-w-[240px] min-h-[160px] flex flex-col justify-center items-center relative overflow-hidden bg-white dark:bg-black border border-gray-300 dark:border-blue-500/30">
                 {/* Screen Glow */}
-                <div className="absolute inset-0 animate-pulse bg-gray-900/10 dark:bg-blue-500/10"></div>
+                <div className="absolute inset-0 animate-pulse bg-black/10 dark:bg-blue-500/10"></div>
 
                 {/* Terminal Content */}
                 <div className="relative z-10 text-center font-mono">
                   {/* Computer Icon */}
-                  <div className="mb-3 text-3xl text-gray-800 dark:text-blue-400">
+                  <div className="mb-3 text-3xl text-black dark:text-blue-400">
                     <div className="inline-block">
                       ▄▄▄▄▄▄▄▄▄
                       <br />
@@ -281,19 +281,19 @@ export default function HomePage() {
                   </div>
 
                   {/* Loading Text */}
-                  <div className="text-base mb-3 h-5 text-gray-800 dark:text-blue-400">
+                  <div className="text-base mb-3 h-5 text-black dark:text-blue-400">
                     {loadingText}
                     {showCursor && <span className="animate-pulse">_</span>}
                   </div>
 
                   {/* Progress Bar */}
                   <div className="w-48 mb-2">
-                    <div className="text-xs mb-1 font-mono text-gray-800 dark:text-blue-400">
+                    <div className="text-xs mb-1 font-mono text-black dark:text-blue-400">
                       [{Math.floor(loadingProgress)}%]
                     </div>
                     <div className="h-2.5 rounded border bg-gray-200 dark:bg-blue-900/30 border-gray-400 dark:border-blue-500/30">
                       <div
-                        className="h-full rounded transition-all duration-100 flex items-center justify-center text-xs font-bold bg-gray-900 dark:bg-blue-500 text-white"
+                        className="h-full rounded transition-all duration-100 flex items-center justify-center text-xs font-bold bg-black dark:bg-blue-500 text-white"
                         style={{ width: `${loadingProgress}%` }}
                       >
                         <div className="flex">
@@ -310,7 +310,7 @@ export default function HomePage() {
                   </div>
 
                   {/* System Info */}
-                  <div className="text-xs font-mono opacity-70 text-gray-600 dark:text-blue-300">
+                  <div className="text-xs font-mono opacity-70 text-black dark:text-blue-300">
                     UIKIT OS v2.0 - TERMINAL READY
                   </div>
                 </div>
