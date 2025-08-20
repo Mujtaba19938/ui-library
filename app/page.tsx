@@ -332,15 +332,15 @@ export default function HomePage() {
 
       <header className="relative z-10 py-4">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto bg-background/80 backdrop-blur-md border border-border/40 rounded-full px-4 py-2 flex items-center justify-between shadow-lg">
+          <div className="max-w-4xl mx-auto bg-background/80 backdrop-blur-md border border-border/40 rounded-full px-4 py-2 flex items-center justify-between shadow-lg dark:shadow-[0_0_30px_rgba(59,130,246,0.15)] dark:shadow-blue-500/20">
             <div className="flex items-center space-x-2">
-              <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+              <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center dark:shadow-[0_0_15px_rgba(59,130,246,0.3)]">
                 <div className="w-3 h-3 bg-white rounded-sm" />
               </div>
               <span className="text-lg font-bold">UIKit</span>
             </div>
 
-            <nav className="hidden md:flex items-center space-x-4 px-4 py-2 bg-background/60 backdrop-blur-sm rounded-full border border-border/30">
+            <nav className="hidden md:flex items-center space-x-4 px-4 py-2 bg-background/60 backdrop-blur-sm rounded-full border border-border/30 dark:shadow-[0_0_20px_rgba(59,130,246,0.1)] dark:shadow-blue-500/15">
               {["Features", "Components", "Docs", "Pricing"].map((item, index) => (
                 <a
                   key={item}
