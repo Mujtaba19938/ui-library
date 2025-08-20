@@ -14,6 +14,7 @@ type AnimationType =
   | 'animate-sound-wave'
   | 'animate-bounce'
   | 'animate-pulse'
+  | 'animate-clone'
 
 interface UseButtonAnimationOptions {
   animationType?: AnimationType

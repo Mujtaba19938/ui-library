@@ -6876,9 +6876,12 @@ const CloneOnClickFM = () => {
 };`,
     preview: (
       <div className="flex items-center justify-center h-64">
-        <button className="px-6 py-3 bg-green-500 text-white rounded-lg font-medium hover:bg-green-600 transition-colors">
+        <AnimatedButton 
+          animationType="animate-clone"
+          className="px-6 py-3 bg-green-500 text-white rounded-lg font-medium hover:bg-green-600 transition-colors"
+        >
           Click to Clone Me
-        </button>
+        </AnimatedButton>
       </div>
     ),
   },

@@ -1,11 +1,11 @@
 'use client'
 
-import React, { forwardRef } from 'react'
+import React, { forwardRef, useState } from 'react'
 import { useButtonAnimation } from '@/hooks/use-button-animation'
 
 interface AnimatedButtonProps {
   children: React.ReactNode
-  animationType?: 'animate-ripple' | 'animate-confetti-burst' | 'animate-sparkle' | 'animate-trail-fade' | 'animate-clone-float' | 'animate-pulse-wave' | 'animate-ink-spread' | 'animate-firework-particle' | 'animate-pixel-explosion' | 'animate-shockwave' | 'animate-sound-wave' | 'animate-bounce' | 'animate-pulse'
+  animationType?: 'animate-ripple' | 'animate-confetti-burst' | 'animate-sparkle' | 'animate-trail-fade' | 'animate-clone-float' | 'animate-pulse-wave' | 'animate-ink-spread' | 'animate-firework-particle' | 'animate-pixel-explosion' | 'animate-shockwave' | 'animate-sound-wave' | 'animate-bounce' | 'animate-pulse' | 'animate-clone'
   duration?: number
   resetOnComplete?: boolean
   className?: string
@@ -37,8 +37,32 @@ export const AnimatedButton = forwardRef<HTMLButtonElement, AnimatedButtonProps>
       resetOnComplete
     })
 
+    // State for clone animation
+    const [clones, setClones] = useState<Array<{id: number, x: number, y: number, width: number, height: number, text: React.ReactNode}>>([])
+
     const handleClick = (e: React.MouseEvent) => {
-      triggerAnimation()
+      // Handle clone animation specially
+      if (animationType === 'animate-clone') {
+        const rect = e.currentTarget.getBoundingClientRect()
+        const newClone = {
+          id: Date.now(),
+          x: rect.left,
+          y: rect.top,
+          width: rect.width,
+          height: rect.height,
+          text: children,
+        }
+        
+        setClones(prev => [...prev, newClone])
+        
+        // Remove clone after animation ends
+        setTimeout(() => {
+          setClones(prev => prev.filter(c => c.id !== newClone.id))
+        }, 600)
+      } else {
+        triggerAnimation()
+      }
+      
       onClick?.(e)
     }
 
@@ -62,7 +86,7 @@ export const AnimatedButton = forwardRef<HTMLButtonElement, AnimatedButtonProps>
 
     const buttonClasses = `inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 ${baseClasses[variant as keyof typeof baseClasses]} ${sizeClasses[size as keyof typeof sizeClasses]} ${className}`
 
-    // For bounce and pulse animations, we apply the class directly to the button
+    // For bounce, pulse, and clone animations, we apply the class directly to the button
     const shouldApplyDirectly = animationClass === 'animate-bounce' || animationClass === 'animate-pulse'
     const directAnimationClass = animationClass === 'animate-bounce' ? 'bounce' : animationClass === 'animate-pulse' ? 'pulse' : ''
     const buttonClassName = shouldApplyDirectly 
@@ -80,6 +104,23 @@ export const AnimatedButton = forwardRef<HTMLButtonElement, AnimatedButtonProps>
       >
         {/* Original button content */}
         {children}
+        
+        {/* Clone animation - render animated clones */}
+        {animationType === 'animate-clone' && clones.map((clone) => (
+          <span
+            key={clone.id}
+            className="clone bg-blue-500 text-white rounded flex items-center justify-center"
+            style={{
+              left: clone.x,
+              top: clone.y,
+              width: clone.width,
+              height: clone.height,
+              position: "fixed",
+            }}
+          >
+            {clone.text}
+          </span>
+        ))}
         
         {/* Animation overlay - only for non-direct animations */}
         {isAnimating && animationClass && !shouldApplyDirectly && (
