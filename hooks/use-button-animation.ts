@@ -12,6 +12,7 @@ type AnimationType =
   | 'animate-pixel-explosion'
   | 'animate-shockwave'
   | 'animate-sound-wave'
+  | 'animate-bounce'
 
 interface UseButtonAnimationOptions {
   animationType?: AnimationType

@@ -6320,10 +6320,11 @@ const RippleButton = () => {
 };`,
     preview: (
       <div className="flex items-center justify-center h-64">
-        <AnimatedButton animationType="animate-ripple">
-          <button className="relative overflow-hidden px-6 py-3 bg-blue-500 text-white rounded-lg font-medium transition-colors hover:bg-blue-600 active:bg-blue-700">
-            Click for Ripple Effect
-          </button>
+        <AnimatedButton 
+          animationType="animate-ripple"
+          className="relative overflow-hidden px-6 py-3 bg-blue-500 text-white rounded-lg font-medium transition-colors hover:bg-blue-600 active:bg-blue-700"
+        >
+          Click for Ripple Effect
         </AnimatedButton>
       </div>
     ),
@@ -6381,10 +6382,11 @@ const ConfettiButton = () => {
 };`,
     preview: (
       <div className="flex items-center justify-center h-64">
-        <AnimatedButton animationType="animate-confetti-burst">
-          <button className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg font-medium transition-transform hover:scale-105 active:scale-95">
-            🎉 Confetti Burst!
-          </button>
+        <AnimatedButton 
+          animationType="animate-confetti-burst"
+          className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg font-medium transition-transform hover:scale-105 active:scale-95"
+        >
+          🎉 Confetti Burst!
         </AnimatedButton>
       </div>
     ),
@@ -6446,10 +6448,11 @@ const SparkleButton = () => {
 };`,
     preview: (
       <div className="flex items-center justify-center h-64">
-        <AnimatedButton animationType="animate-sparkle">
-          <button className="px-6 py-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-white rounded-lg font-medium transition-all hover:shadow-lg hover:scale-105">
-            ✨ Sparkle Effect
-          </button>
+        <AnimatedButton 
+          animationType="animate-sparkle"
+          className="px-6 py-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-white rounded-lg font-medium transition-all hover:shadow-lg hover:scale-105"
+        >
+          ✨ Sparkle Effect
         </AnimatedButton>
       </div>
     ),
@@ -6997,10 +7000,11 @@ const PulseClickEffectFM = () => {
 };`,
     preview: (
       <div className="flex items-center justify-center h-64">
-        <AnimatedButton animationType="animate-pulse-wave">
-          <button className="relative overflow-hidden px-6 py-3 bg-blue-500 text-white rounded-lg font-medium transition-colors hover:bg-blue-600 active:bg-blue-700">
-            Click for Pulse Effect
-          </button>
+        <AnimatedButton 
+          animationType="animate-pulse-wave"
+          className="relative overflow-hidden px-6 py-3 bg-blue-500 text-white rounded-lg font-medium transition-colors hover:bg-blue-600 active:bg-blue-700"
+        >
+          Click for Pulse Effect
         </AnimatedButton>
       </div>
     ),
@@ -7123,10 +7127,11 @@ const InkSpreadEffectFM = () => {
 };`,
     preview: (
       <div className="flex items-center justify-center h-64">
-        <AnimatedButton animationType="animate-ink-spread">
-          <button className="relative overflow-hidden px-6 py-3 bg-gray-800 text-white rounded-lg font-medium transition-colors hover:bg-gray-700 active:bg-gray-900">
-            Click for Ink Spread
-          </button>
+        <AnimatedButton 
+          animationType="animate-ink-spread"
+          className="relative overflow-hidden px-6 py-3 bg-gray-800 text-white rounded-lg font-medium transition-colors hover:bg-gray-700 active:bg-gray-900"
+        >
+          Click for Ink Spread
         </AnimatedButton>
       </div>
     ),
@@ -7260,10 +7265,11 @@ const FireworkClickEffectFM = () => {
 };`,
     preview: (
       <div className="flex items-center justify-center h-64">
-        <AnimatedButton animationType="animate-firework-particle">
-          <button className="relative overflow-hidden px-6 py-3 bg-purple-500 text-white rounded-lg font-medium transition-colors hover:bg-purple-600 active:bg-purple-700">
-            Click for Fireworks
-          </button>
+        <AnimatedButton 
+          animationType="animate-firework-particle"
+          className="relative overflow-hidden px-6 py-3 bg-purple-500 text-white rounded-lg font-medium transition-colors hover:bg-purple-600 active:bg-purple-700"
+        >
+          Click for Fireworks
         </AnimatedButton>
       </div>
     ),
@@ -7396,10 +7402,11 @@ const ExplodingPixelEffectFM = () => {
 };`,
     preview: (
       <div className="flex items-center justify-center h-64">
-        <AnimatedButton animationType="animate-pixel-explosion">
-          <button className="relative overflow-hidden px-6 py-3 bg-red-500 text-white rounded-lg font-medium transition-colors hover:bg-red-600 active:bg-red-700">
-            Click for Pixel Explosion
-          </button>
+        <AnimatedButton 
+          animationType="animate-pixel-explosion"
+          className="relative overflow-hidden px-6 py-3 bg-red-500 text-white rounded-lg font-medium transition-colors hover:bg-red-600 active:bg-red-700"
+        >
+          Click for Pixel Explosion
         </AnimatedButton>
       </div>
     ),
@@ -7520,10 +7527,11 @@ const ShockwaveEffectFM = () => {
 };`,
     preview: (
       <div className="flex items-center justify-center h-64">
-        <AnimatedButton animationType="animate-shockwave">
-          <button className="relative overflow-hidden px-6 py-3 bg-orange-500 text-white rounded-lg font-medium transition-colors hover:bg-orange-600 active:bg-orange-700">
-            Click for Shockwave
-          </button>
+        <AnimatedButton 
+          animationType="animate-shockwave"
+          className="relative overflow-hidden px-6 py-3 bg-orange-500 text-white rounded-lg font-medium transition-colors hover:bg-orange-600 active:bg-orange-700"
+        >
+          Click for Shockwave
         </AnimatedButton>
       </div>
     ),
@@ -7585,10 +7593,11 @@ const ClickToBounceFM = () => {
 };`,
     preview: (
       <div className="flex items-center justify-center h-64">
-        <AnimatedButton animationType="animate-bounce">
-          <button className="px-6 py-3 bg-green-500 text-white rounded-lg font-medium transition-all duration-300 hover:bg-green-600">
-            Click to Bounce
-          </button>
+        <AnimatedButton 
+          animationType="animate-bounce"
+          className="px-6 py-3 bg-green-500 text-white rounded-lg font-medium transition-all duration-300 hover:bg-green-600"
+        >
+          Click to Bounce
         </AnimatedButton>
       </div>
     ),
@@ -7726,10 +7735,11 @@ const SoundWaveEffectFM = () => {
 };`,
     preview: (
       <div className="flex items-center justify-center h-64">
-        <AnimatedButton animationType="animate-sound-wave">
-          <button className="relative overflow-hidden px-6 py-3 bg-cyan-500 text-white rounded-lg font-medium transition-colors hover:bg-cyan-600 active:bg-cyan-700">
-            Click for Sound Waves
-          </button>
+        <AnimatedButton 
+          animationType="animate-sound-wave"
+          className="relative overflow-hidden px-6 py-3 bg-cyan-500 text-white rounded-lg font-medium transition-colors hover:bg-cyan-600 active:bg-cyan-700"
+        >
+          Click for Sound Waves
         </AnimatedButton>
       </div>
     ),

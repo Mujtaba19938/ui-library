@@ -5,11 +5,15 @@ import { useButtonAnimation } from '@/hooks/use-button-animation'
 
 interface AnimatedButtonProps {
   children: React.ReactNode
-  animationType?: 'animate-ripple' | 'animate-confetti-burst' | 'animate-sparkle' | 'animate-trail-fade' | 'animate-clone-float' | 'animate-pulse-wave' | 'animate-ink-spread' | 'animate-firework-particle' | 'animate-pixel-explosion' | 'animate-shockwave' | 'animate-sound-wave'
+  animationType?: 'animate-ripple' | 'animate-confetti-burst' | 'animate-sparkle' | 'animate-trail-fade' | 'animate-clone-float' | 'animate-pulse-wave' | 'animate-ink-spread' | 'animate-firework-particle' | 'animate-pixel-explosion' | 'animate-shockwave' | 'animate-sound-wave' | 'animate-bounce'
   duration?: number
   resetOnComplete?: boolean
   className?: string
   onClick?: (e: React.MouseEvent) => void
+  variant?: 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link'
+  size?: 'default' | 'sm' | 'lg' | 'icon'
+  disabled?: boolean
+  type?: 'button' | 'submit' | 'reset'
   [key: string]: any // Allow any other props to pass through
 }
 
@@ -21,6 +25,10 @@ export const AnimatedButton = forwardRef<HTMLButtonElement, AnimatedButtonProps>
     resetOnComplete = true,
     className = '',
     onClick,
+    variant = 'default',
+    size = 'default',
+    disabled = false,
+    type = 'button',
     ...props 
   }, ref) => {
     const { isAnimating, animationClass, triggerAnimation } = useButtonAnimation({
@@ -34,18 +42,46 @@ export const AnimatedButton = forwardRef<HTMLButtonElement, AnimatedButtonProps>
       onClick?.(e)
     }
 
+    // Base button classes based on variant
+    const baseClasses = {
+      default: 'bg-primary text-primary-foreground hover:bg-primary/90',
+      destructive: 'bg-destructive text-destructive-foreground hover:bg-destructive/90',
+      outline: 'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
+      secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/80',
+      ghost: 'hover:bg-accent hover:text-accent-foreground',
+      link: 'text-primary underline-offset-4 hover:underline'
+    }
+
+    // Size classes
+    const sizeClasses = {
+      default: 'h-10 px-4 py-2',
+      sm: 'h-9 rounded-md px-3',
+      lg: 'h-11 rounded-md px-8',
+      icon: 'h-10 w-10'
+    }
+
+    const buttonClasses = `inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 ${baseClasses[variant as keyof typeof baseClasses]} ${sizeClasses[size as keyof typeof sizeClasses]} ${className}`
+
+    // For bounce animation, we apply the class directly to the button
+    const shouldApplyBounceDirectly = animationClass === 'animate-bounce'
+    const buttonClassName = shouldApplyBounceDirectly 
+      ? `relative overflow-hidden ${buttonClasses} bounce`
+      : `relative overflow-hidden ${buttonClasses}`
+
     return (
       <button
         ref={ref}
-        className={`relative overflow-hidden ${className}`}
+        type={type}
+        disabled={disabled}
+        className={buttonClassName}
         onClick={handleClick}
         {...props}
       >
         {/* Original button content */}
         {children}
         
-        {/* Animation overlay */}
-        {isAnimating && animationClass && (
+        {/* Animation overlay - only for non-bounce animations */}
+        {isAnimating && animationClass && !shouldApplyBounceDirectly && (
           <div className="absolute inset-0 pointer-events-none">
             {/* Ripple effect */}
             {animationClass === 'animate-ripple' && (
