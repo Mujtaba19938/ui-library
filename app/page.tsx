@@ -257,9 +257,9 @@ export default function HomePage() {
           {/* Monitor Frame */}
           <div className="relative p-2 rounded-lg shadow-2xl bg-black dark:bg-blue-500">
             <div className="p-1.5 rounded-md bg-black/80 dark:bg-blue-500/80">
-              <div className="p-3 rounded-md min-w-[240px] min-h-[160px] flex flex-col justify-center items-center relative overflow-hidden bg-white dark:bg-blue-950 border border-gray-300 dark:border-blue-500/30">
+              <div className="p-3 rounded-md min-w-[240px] min-h-[160px] flex flex-col justify-center items-center relative overflow-hidden bg-white dark:bg-blue-500 border border-gray-300 dark:border-blue-500/30">
                 {/* Screen Glow */}
-                <div className="absolute inset-0 animate-pulse bg-black/10 dark:bg-blue-500/10"></div>
+                <div className="absolute inset-0 animate-pulse bg-black/10 dark:bg-blue-500/20"></div>
 
                 {/* Terminal Content */}
                 <div className="relative z-10 text-center font-mono">
@@ -291,7 +291,7 @@ export default function HomePage() {
                     <div className="text-xs mb-1 font-mono text-black dark:text-blue-400">
                       [{Math.floor(loadingProgress)}%]
                     </div>
-                    <div className="h-2.5 rounded border bg-gray-200 dark:bg-blue-900/30 border-gray-400 dark:border-blue-500/30">
+                    <div className="h-2.5 rounded border bg-gray-200 dark:bg-blue-500/30 border-gray-400 dark:border-blue-500/30">
                       <div
                         className="h-full rounded transition-all duration-100 flex items-center justify-center text-xs font-bold bg-black dark:bg-blue-500 text-white"
                         style={{ width: `${loadingProgress}%` }}
