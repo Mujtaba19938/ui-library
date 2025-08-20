@@ -257,7 +257,7 @@ export default function HomePage() {
           {/* Monitor Frame */}
           <div className="relative p-2 rounded-lg shadow-2xl bg-black dark:bg-blue-500">
             <div className="p-1.5 rounded-md bg-black/80 dark:bg-blue-500/80">
-              <div className="p-3 rounded-md min-w-[240px] min-h-[160px] flex flex-col justify-center items-center relative overflow-hidden bg-white dark:bg-black border border-gray-300 dark:border-blue-500/30">
+              <div className="p-3 rounded-md min-w-[240px] min-h-[160px] flex flex-col justify-center items-center relative overflow-hidden bg-white dark:bg-gray-900 border border-gray-300 dark:border-blue-500/30">
                 {/* Screen Glow */}
                 <div className="absolute inset-0 animate-pulse bg-black/10 dark:bg-blue-500/10"></div>
 
