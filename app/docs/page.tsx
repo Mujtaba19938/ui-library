@@ -7001,7 +7001,7 @@ const PulseClickEffectFM = () => {
     preview: (
       <div className="flex items-center justify-center h-64">
         <AnimatedButton 
-          animationType="animate-pulse-wave"
+          animationType="animate-pulse"
           className="relative overflow-hidden px-6 py-3 bg-blue-500 text-white rounded-lg font-medium transition-colors hover:bg-blue-600 active:bg-blue-700"
         >
           Click for Pulse Effect

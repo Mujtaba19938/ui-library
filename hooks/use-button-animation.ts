@@ -13,6 +13,7 @@ type AnimationType =
   | 'animate-shockwave'
   | 'animate-sound-wave'
   | 'animate-bounce'
+  | 'animate-pulse'
 
 interface UseButtonAnimationOptions {
   animationType?: AnimationType

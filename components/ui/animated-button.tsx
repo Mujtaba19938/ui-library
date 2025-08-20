@@ -5,7 +5,7 @@ import { useButtonAnimation } from '@/hooks/use-button-animation'
 
 interface AnimatedButtonProps {
   children: React.ReactNode
-  animationType?: 'animate-ripple' | 'animate-confetti-burst' | 'animate-sparkle' | 'animate-trail-fade' | 'animate-clone-float' | 'animate-pulse-wave' | 'animate-ink-spread' | 'animate-firework-particle' | 'animate-pixel-explosion' | 'animate-shockwave' | 'animate-sound-wave' | 'animate-bounce'
+  animationType?: 'animate-ripple' | 'animate-confetti-burst' | 'animate-sparkle' | 'animate-trail-fade' | 'animate-clone-float' | 'animate-pulse-wave' | 'animate-ink-spread' | 'animate-firework-particle' | 'animate-pixel-explosion' | 'animate-shockwave' | 'animate-sound-wave' | 'animate-bounce' | 'animate-pulse'
   duration?: number
   resetOnComplete?: boolean
   className?: string
@@ -62,10 +62,11 @@ export const AnimatedButton = forwardRef<HTMLButtonElement, AnimatedButtonProps>
 
     const buttonClasses = `inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 ${baseClasses[variant as keyof typeof baseClasses]} ${sizeClasses[size as keyof typeof sizeClasses]} ${className}`
 
-    // For bounce animation, we apply the class directly to the button
-    const shouldApplyBounceDirectly = animationClass === 'animate-bounce'
-    const buttonClassName = shouldApplyBounceDirectly 
-      ? `relative overflow-hidden ${buttonClasses} bounce`
+    // For bounce and pulse animations, we apply the class directly to the button
+    const shouldApplyDirectly = animationClass === 'animate-bounce' || animationClass === 'animate-pulse'
+    const directAnimationClass = animationClass === 'animate-bounce' ? 'bounce' : animationClass === 'animate-pulse' ? 'pulse' : ''
+    const buttonClassName = shouldApplyDirectly 
+      ? `relative overflow-hidden ${buttonClasses} ${directAnimationClass}`
       : `relative overflow-hidden ${buttonClasses}`
 
     return (
@@ -80,8 +81,8 @@ export const AnimatedButton = forwardRef<HTMLButtonElement, AnimatedButtonProps>
         {/* Original button content */}
         {children}
         
-        {/* Animation overlay - only for non-bounce animations */}
-        {isAnimating && animationClass && !shouldApplyBounceDirectly && (
+        {/* Animation overlay - only for non-direct animations */}
+        {isAnimating && animationClass && !shouldApplyDirectly && (
           <div className="absolute inset-0 pointer-events-none">
             {/* Ripple effect */}
             {animationClass === 'animate-ripple' && (
