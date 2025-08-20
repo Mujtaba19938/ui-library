@@ -257,7 +257,7 @@ export default function HomePage() {
           {/* Monitor Frame */}
           <div className="relative p-2 rounded-lg shadow-2xl bg-black dark:bg-blue-500">
             <div className="p-1.5 rounded-md bg-black/80 dark:bg-blue-500/80">
-              <div className="p-3 rounded-md min-w-[240px] min-h-[160px] flex flex-col justify-center items-center relative overflow-hidden bg-white dark:bg-gray-900 border border-gray-300 dark:border-blue-500/30">
+              <div className="p-3 rounded-md min-w-[240px] min-h-[160px] flex flex-col justify-center items-center relative overflow-hidden bg-white dark:bg-blue-950 border border-gray-300 dark:border-blue-500/30">
                 {/* Screen Glow */}
                 <div className="absolute inset-0 animate-pulse bg-black/10 dark:bg-blue-500/10"></div>
 
@@ -332,7 +332,7 @@ export default function HomePage() {
 
       <header className="relative z-10 py-4">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto bg-background/80 backdrop-blur-md border border-border/40 rounded-full px-4 py-2 flex items-center justify-between shadow-lg dark:shadow-[0_0_30px_rgba(59,130,246,0.15)] dark:shadow-blue-500/20">
+          <div className="max-w-4xl mx-auto bg-background/80 backdrop-blur-md border border-border/40 rounded-full px-4 py-2 flex items-center justify-between shadow-lg dark:shadow-[0_0_40px_rgba(59,130,246,0.25)] dark:shadow-blue-500/30">
             <div className="flex items-center space-x-2">
               <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center dark:shadow-[0_0_15px_rgba(59,130,246,0.3)]">
                 <div className="w-3 h-3 bg-white rounded-sm" />
@@ -340,7 +340,7 @@ export default function HomePage() {
               <span className="text-lg font-bold">UIKit</span>
             </div>
 
-            <nav className="hidden md:flex items-center space-x-4 px-4 py-2 bg-background/60 backdrop-blur-sm rounded-full border border-border/30 dark:shadow-[0_0_20px_rgba(59,130,246,0.1)] dark:shadow-blue-500/15">
+            <nav className="hidden md:flex items-center space-x-4 px-4 py-2 bg-background/60 backdrop-blur-sm rounded-full border border-border/30 dark:shadow-[0_0_25px_rgba(59,130,246,0.2)] dark:shadow-blue-500/25">
               {["Features", "Components", "Docs", "Pricing"].map((item, index) => (
                 <a
                   key={item}
